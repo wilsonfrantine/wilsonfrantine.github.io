@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+header {
+    text-align: center;
+    padding: 8vh 0 4vh;
+}
+
+header h1 {
+    font-size: 6vw;
+    font-weight: 700;
+    color: #333;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.repository {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 60vw;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    /*justify-content: space-between;*/
+    transition: background-color 0.3s ease;
+	cursor: pointer;
+}
+
+.repository:hover {
+    background-color: #Edf;
+	cursor: hand;
+}
+
+.repository h3, p, a {
+	flex-direction: column;
+}
+
+.repository-content {
+    display: flex;
+    align-items: center;
+}
+
+.repository-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.repository img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline;
+}
+
+.repository h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.repository p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.repository a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.repository a:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px)  {
+    header h1 {
+        font-size: 12vw;
+    }
+    .repository {
+        background-color: #fff;
+        border-radius: 8px;
+        width: 90%;
+        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+}
