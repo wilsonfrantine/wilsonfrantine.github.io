@@ -51,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function() {
         repositoryDiv.classList.add("repository");
         repositoryDiv.style.cursor = "pointer";
         repositoryDiv.addEventListener("click", () => {
-            window.location.href = repo.html_url;
+           /* window.location.href = repo.html_url; */
+           window.location.href = `https://wilsonfrantine.github.io/${repo.name}`;
+
         });
 
         const image = document.createElement("img");
