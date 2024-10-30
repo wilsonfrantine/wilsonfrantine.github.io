@@ -1,91 +1,99 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Basic reset and styling */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafc;
     color: #333;
+    line-height: 1.6;
 }
 
+/* Header */
 header {
-    background-color: #333;
+    background-color: #007acc;
     color: white;
-    padding: 15px 0;
+    padding: 15px;
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.section {
-    padding: 50px;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+header h1 {
+    font-weight: 700;
+    font-size: 1.8em;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
 }
 
+/* Repository Card */
 .repository {
     background-color: white;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .repository:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .repository img {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
 }
 
 .repo-content {
-    display: flex;
-    align-items: center;
+    padding: 20px;
 }
 
 .repo-content h3 {
-    margin: 0;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    color: #007acc;
+    margin-bottom: 10px;
 }
 
+.repo-content p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Button Styles */
 .cta-button {
     background-color: #007acc;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
 }
 
+.cta-button:hover {
+    background-color: #005f99;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     padding: 15px;
     text-align: center;
+    margin-top: 30px;
 }
