@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
             "mariorun": "https://cdn-icons-png.flaticon.com/512/1408/1408990.png",
             "R4eco": "https://cdn-icons-png.flaticon.com/512/3723/3723449.png",
             "ENM101": "https://cdn-icons-png.flaticon.com/512/5145/5145062.png",
+            "QuickAR": "https://cdn-icons-png.flaticon.com/512/6357/6357965.png",
+            "aves": "https://cdn-icons-png.flaticon.com/512/6363/6363577.png",
+            "nucleodrop": "https://cdn-icons-png.flaticon.com/512/620/620341.png",
+            "easygrade": "https://cdn-icons-png.flaticon.com/512/5231/5231964.png"
         };
 
         return repoImages[repo.name] || "https://cdn-icons-png.flaticon.com/512/9496/9496020.png";
@@ -41,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         repositoryDiv.classList.add("repository");
         repositoryDiv.style.cursor = "pointer";
         repositoryDiv.addEventListener("click", () => {
-           window.location.href = `https://wilsonfrantine.github.io/${repo.name}`;
+            window.location.href = `https://wilsonfrantine.github.io/${repo.name}`;
         });
 
         const image = document.createElement("img");
