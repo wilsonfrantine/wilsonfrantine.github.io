@@ -5,66 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Wilson Frantine-Silva - Biologist specializing in genetics, molecular ecology, and bioinformatics">
     <title>Wilson Frantine-Silva | Profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
     <!-- Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#teaching">Teaching</a></li>
+                <li id="github-link"><i data-feather="github"></i>GitHub</li>
+                <li><a href="#intro">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#translate" id="translate-link" onclick="triggerTranslation()">
+                        <i class="fas fa-language"></i> Translate
+                    </a>
+                </li>                
             </ul>
         </nav>
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="section home">
-        <div class="intro">
+    <section id="intro" class="intro">
+        <div class="intro-content">
+            <div class="profileimage"><img src="src/profileimage2.webp" /> </div>
             <h1>Dr. Wilson Frantine-Silva</h1>
-            <p>Biologist specializing in genetics, molecular ecology, and bioinformatics.</p>
-            <a href="#research" class="cta-button">Explore My Work</a>
+            <h2>Genetics, Molecular Ecology, and Computational Insights</h2>
+            <p class="tagline">"Blending genes, data, and code to understand the world’s wild complexities."</p>
+
+            <div class="intro-buttons">
+                <a href="#projects" class="cta-button">See My Projects</a>
+                <a href="#research" class="cta-button">Discover My Research</a>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/wilsonfrantine" target="_blank" aria-label="X">
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </a>
+                <a href="https://instagram.com/wilsonfrantine" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" target="_blank" aria-label="ResearchGate">
+                    <i class="fab fa-researchgate"></i>
+                </a>
+                <a href="https://orcid.org/0000-0002-4293-0471" target="_blank" aria-label="ORCID">
+                    <i class="fab fa-orcid"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR" target="_blank" aria-label="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+            </div>
         </div>
     </section>
+        <!-- Projects Section -->
+        <section id="projects" class="section projects" data-aos="fade-up">
+            <h2>Projects</h2>
+            <button class="scroll-btn scroll-left" id="projectLeft" onclick="scrollProjects(-300)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            </button>
+            <button class="scroll-btn scroll-right" id="projectRight" onclick="scrollProjects(300)">
+            <i class="fas fa-chevron-right"></i>
+            </button>
+            <div id="project-list" class="project-list" data-aos="fade-up">
+                <!-- Repositories loaded dynamically here -->
+            </div>
+        </section>
 
     <!-- Research Section -->
     <section id="research" class="section research">
         <h2>Research</h2>
         <p>Explore my research on environmental factors influencing genetic diversity and population dynamics.</p>
-        <button class="scroll-btn scroll-left">◄</button>
+        <button class="scroll-btn scroll-left" id="researchLeft" aria-label="Scroll Left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="scroll-btn scroll-right" id="researchRight" aria-label="Scroll Right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
         <div id="research-list" class="research-list">
             <!-- Publications loaded dynamically here -->
         </div>
-        <button class="scroll-btn scroll-right">►</button>
+        
 
     </section>
 
-    <!-- Teaching Section -->
-    <section id="teaching" class="section teaching">
+    <!-- Teaching Section 
+    <section id="teaching" class="section teaching" data-aos="fade-up">
         <h2>Teaching</h2>
         <p>I am passionate about teaching genetics and bioinformatics, helping students learn through practical exercises...</p>
     </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects">
-        <h2>Projects</h2>
-        <div id="project-list" class="container">
-            <!-- Repositories loaded dynamically here -->
-        </div>
-    </section>
+    -->
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Let’s collaborate! Feel free to reach out to me via email or connect on social media.</p>
-        <ul class="social-links">
-            <li><a href="mailto:your-email@example.com">Email</a></li>
-            <li><a href="https://github.com/wilsonfrantine">GitHub</a></li>
-            <li><a href="https://twitter.com/your-twitter">Twitter</a></li>
-        </ul>
+        <div class="social-links">
+            <a href="mailto:your-email@example.com" target="_blank" aria-label="Email">
+                <i class="fa-regular fa-envelope"></i>
+            </a>
+            <a href="https://x.com/wilsonfrantine" target="_blank" aria-label="X">
+                <i class="fa-brands fa-square-x-twitter"></i>
+            </a>
+            <a href="https://instagram.com/wilsonfrantine" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" target="_blank" aria-label="ResearchGate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+            <a href="https://orcid.org/0000-0002-4293-0471" target="_blank" aria-label="ORCID">
+                <i class="fab fa-orcid"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR" target="_blank" aria-label="Google Scholar">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/wilsonfrantine" target="_blank" aria-label="Github">
+                <i class="fa-brands fa-square-github"></i>
+            </a>
+        </div>
+        <p></p>
+        <p> You can mail-me anytime! wilsonfrantine@gmail.com</p>
     </section>
 
     <footer>
@@ -72,5 +136,11 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        feather.replace();
+    </script>
 </body>
 </html>

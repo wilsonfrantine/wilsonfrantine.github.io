@@ -1,18 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if(window.scrollY > 50){
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
     // Open external links in a new tab
     document.querySelectorAll('a').forEach(link => {
         const url = new URL(link.href);
@@ -66,31 +60,38 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
 
-    function createRepositoryDiv(repo, imageUrl) {
-        const repositoryDiv = document.createElement("div");
-        repositoryDiv.classList.add("repository");
-        repositoryDiv.style.cursor = "pointer";
-        repositoryDiv.addEventListener("click", () => {
-            window.open(`https://github.com/wilsonfrantine/${repo.name}`, "_blank");
-        });
-
-        const image = document.createElement("img");
-        image.src = imageUrl;
-        image.alt = "Repository Image";
-
-        const repoContentDiv = document.createElement("div");
-        repoContentDiv.classList.add("repo-content");
-
-        const { name, description } = repo;
-        repoContentDiv.innerHTML = `
-            <h3><a href="https://github.com/wilsonfrantine/${repo.name}" target="_blank" rel="noopener noreferrer">${name}</a></h3>
-            <p>${description || "No description provided."}</p>
-        `;
-
-        repositoryDiv.appendChild(image);
-        repositoryDiv.appendChild(repoContentDiv);
-        return repositoryDiv;
-    }
+        function createRepositoryDiv(repo, imageUrl) {
+            const repositoryDiv = document.createElement("div");
+            repositoryDiv.classList.add("repository");
+            repositoryDiv.style.cursor = "pointer";
+            repositoryDiv.addEventListener("click", () => {
+                window.open(`https://github.com/wilsonfrantine/${repo.name}`, "_blank");
+            });
+        
+            const image = document.createElement("img");
+            image.src = imageUrl;
+            image.alt = "Repository Image";
+        
+            const repoContentDiv = document.createElement("div");
+            repoContentDiv.classList.add("repo-content");
+        
+            // Limita a descrição a 35 caracteres
+            const description = repo.description
+                ? repo.description.length > 35
+                    ? repo.description.slice(0, 35) + "..."
+                    : repo.description
+                : "No description provided.";
+        
+            repoContentDiv.innerHTML = `
+                <h3><a href="https://github.com/wilsonfrantine/${repo.name}" target="_blank" rel="noopener noreferrer">${repo.name}</a></h3>
+                <p>${description}</p>
+            `;
+        
+            repositoryDiv.appendChild(image);
+            repositoryDiv.appendChild(repoContentDiv);
+            return repositoryDiv;
+        }
+        
 
     // Fetch and display ORCID publications
     const orcidId = "0000-0002-4293-0471"; // Replace with your ORCID iD
@@ -133,10 +134,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Scroll buttons functionality for research section
-    const scrollAmount = 300;
-    const scrollLeftButton = document.querySelector(".scroll-left");
-    const scrollRightButton = document.querySelector(".scroll-right");
+    const scrollAmount = 600;
+    const scrollLeftButton = document.querySelector("#researchLeft");
+    const scrollRightButton = document.querySelector("#researchRight");
     const researchListContainer = document.querySelector(".research-list");
+    const projectLeftButton = document.querySelector("#projectLeft");
+    const projectRightButton = document.querySelector("#projectRight");
+    const projectListContainer = document.querySelector(".project-list");
 
     scrollLeftButton.addEventListener("click", () => {
         researchListContainer.scrollBy({
@@ -151,4 +155,61 @@ document.addEventListener("DOMContentLoaded", function() {
             behavior: "smooth"
         });
     });
+
+    projectLeftButton.addEventListener("click", () => {
+        projectListContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth"
+        });
+    });
+    projectRightButton.addEventListener("click", () => {
+        projectListContainer.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+        });
+    });
+
+    
+    function triggerTranslation() {
+        const htmlTag = document.documentElement;
+        const currentLang = htmlTag.getAttribute("lang");
+    
+        // Alterna temporariamente o idioma para simular uma página em inglês
+        htmlTag.setAttribute("lang", currentLang === "pt" ? "en" : "pt");
+    
+        // Retorna ao idioma original após uma pequena espera para acionar o prompt de tradução
+        setTimeout(() => {
+            htmlTag.setAttribute("lang", currentLang);
+        }, 500); // Tempo de espera curto para simular a mudança
+    }
+    
 });
+document.addEventListener('wheel', (event) => {
+    event.preventDefault();
+
+    const sections = document.querySelectorAll('section'); // Selecione todas as seções
+    const currentScrollPosition = window.scrollY;
+    const viewportHeight = window.innerHeight;
+
+    let nextSection = null;
+
+    if (event.deltaY > 0) {
+        // Rolar para baixo
+        nextSection = Array.from(sections).find(
+            section => section.offsetTop > currentScrollPosition + 10 // Ignora a seção atual
+        );
+    } else {
+        // Rolar para cima
+        nextSection = Array.from(sections).reverse().find(
+            section => section.offsetTop < currentScrollPosition - 10
+        );
+    }
+
+    // Rolagem suave para a próxima seção, se existir
+    if (nextSection) {
+        window.scrollTo({
+            top: nextSection.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}, { passive: false });
