@@ -319,6 +319,7 @@ header {
     overflow: hidden;
     min-width: 250px;
     max-width: 300px;
+    max-height: 260px;
     padding: 20px;
     flex-shrink: 0;
     color: #f3f4fa;
