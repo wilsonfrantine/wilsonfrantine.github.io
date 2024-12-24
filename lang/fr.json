@@ -1,0 +1,45 @@
+{
+    "navbar.home": "Accueil",
+    "navbar.about": "À propos",
+    "navbar.projects": "Mes Projets",
+    "navbar.research": "Recherche",
+    "navbar.teaching": "Enseignement",
+    "navbar.contact": "Contact",
+    
+    "intro.profile_name": "Dr. Wilson Frantine-Silva",
+    "intro.welcome": "Génétique, Écologie Moléculaire et Bioinformatique",
+    "intro.description": "Relier les gènes, les données et le code pour comprendre la biodiversité.",
+  
+    "about.title": "À propos",
+    "about.content1": "Salut ! Je suis Wilson – biologiste, docteur en génétique, professeur et passionné par l'évolution, la bioinformatique et la conservation.",
+      
+    "about.content2": "<p>Depuis près de deux décennies, j'aide des professionnels et des chercheurs à mettre en œuvre des solutions innovantes d'analyse de données dans divers domaines et institutions. J'ai eu le privilège de collaborer avec des institutions de renom comme <a href='https://ufu.br' target='_blank'>UFU</a>, <a href='http://uenf.br' target='_blank'>UENF</a>, <a href='https://uel.br' target='_blank'>UEL</a> et <a href='https://ucdavis.edu' target='_blank'>UC Davis (CA)</a>. Au fil des années, j'ai travaillé sur des projets allant de la génétique des populations à la modélisation écologique, intégrant la science des données et la technologie pour promouvoir la conservation de la biodiversité.</p>",
+    
+    "about.content3": "<p>Actuellement, je suis professeur à l'<a href='https://uenp.edu.br' target='_blank'>Université d'État du Nord du Paraná (UENP), campus de Cornélio Procópio</a>, où j'enseigne la zoologie, la génétique et la bio-statistique.</p> <p>Mes recherches portent sur l'influence des facteurs environnementaux sur l'évolution des espèces animales – des poissons et des abeilles jusqu'aux humains. J'estime que l'intégration de diverses disciplines est essentielle pour comprendre et préserver la biodiversité dans notre monde en constante évolution.</p> <p>Si vous recherchez du soutien pour vos projets, des consultations ou des collaborations, je serais ravi de vous aider. <a href='#contact'><b>Discutons-en !</b></a></p>",
+    
+    "projects.title": "Projets sur Github",
+    "projects.content": "Explorez quelques-uns de mes projets sur Github, où je partage du code, des tutoriels et des informations sur la bioinformatique, la génétique et la conservation.",
+    "projects.filter_placeholder": "Rechercher des projets...",
+  
+    "research.title": "Recherche",
+    "research.description": "Découvrez mes recherches sur l'influence de l'environnement sur la génétique et la dynamique des populations.",
+    
+    "teaching.title": "Cours",
+    "teaching.description": "Voici des cours et des ressources que j'ai développés pour rendre la bioinformatique et la génétique accessibles à tous !",
+    "teaching.intro_bioinformatics.title": "Bioinformatique Simplifiée",
+    "teaching.intro_bioinformatics.description": "Un guide pratique en PDF couvrant les bases de la ligne de commande, l'analyse de données et la visualisation en R.",
+    "teaching.intro_bioinformatics.cta": "Télécharger le PDF",
+    "teaching.genetics_101.title": "Génétique 101",
+    "teaching.genetics_101.description": "Une série de vidéos courtes sur la génétique des populations, l'évolution moléculaire et l'analyse des données.",
+    "teaching.genetics_101.cta": "Regarder sur YouTube",
+    
+    "contact.title": "Contact",
+    "contact.description": "Curieux ou intéressé par une collaboration ? Envoyez-moi un e-mail ou retrouvez-moi sur les réseaux sociaux !",
+    "contact.email": "Envoyez-moi un e-mail : <strong><a href=\"mailto:wilsonfrantine@gmail.com\">wilsonfrantine@gmail.com</a></strong>",
+    
+    "footer.copyright": "© 2024 Wilson Frantine-Silva.",
+  
+    "buttons.scroll_left": "Voir plus de projets",
+    "buttons.scroll_right": "Explorer d'autres projets",
+    "buttons.back_to_top": "Retour en haut 🚀"
+}

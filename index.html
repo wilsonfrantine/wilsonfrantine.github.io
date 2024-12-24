@@ -1,146 +1,342 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wilson Frantine-Silva - Biologist specializing in genetics, molecular ecology, and bioinformatics">
-    <title>Wilson Frantine-Silva | Profile</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="Biologist specialized in genetics, molecular ecology, and bioinformatics."
+  />
+  <title>Wilson Frantine-Silva | Profile</title>
+
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- AOS (Scroll Animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
 
 </head>
+
 <body>
-    <!-- Navigation -->
+  <!-- Header & Navbar (fixed with auto-hide) -->
     <header>
-        <nav>
-            <ul>
-                <li id="github-link"><i data-feather="github"></i>GitHub</li>
-                <li><a href="#intro">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <a href="#translate" id="translate-link" onclick="triggerTranslation()">
-                        <i class="fas fa-language"></i> Translate
-                    </a>
-                </li>                
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <button class="hamburger" aria-label="Open/Close Menu" aria-controls="nav-links" aria-expanded="false" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#intro" data-i18n="navbar.home">Home</a></li>
+        <li><a href="#projects" data-i18n="navbar.projects">Projects</a></li>
+        <li><a href="#research" data-i18n="navbar.research">Research</a></li>
+        <li><a href="#teaching" data-i18n="navbar.teaching">Teaching</a></li>
+        <li><a href="#about" data-i18n="navbar.about">About</a></li>
+        <li><a href="#contact" data-i18n="navbar.contact">Contact</a></li>
+        <li class="dropdown">
+            <a href="#translate" id="translate-link">
+                <i class="fas fa-language"></i>
+                <span id="current-lang">EN</span>
+            </a>
+            <ul class="dropdown-menu" id="lang-options">
+                <li data-lang="pt">🇧🇷 Português</li>
+                <li data-lang="en">🇺🇸 English</li>
+                <li data-lang="es">🇪🇸 Español</li>
+                <li data-lang="fr">🇫🇷 Français</li>
+                <li data-lang="ja">🇯🇵 日本語 (Nihongo)</li>
+            </ul>            
+        </li>
+        <li>
+            <a class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </a>
+        </li>        
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Home Section -->
-    <section id="intro" class="intro">
-        <div class="intro-content">
-            <div class="profileimage"><img src="src/profileimage2.webp" /> </div>
-            <h1>Dr. Wilson Frantine-Silva</h1>
-            <h2>Genetics, Molecular Ecology, and Computational Insights</h2>
-            <p class="tagline">"Blending genes, data, and code to understand the world’s wild complexities."</p>
+  <!-- Intro Section -->
+  <section id="intro" class="intro" aria-label="Introduction">
+    <video autoplay muted loop id="introVideo" class="intro-video">
+      <source src="src/introbackground.webm" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="intro-content">
+      <div class="profileimage">
+        <img
+          src="src/profileimage2.webp"
+          alt="Profile photo of Dr. Wilson Frantine-Silva"
+        />
+        <p style="font-size:0.8em">Dr. Wilson Frantine-Silva</p>
+      </div>
+      <h1 id="welcome">Genetics, Molecular Ecology & Bioinformatics</h1>
+      <p class="tagline" data-i18n="intro.description">
+        "Blending genes, data, and code to understand the world’s wild complexities."
+      </p>
 
-            <div class="intro-buttons">
-                <a href="#projects" class="cta-button">See My Projects</a>
-                <a href="#research" class="cta-button">Discover My Research</a>
-            </div>
-            <div class="social-links">
-                <a href="https://x.com/wilsonfrantine" target="_blank" aria-label="X">
-                    <i class="fa-brands fa-square-x-twitter"></i>
-                </a>
-                <a href="https://instagram.com/wilsonfrantine" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" target="_blank" aria-label="ResearchGate">
-                    <i class="fab fa-researchgate"></i>
-                </a>
-                <a href="https://orcid.org/0000-0002-4293-0471" target="_blank" aria-label="ORCID">
-                    <i class="fab fa-orcid"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR" target="_blank" aria-label="Google Scholar">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-            </div>
+      <!-- Redes sociais com ícones maiores -->
+      <div class="social-links">
+        <a href="#" aria-label="X (Twitter)" class="social-btn" data-platform="twitter" data-link="https://x.com/wilsonfrantine">
+          <i class="fa-brands fa-square-x-twitter"></i>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-btn" data-platform="instagram" data-link="https://instagram.com/wilsonfrantine">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="ResearchGate" class="social-btn" data-platform="researchgate" data-link="https://www.researchgate.net/profile/Wilson-Frantine-Silva">
+            <i class="fab fa-researchgate"></i>
+        </a>
+        <a href="#" aria-label="ORCID" class="social-btn" data-platform="orcid" data-link="https://orcid.org/0000-0002-4293-0471">
+            <i class="fab fa-orcid"></i>
+        </a>
+        <a href="#" aria-label="Google Scholar" class="social-btn" data-platform="scholar" data-link="https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR">
+            <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="#" aria-label="GitHub" class="social-btn" data-platform="github" data-link="https://github.com/wilsonfrantine">
+            <i class="fa-brands fa-github-square"></i>
+        </a>
+
+        <!-- Balão de Informação Estilo Tooltip -->
+        <div id="social-modal" class="modal-bubble" aria-hidden="true">
+          <div class="modal-content">
+              <img id="modal-icon" src="img/default-icon.png" alt="Ícone da Rede Social" loading="lazy">
+              <div class="modal-info">
+                  <h4 id="modal-title">Título</h4>
+                  <div id="modal-html">|</div>
+              </div>
+          </div>
         </div>
-    </section>
-        <!-- Projects Section -->
-        <section id="projects" class="section projects" data-aos="fade-up">
-            <h2>Projects</h2>
-            <button class="scroll-btn scroll-left" id="projectLeft" onclick="scrollProjects(-300)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            </button>
-            <button class="scroll-btn scroll-right" id="projectRight" onclick="scrollProjects(300)">
-            <i class="fas fa-chevron-right"></i>
-            </button>
-            <div id="project-list" class="project-list" data-aos="fade-up">
-                <!-- Repositories loaded dynamically here -->
-            </div>
-        </section>
+    </div>
+    
+    
+    
+    
+    
+    </div>
+  </section>
 
-    <!-- Research Section -->
-    <section id="research" class="section research">
-        <h2>Research</h2>
-        <p>Explore my research on environmental factors influencing genetic diversity and population dynamics.</p>
-        <button class="scroll-btn scroll-left" id="researchLeft" aria-label="Scroll Left">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="scroll-btn scroll-right" id="researchRight" aria-label="Scroll Right">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        <div id="research-list" class="research-list">
-            <!-- Publications loaded dynamically here -->
+  <!-- Projects Section -->
+  <section
+    id="projects"
+    class="section projects"
+    aria-label="Projects"
+    data-aos="fade-up"
+  >
+    <h2>Projects</h2>
+
+    <!-- Barra de busca (filtro) -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="projectSearch"
+        data-i18n-placeholder="projects.filter_placeholder" 
+        placeholder="Filter projects..."
+        oninput="filterProjects()"
+      />
+      <i class="fas fa-search"></i>
+    </div>
+
+    <!-- Botões de scroll (desktop) -->
+    <button
+      class="scroll-btn scroll-left"
+      id="projectLeft"
+      onclick="scrollProjects(-300)"
+      aria-label="Scroll projects left"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button
+      class="scroll-btn scroll-right"
+      id="projectRight"
+      onclick="scrollProjects(300)"
+      aria-label="Scroll projects right"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div
+      id="project-list"
+      class="project-list"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <!-- GitHub repos dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section
+    id="research"
+    class="section research"
+    aria-label="Research"
+    data-aos="fade-up"
+  >
+    <h2 data-i18n="research.title">Research</h2>
+    <p data-i18n="research.description">
+        Explore my research on environmental factors influencing genetic diversity and population dynamics.
+    </p>
+
+    <!-- Botões de scroll (desktop) -->
+    <button
+      class="scroll-btn scroll-left"
+      id="researchLeft"
+      aria-label="Scroll research left"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button
+      class="scroll-btn scroll-right"
+      id="researchRight"
+      aria-label="Scroll research right"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div id="research-list" class="research-list" data-aos="fade-up" data-aos-delay="100">
+      <!-- ORCID pubs dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Teaching Section -->
+  <section
+    id="teaching"
+    class="section teaching"
+    aria-label="Teaching materials"
+    data-aos="fade-up"
+  >
+  <h2 data-i18n="teaching.title">Teaching</h2>
+  <p data-i18n="teaching.description">
+    Here you can find some teaching materials and courses I've developed for students and professionals.
+  </p>
+  <div class="teaching-list">
+    <div class="teaching-card">
+      <i class="fas fa-file-alt"></i>
+      <h3 data-i18n="teaching.intro_bioinformatics.title">Intro to Bioinformatics</h3>
+      <p data-i18n="teaching.intro_bioinformatics.description">
+        PDF guide covering command-line basics, data analysis, and visualization in R.
+      </p>
+      <a href="#" class="cta-button" data-i18n="teaching.intro_bioinformatics.cta">Download PDF</a>
+    </div>
+    
+
+  </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about" aria-label="About section" data-aos="fade-up">
+    <h2 data-i18n="about.title">About</h2>
+    <div class="about-image">
+        <img src="src/profileimage2.webp" alt="Foto de Wilson Frantine-Silva" />
+      </div>
+    <div class="about-content">
+    <p data-i18n="about.content1">
+        Hello! I'm Wilson, a biologist specialized in genetics, molecular ecology, and bioinformatics.
+    </p>
+    <p data-i18n="about.content2">
+        Over my career, I've developed various projects in collaboration with researchers and students, always aiming to merge data analysis, programming, and scientific discovery in creative ways.
+    </p>
+    <p data-i18n="about.content3">
+        If you're interested in molecular ecology, bioinformatics, or conservation genetics, this space is open for exchanges, learning, and collaboration.
+    </p>
+    </div>
+    <div class="about-content">
+        <!-- Lista de habilidades com ícones -->
+        <div class="skills">
+        <div>
+            <i class="fas fa-dna"></i>
+            <p>Genética</p>
         </div>
-        
-
-    </section>
-
-    <!-- Teaching Section 
-    <section id="teaching" class="section teaching" data-aos="fade-up">
-        <h2>Teaching</h2>
-        <p>I am passionate about teaching genetics and bioinformatics, helping students learn through practical exercises...</p>
-    </section>
-    -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Let’s collaborate! Feel free to reach out to me via email or connect on social media.</p>
-        <div class="social-links">
-            <a href="mailto:your-email@example.com" target="_blank" aria-label="Email">
-                <i class="fa-regular fa-envelope"></i>
-            </a>
-            <a href="https://x.com/wilsonfrantine" target="_blank" aria-label="X">
-                <i class="fa-brands fa-square-x-twitter"></i>
-            </a>
-            <a href="https://instagram.com/wilsonfrantine" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" target="_blank" aria-label="ResearchGate">
-                <i class="fab fa-researchgate"></i>
-            </a>
-            <a href="https://orcid.org/0000-0002-4293-0471" target="_blank" aria-label="ORCID">
-                <i class="fab fa-orcid"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR" target="_blank" aria-label="Google Scholar">
-                <i class="fas fa-graduation-cap"></i>
-            </a>
-            <a href="https://github.com/wilsonfrantine" target="_blank" aria-label="Github">
-                <i class="fa-brands fa-square-github"></i>
-            </a>
+        <div>
+            <i class="fas fa-leaf"></i>
+            <p>Ecologia Molecular</p>
         </div>
-        <p></p>
-        <p> You can mail-me anytime! wilsonfrantine@gmail.com</p>
-    </section>
+        <div>
+            <i class="fas fa-laptop-code"></i>
+            <p>Bioinformática</p>
+        </div>
+        </div>
 
-    <footer>
-        <p>© 2024 Wilson Frantine-Silva. All rights reserved.</p>
-    </footer>
+        <!-- Call to Action -->
+        <div class="cta">
+        <p>Interessado em colaborações ou projetos?</p>
+        <a href="#contact" class="cta-button">Entre em contato</a>
+        </div>
+    </div>
+</section>
 
-    <script src="js/script.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-        feather.replace();
-    </script>
+  <!-- Contact Section -->
+  <section
+    id="contact"
+    class="section contact"
+    aria-label="Contact"
+    data-aos="fade-up"
+  >
+  <h2 data-i18n="contact.title">Contact</h2>
+    <p data-i18n="contact.description">
+        Let’s collaborate! Feel free to reach out to me via email or connect on social media.
+    </p>
+    <p>
+        <strong><a href="mailto:wilsonfrantine@gmail.com" data-i18n="contact.email">Email me</a></strong>
+    </p>
+    <div class="social-links">
+    <a href="mailto:wilsonfrantine@gmail.com" aria-label="Email Wilson" target="_blank">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <a href="https://x.com/wilsonfrantine" aria-label="X (Twitter)" target="_blank">
+      <i class="fa-brands fa-square-x-twitter"></i>
+    </a>
+    <a href="https://instagram.com/wilsonfrantine" aria-label="Instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" aria-label="ResearchGate" target="_blank">
+      <i class="fab fa-researchgate"></i>
+    </a>
+    <a href="https://orcid.org/0000-0002-4293-0471" aria-label="ORCID" target="_blank">
+      <i class="fab fa-orcid"></i>
+    </a>
+    <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR" aria-label="Google Scholar" target="_blank">
+      <i class="fas fa-graduation-cap"></i>
+    </a>
+    <a href="https://github.com/wilsonfrantine" aria-label="GitHub" target="_blank">
+      <i class="fa-brands fa-github-square"></i>
+    </a>
+    </div>
+    <p style="margin-top: 1rem;">
+      You can email me at: <strong><a href="mailto:wilsonfrantine@gmail.com">wilsonfrantine@gmail.com</a></strong>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p data-i18n="footer.copyright">© 2024 Wilson Frantine-Silva. All rights reserved.</p>
+  </footer>
+
+  <!-- Back-to-top button (fixed) -->
+  <button class="back-to-top" aria-label="Back to Top" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+ 
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    feather.replace();
+
+    // Ajustar a velocidade de reprodução do vídeo
+    document.getElementById('introVideo').playbackRate = 0.75; // Define a velocidade para 50% do normal
+  </script>
 </body>
 </html>

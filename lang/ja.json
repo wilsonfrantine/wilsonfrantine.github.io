@@ -1,0 +1,45 @@
+{
+    "navbar.home": "ホーム",
+    "navbar.about": "私について",
+    "navbar.projects": "プロジェクト",
+    "navbar.research": "研究",
+    "navbar.teaching": "教育",
+    "navbar.contact": "お問い合わせ",
+    
+    "intro.profile_name": "Dr. Wilson Frantine-Silva",
+    "intro.welcome": "遺伝学、分子生態学、バイオインフォマティクス",
+    "intro.description": "遺伝子、データ、コードを駆使して生物多様性を理解する。",
+  
+    "about.title": "私について",
+    "about.content1": "こんにちは！私はウィルソンです。生物学者であり、遺伝学の博士号を取得し、進化学、バイオインフォマティクス、保全学に情熱を注いでいる教授兼研究者です。",
+      
+    "about.content2": "<p>これまで約20年間、さまざまな分野や機関でデータ分析の革新的なソリューションを実装するために、専門家や研究者を支援してきました。これまでに<a href='https://ufu.br' target='_blank'>UFU</a>、<a href='http://uenf.br' target='_blank'>UENF</a>、<a href='https://uel.br' target='_blank'>UEL</a>、<a href='https://ucdavis.edu' target='_blank'>UC Davis</a>などの著名な機関と協力する機会に恵まれました。これまで、集団遺伝学から生態モデリングまで幅広いプロジェクトに携わり、データサイエンスとテクノロジーを活用して生物多様性の保全に貢献しています。</p>",
+    
+    "about.content3": "<p>現在、私は<a href='https://uenp.edu.br' target='_blank'>Universidade Estadual do Norte do Paraná (UENP)</a>のCornélio Procópioキャンパスで教授として動物学、遺伝学、統計学を教えています。</p> <p>私の研究は、環境要因が魚類、ミツバチ、人間を含む動物種の進化にどのように影響するかに焦点を当てています。異なる分野の知識を統合することが、生物多様性を理解し、保護するために不可欠であると信じています。</p> <p>プロジェクトの支援、コンサルティング、コラボレーションをお求めでしたら、ぜひご連絡ください。<a href='#contact'><b>お気軽にご相談ください！</b></a></p>",
+    
+    "projects.title": "Githubプロジェクト",
+    "projects.content": "Githubで私のプロジェクトをいくつかご覧ください。バイオインフォマティクス、遺伝学、保全学に関するコード、チュートリアル、インサイトを共有しています。",
+    "projects.filter_placeholder": "プロジェクトを検索...",
+  
+    "research.title": "研究",
+    "research.description": "環境が遺伝学や集団動態にどのような影響を与えるかを探る私の研究をご覧ください。",
+    
+    "teaching.title": "コース",
+    "teaching.description": "バイオインフォマティクスや遺伝学を誰でも学べるようにするために開発したコースや資料をご紹介します！",
+    "teaching.intro_bioinformatics.title": "やさしいバイオインフォマティクス",
+    "teaching.intro_bioinformatics.description": "コマンドラインの基礎、データ分析、Rでの可視化をカバーする実践的なPDFガイドです。",
+    "teaching.intro_bioinformatics.cta": "PDFをダウンロード",
+    "teaching.genetics_101.title": "遺伝学入門",
+    "teaching.genetics_101.description": "集団遺伝学、分子進化、データ解析に関する短編動画シリーズです。",
+    "teaching.genetics_101.cta": "YouTubeで視聴",
+    
+    "contact.title": "お問い合わせ",
+    "contact.description": "コラボレーションに興味がある方やご質問がある方は、お気軽にメールまたはSNSでご連絡ください。",
+    "contact.email": "メールでお問い合わせください: <strong><a href=\"mailto:wilsonfrantine@gmail.com\">wilsonfrantine@gmail.com</a></strong>",
+    
+    "footer.copyright": "© 2024 Wilson Frantine-Silva",
+  
+    "buttons.scroll_left": "さらにプロジェクトを見る",
+    "buttons.scroll_right": "他のプロジェクトを探す",
+    "buttons.back_to_top": "トップに戻る 🚀"
+}

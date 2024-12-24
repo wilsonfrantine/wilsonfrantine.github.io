@@ -1,0 +1,45 @@
+{
+    "navbar.home": "Home",
+    "navbar.about": "About",
+    "navbar.projects": "My Projects",
+    "navbar.research": "Research",
+    "navbar.teaching": "Teaching",
+    "navbar.contact": "Get in Touch",
+    
+    "intro.profile_name": "Dr. Wilson Frantine-Silva",
+    "intro.welcome": "Genetics, Molecular Ecology & Bioinformatics",
+    "intro.description": "Bridging genes, data, and code to understand biodiversity.",
+  
+    "about.title": "About",
+    "about.content1": "Hey there! I'm Wilson – a biologist, PhD in Genetics, and a professor deeply passionate about Evolution, Bioinformatics, and Conservation.",
+      
+    "about.content2": "<p>For nearly two decades, I have been helping professionals and researchers implement innovative data analysis solutions across various fields. During this time, I have had the privilege of collaborating with leading institutions such as <a href='https://ufu.br' target='_blank'>UFU</a>, <a href='http://uenf.br' target='_blank'>UENF</a>, <a href='https://uel.br' target='_blank'>UEL</a>, and <a href='https://ucdavis.edu' target='_blank'>UC Davis (CA)</a>, working on projects ranging from population genetics to ecological modeling, all with the goal of understanding and protecting biodiversity.</p>",
+    
+    "about.content3": "<p>Currently, I'm a professor at the <a href='https://uenp.edu.br' target='_blank'>State University of Northern Paraná (UENP), Cornélio Procópio Campus</a>, where I teach Zoology, Genetics, and Biostatistics.</p> <p>My research focuses on how environmental factors influence the evolution of animal species – from fish and bees to humans. I believe that integrating diverse fields of study is key to understanding and preserving biodiversity in our ever-changing world.</p> <p>If you're looking for project support, consulting, or collaboration, I'd love to connect. <a href='#contact'><b>Let's talk!</b></a></p>",
+    
+    "projects.title": "Projects on Github",
+    "projects.content": "Explore some of my projects on Github, where I share code, tutorials, and insights on bioinformatics, genetics, and conservation.",
+    "projects.filter_placeholder": "Search projects...",
+  
+    "research.title": "Research",
+    "research.description": "Take a look at my research exploring how the environment shapes genetics and population dynamics.",
+    
+    "teaching.title": "Courses",
+    "teaching.description": "Here are some courses and resources I've developed to make bioinformatics and genetics accessible to everyone!",
+    "teaching.intro_bioinformatics.title": "Bioinformatics Made Simple",
+    "teaching.intro_bioinformatics.description": "A practical PDF guide covering command-line basics, data analysis, and visualization in R.",
+    "teaching.intro_bioinformatics.cta": "Download PDF",
+    "teaching.genetics_101.title": "Genetics 101",
+    "teaching.genetics_101.description": "A short video series on population genetics, molecular evolution, and data analysis.",
+    "teaching.genetics_101.cta": "Watch on YouTube",
+    
+    "contact.title": "Get in Touch",
+    "contact.description": "Curious or interested in collaborating? Drop me an email or find me on social media!",
+    "contact.email": "Shoot me an email: <strong><a href=\"mailto:wilsonfrantine@gmail.com\">wilsonfrantine@gmail.com</a></strong>",
+    
+    "footer.copyright": "© 2024 Wilson Frantine-Silva.",
+  
+    "buttons.scroll_left": "See more projects",
+    "buttons.scroll_right": "Explore other projects",
+    "buttons.back_to_top": "Back to top 🚀"
+}

@@ -1,0 +1,45 @@
+{
+    "navbar.home": "Inicio",
+    "navbar.about": "Sobre mí",
+    "navbar.projects": "Mis Proyectos",
+    "navbar.research": "Investigación",
+    "navbar.teaching": "Enseñanza",
+    "navbar.contact": "Contacto",
+    
+    "intro.profile_name": "Dr. Wilson Frantine-Silva",
+    "intro.welcome": "Genética, Ecología Molecular y Bioinformática",
+    "intro.description": "Uniendo genes, datos y código para comprender la biodiversidad.",
+  
+    "about.title": "Sobre mí",
+    "about.content1": "¡Hola! Soy Wilson, biólogo, doctor en Genética, profesor y apasionado por la Evolución, Bioinformática y Conservación.",
+      
+    "about.content2": "<p>Durante casi dos décadas, he ayudado a profesionales e investigadores a implementar soluciones innovadoras de análisis de datos en diferentes campos e instituciones. He tenido el privilegio de colaborar con instituciones líderes como <a href='https://ufu.br' target='_blank'>UFU</a>, <a href='http://uenf.br' target='_blank'>UENF</a>, <a href='https://uel.br' target='_blank'>UEL</a> y <a href='https://ucdavis.edu' target='_blank'>UC Davis (CA)</a>. A lo largo de los años, he trabajado en proyectos que van desde genética de poblaciones hasta modelado ecológico, combinando ciencia de datos y tecnología para impulsar la conservación de la biodiversidad.</p>",
+    
+    "about.content3": "<p>Actualmente, soy profesor en la <a href='https://uenp.edu.br' target='_blank'>Universidad Estatal del Norte de Paraná (UENP), Campus de Cornélio Procópio</a>, donde enseño Zoología, Genética y Bioestadística.</p> <p>Mi investigación se centra en cómo los factores ambientales influyen en la evolución de especies animales, desde peces y abejas hasta seres humanos. Creo que integrar diversas áreas de estudio es clave para comprender y preservar la biodiversidad en un mundo en constante cambio.</p> <p>Si buscas apoyo en proyectos, consultoría o colaboración, me encantaría conectar contigo. <a href='#contact'><b>¡Hablemos!</b></a></p>",
+    
+    "projects.title": "Proyectos en Github",
+    "projects.content": "Explora algunos de mis proyectos en Github, donde comparto código, tutoriales y conocimientos sobre bioinformática, genética y conservación.",
+    "projects.filter_placeholder": "Buscar proyectos...",
+  
+    "research.title": "Investigación",
+    "research.description": "Echa un vistazo a mi investigación sobre cómo el ambiente moldea la genética y la dinámica de las poblaciones.",
+    
+    "teaching.title": "Cursos",
+    "teaching.description": "Aquí tienes algunos cursos y materiales que he desarrollado para hacer la bioinformática y la genética accesibles para todos.",
+    "teaching.intro_bioinformatics.title": "Bioinformática Simplificada",
+    "teaching.intro_bioinformatics.description": "Una guía práctica en PDF que cubre lo básico de la línea de comandos, análisis de datos y visualización en R.",
+    "teaching.intro_bioinformatics.cta": "Descargar PDF",
+    "teaching.genetics_101.title": "Genética 101",
+    "teaching.genetics_101.description": "Una serie de videos cortos sobre genética de poblaciones, evolución molecular y análisis de datos.",
+    "teaching.genetics_101.cta": "Ver en YouTube",
+    
+    "contact.title": "Contacto",
+    "contact.description": "¿Curioso o interesado en colaborar? ¡Envíame un correo electrónico o encuéntrame en redes sociales!",
+    "contact.email": "Envíame un correo: <strong><a href=\"mailto:wilsonfrantine@gmail.com\">wilsonfrantine@gmail.com</a></strong>",
+    
+    "footer.copyright": "© 2024 Wilson Frantine-Silva.",
+  
+    "buttons.scroll_left": "Ver más proyectos",
+    "buttons.scroll_right": "Explorar otros proyectos",
+    "buttons.back_to_top": "Volver arriba 🚀"
+}
