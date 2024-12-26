@@ -17,6 +17,13 @@
     
     "about.content3": "<p>Actuellement, je suis professeur à l'<a href='https://uenp.edu.br' target='_blank'>Université d'État du Nord du Paraná (UENP), campus de Cornélio Procópio</a>, où j'enseigne la zoologie, la génétique et la bio-statistique.</p> <p>Mes recherches portent sur l'influence des facteurs environnementaux sur l'évolution des espèces animales – des poissons et des abeilles jusqu'aux humains. J'estime que l'intégration de diverses disciplines est essentielle pour comprendre et préserver la biodiversité dans notre monde en constante évolution.</p> <p>Si vous recherchez du soutien pour vos projets, des consultations ou des collaborations, je serais ravi de vous aider. <a href='#contact'><b>Discutons-en !</b></a></p>",
     
+    "about.content4": "Génétique",
+    "about.content5": "Écologie Moléculaire",
+    "about.content6": "Bioinformatique",
+    "about.content7": "Conservation",
+    "about.content8": "Intéressé par des collaborations ou des projets ?",
+    "about.content9": "Contactez-moi",
+    
     "projects.title": "Projets sur Github",
     "projects.content": "Explorez quelques-uns de mes projets sur Github, où je partage du code, des tutoriels et des informations sur la bioinformatique, la génétique et la conservation.",
     "projects.filter_placeholder": "Rechercher des projets...",

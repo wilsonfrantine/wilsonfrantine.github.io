@@ -1,0 +1,62 @@
+{
+  "twitter": {
+    "title": "X (Twitter)",
+    "username": "@wilsonfrantine",
+    "bio": "In God we trust, the others bring the data. Professor Adjunto na UENP",
+    "location": "📍 Londrina, PR - Brasil",
+    "joined": "📅 Joined April 2021",
+    "link": "https://x.com/wilsonfrantine",
+    "icon": "./img/icons/x.png"
+  },
+  "github": {
+    "title": "GitHub",
+    "username": "@wilsonfrantine",
+    "bio": "Professor & Bioinformatics Enthusiast",
+    "repos": 15,
+    "commits": 376,
+    "languages": "R, Python, JavaScript, Shell, ...",
+    "link": "https://github.com/wilsonfrantine",
+    "icon": "./img/icons/github.png"
+  },
+  "researchgate": {
+    "title": "ResearchGate",
+    "username": "Wilson Frantine-Silva",
+    "bio": "PhD in Genetics and Molecular Biology",
+    "location": "📍 Cornélio Procópio, Brazil",
+    "ri_score": 413.3,
+    "reads": 15046,
+    "citations": 315,
+    "recomendations": 169,
+    "link": "https://www.researchgate.net/profile/Wilson-Frantine-Silva",
+    "icon": "./img/icons/researchgate.png"
+  },
+  "orcid": {
+    "title": "ORCID",
+    "username": "Wilson Frantine-Silva",
+    "bio": "Professor at UENP",
+    "id": "0000-0002-4293-0471",
+    "link": "https://orcid.org/0000-0002-4293-0471",
+    "icon": "./img/icons/orcid.png"
+  },
+  "scholar": {
+    "title": "Google Scholar",
+    "username": "Wilson Frantine-Silva",
+    "citations": 362,
+    "h_index": 12,
+    "i10_index": 14,
+    "citations_by_year": [20, 25, 30, 40, 46, 39, 85, 51],
+    "link": "https://scholar.google.com/citations?user=1YVXRuEAAAAJ&hl=pt-BR",
+    "icon": "./img/icons/googlescholar.png"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "username": "@wilsonfrantine",
+    "posts": 14,
+    "followers": 426,
+    "following": 208,
+    "bio": "📚 Professor e Pesquisador. Entre genes e abelhas, um pouco de tudo 🐝🔬",
+    "verified": true,
+    "link": "https://instagram.com/wilsonfrantine",
+    "icon": "./img/icons/instagram.png"
+  }
+}

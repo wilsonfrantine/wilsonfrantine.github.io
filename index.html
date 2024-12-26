@@ -12,6 +12,24 @@
   />
   <title>Wilson Frantine-Silva | Profile</title>
 
+  <script src="https://unpkg.com/feather-icons" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+  <script src="js/main.js" type="module" defer></script>
+  <script src="js/script.js" defer ></script>
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+      feather.replace();
+
+      // Ajustar a velocidade de reprodução do vídeo
+      const introVideo = document.getElementById('introVideo');
+      if (introVideo) {
+        introVideo.playbackRate = 0.75;
+      }
+    });
+  </script>
+
   <!-- Fonts & Icons -->
   <link
     href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
@@ -38,12 +56,12 @@
         <span></span><span></span><span></span>
       </button>
       <ul id="nav-links" class="nav-links">
-        <li><a href="#intro" data-i18n="navbar.home">Home</a></li>
-        <li><a href="#projects" data-i18n="navbar.projects">Projects</a></li>
-        <li><a href="#research" data-i18n="navbar.research">Research</a></li>
-        <li><a href="#teaching" data-i18n="navbar.teaching">Teaching</a></li>
-        <li><a href="#about" data-i18n="navbar.about">About</a></li>
-        <li><a href="#contact" data-i18n="navbar.contact">Contact</a></li>
+        <li><a href="#intro" data-i18n="navbar.home" data-index="0">Home</a></li>
+        <li><a href="#projects" data-i18n="navbar.projects" data-index="1">Projects</a></li>
+        <li><a href="#research" data-i18n="navbar.research" data-index="2">Research</a></li>
+        <li><a href="#teaching" data-i18n="navbar.teaching" data-index="3">Teaching</a></li>
+        <li><a href="#about" data-i18n="navbar.about" data-index="4">About</a></li>
+        <li><a href="#contact" data-i18n="navbar.contact" data-index="5">Contact</a></li>
         <li class="dropdown">
             <a href="#translate" id="translate-link">
                 <i class="fas fa-language"></i>
@@ -107,21 +125,23 @@
         </a>
 
         <!-- Balão de Informação Estilo Tooltip -->
-        <div id="social-modal" class="modal-bubble" aria-hidden="true">
-          <div class="modal-content">
-              <img id="modal-icon" src="img/default-icon.png" alt="Ícone da Rede Social" loading="lazy">
-              <div class="modal-info">
-                  <h4 id="modal-title">Título</h4>
-                  <div id="modal-html">|</div>
-              </div>
+        <div class="social-modal" id="social-modal">
+          <div class="profile-header">
+            <img id="modal-icon" src="" alt="Profile Icon">
+            <div class="username" id="modal-title"></div>
+          </div>
+          
+          <div class="profile-card">
+            <div class="profile-bio" id="modal-bio"></div>
+            <div class="profile-metrics" id="modal-metrics"></div>
+            <div class="profile-graph" id="modal-graph"></div>
+        
+            <div class="profile-link">
+              <a id="profile-link-a" href="#" target="_blank" id="modal-link">View Profile</a>
+            </div>
           </div>
         </div>
-    </div>
-    
-    
-    
-    
-    
+      </div>
     </div>
   </section>
 
@@ -254,22 +274,22 @@
         <div class="skills">
         <div>
             <i class="fas fa-dna"></i>
-            <p>Genética</p>
+            <p data-i18n="about.content4">Genética</p>
         </div>
         <div>
             <i class="fas fa-leaf"></i>
-            <p>Ecologia Molecular</p>
+            <p data-i18n="about.content5">Ecologia Molecular</p>
         </div>
         <div>
             <i class="fas fa-laptop-code"></i>
-            <p>Bioinformática</p>
+            <p data-i18n="about.content6">Bioinformática</p>
         </div>
         </div>
 
         <!-- Call to Action -->
         <div class="cta">
-        <p>Interessado em colaborações ou projetos?</p>
-        <a href="#contact" class="cta-button">Entre em contato</a>
+        <p data-i18n="about.content8">Interessado em colaborações ou projetos?</p>
+        <a href="#contact" class="cta-button" data-i18n="about.content9">Entre em contato</a>
         </div>
     </div>
 </section>
@@ -326,17 +346,5 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
- 
-  <!-- Scripts -->
-  <script src="js/script.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    feather.replace();
-
-    // Ajustar a velocidade de reprodução do vídeo
-    document.getElementById('introVideo').playbackRate = 0.75; // Define a velocidade para 50% do normal
-  </script>
 </body>
 </html>

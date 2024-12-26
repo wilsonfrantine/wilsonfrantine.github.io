@@ -17,6 +17,13 @@
     
     "about.content3": "<p>Currently, I'm a professor at the <a href='https://uenp.edu.br' target='_blank'>State University of Northern Paraná (UENP), Cornélio Procópio Campus</a>, where I teach Zoology, Genetics, and Biostatistics.</p> <p>My research focuses on how environmental factors influence the evolution of animal species – from fish and bees to humans. I believe that integrating diverse fields of study is key to understanding and preserving biodiversity in our ever-changing world.</p> <p>If you're looking for project support, consulting, or collaboration, I'd love to connect. <a href='#contact'><b>Let's talk!</b></a></p>",
     
+    "about.content4": "Genetics",
+    "about.content5": "Molecular Ecology",
+    "about.content6": "Bioinformatics",
+    "about.content7": "Conservation",
+    "about.content8": "Interested in collaborations or projects?",
+    "about.content9": "Get in touch",
+    
     "projects.title": "Projects on Github",
     "projects.content": "Explore some of my projects on Github, where I share code, tutorials, and insights on bioinformatics, genetics, and conservation.",
     "projects.filter_placeholder": "Search projects...",

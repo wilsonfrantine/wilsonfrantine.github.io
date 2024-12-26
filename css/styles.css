@@ -595,10 +595,32 @@ footer {
 
 
 /* Seção de Links Sociais */
-/* Modal Inicial (Oculto) */
-.modal-bubble {
+
+/* ======== MODAL CONTAINER ======== */
+.social-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--modal-width);
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     opacity: 0;
-    transform: translateY(-10px) scale(0.95); /* Ligeiramente acima e menor */
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow: hidden;
+    padding: var(--spacing-md); /* Add padding to the modal */
+}
+
+.social-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+.social-modal {
+    opacity: 0;
+    transform: translateX(-0%) scale(0.95); /* Ligeiramente acima e menor */
     visibility: hidden;  /* Inacessível para cliques */
     pointer-events: none;  /* Evita que interfira no fluxo */
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;
@@ -613,182 +635,214 @@ footer {
 }
 
 /* Modal Visível (Fade-in) */
-.modal-bubble.show {
+.social-modal.show {
     opacity: 1;
-    transform: translateY(0) scale(1);  /* Tamanho e posição normais */
+    transform: translateY(10px) translateX(50%) scale(1);  /* Tamanho e posição normais */
     visibility: visible;
     pointer-events: auto;  /* Torna interativo novamente */
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-
-
-.modal-content {
-    padding: var(--spacing-sm);
-    text-align: left;
-    color: var(--text-primary);
-    border-radius: 8px;
-    position: relative;
-    z-index: 2;
-}
-
-.modal-content img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-bottom: var(--spacing-xs);
-}
-
-.modal-info p,
-.modal-content a,
-.modal-info ul li {
-    margin: 6px 0;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: var(--text-medium);
-    max-width: 250px;
-}
-
-.cta-button {
-    display: inline-block;
-    background: rgba(var(--accent-2), 0.8);
-    color: var(--primary-bg);
-    padding: 5px 14px;
-    border-radius: 6px;
-    font-size: var(--font-size-base);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.cta-button:hover {
-    background: rgba(var(--accent-1), 0.8);
-    transform: translateY(-2px);
-}
-
-.close-modal {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    color: var(--text-medium);
-    background: none;
-}
-
-.close-modal:hover {
-    color: var(--accent-1);
-}
-
-/*BADGES*/
-/* Estilo Base para Todos os Cards */
-.profile-card {
-    width: 350px;
-    height: auto;
-    border: 1px solid rgba(var(--secondary-bg-rgb), 0.5);
-    border-radius: 10px;
-    font-family: 'Arial', sans-serif;
-    padding: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(var(--secondary-bg-rgb), 0.3);
-}
-
-/* Header com Imagem e Informações */
+/* ======== MODAL HEADER ======== */
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid #ddd;
+    margin-bottom: var(--spacing-xs);
+    padding-bottom: var(--spacing-xs);
+    gap: var(--spacing-xs);
 }
 
-.profile-pic {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
+.profile-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;}
 
-/* Informações do Perfil */
-.profile-info {
-    font-size: 0.9rem;
-    color: var(--text-primary);
-    line-height: 1.4;
+/* ======== MODAL BODY ======== */
+.profile-card {
+    padding: var(--spacing);
 }
-
-.profile-info strong {
-    font-size: 1.1rem;
-}
-
-/* Localização e Outras Informações */
-.profile-location, .profile-metrics, .profile-bio {
-    font-size: 0.85rem;
-    margin: 8px 0;
-    color: var(--text-secondary);
-}
-
-/* Métricas de Destaque */
-.profile-metrics {
-    display: flex;
-    text-align: left;
-    flex-wrap: wrap;
+.profile-card h4 {
+    font-size: 1.3em;
     font-weight: bold;
-
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    color: var(--accent-2)
 }
 
+.profile-bio, .profile-metrics {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing);
+}
 
+.profile-metrics span {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    font-size: 0.85rem;
+    margin: 4px 4px 0 0;
+}
 
-/* Gráficos (Scholar) */
-.profile-graph {
+.profile-link {
+    text-align: center;
+}
+
+.profile-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: var(--text-medium);
+}
+
+.profile-link a:hover {
+    color: #005bb5;
+}
+
+.citations-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    position: relative;
+    height: 400px; /* Define a height for the chart */
+    width: 100%;
+    border-left: 2px solid var(--text-light); /* Y-axis */
+    border-bottom: 2px solid var(--text-light); /* X-axis */
+}
+
+.citations-bar {
+    background: var(--accent-1);
+    border-radius: 4px;
+    width: 40px; /* Width of each bar */
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    bottom: 0; /* Align bars to the bottom */
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 100px;
-    margin: 10px auto;
-    width: 90%;
-    border-left: 1px solid var(--text-secondary);
-    border-bottom: 1px solid var(--text-secondary);
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-align: center;
 }
 
-.bar {
-    width: 20px;
-    background-color: var(--accent-2);
-    border-radius: 3px;
-    transition: height 0.3s ease;
-    margin: 0 5px;
+.citations-bar:hover {
+    transform: scale(1.05);
+    background: var(--accent-2);
 }
 
-/* Links e Botões */
-.profile-link {
-    display: block;
-    margin-top: 15px;
-    text-align: left;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: bold;
+/* Labels for X and Y axes */
+.citations-list::after {
+    content: 'Citations';
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-light);
 }
 
-.profile-link:hover {
-    text-decoration: underline;
-    color: var(--accent-1);
+.citation-list::before {
+    content: 'Years';
+    position: absolute;
+    top: 50%;
+    left: -3rem;
+    transform: translateY(-50%) rotate(-90deg);
+    color: var(--text-light);
 }
 
-/* Ícone Verificado */
-.modal-content .username  img {
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
-    vertical-align: middle;
+.citation-list::before {
+    content: 'Years';
+    position: absolute;
+    top: 50%;
+    left: -3rem;
+    transform: translateY(-50%) rotate(-90deg);
+    color: var(--text-light);
 }
-
-
-/* SHOW SCROLL BUTTONS ON DESKTOP ONLY */
-@media (min-width: 768px) {
-    .scroll-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+/* ======== ANIMAÇÃO DE ENTRADA ======== */
+@keyframes fadeInUp {
+    from {
+        transform: translate(0%, 0%);
+        opacity: 0;
     }
+    to {
+        transform: translate(50%, 0%);
+        opacity: 1;
+    }
+}
+
+.social-modal.show {
+    animation: fadeInUp 0.3s ease;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 480px) {
+    .social-modal {
+        width: 90%;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-header img {
+        margin-bottom: 10px;
+    }
+}
+
+/* Chart styles */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 120px; /* Reduza a altura do contêiner do gráfico */
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100px; /* Reduza a altura das barras do gráfico */
+    border-left: 1px solid var(--text-light); /* Y-axis */
+    border-bottom: 1px solid var(--text-light); /* X-axis */
+    width: 100%;
+}
+
+.chart-bars .bar {
+    background: var(--accent-2);
+    border-radius: 4px;
+    width: 25px; /* Reduza a largura das barras do gráfico */
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.chart-bars .bar:hover {
+    transform: scale(1.05);
+    background: var(--accent-1);
+}
+
+.chart-years {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.chart-years .year {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    width: 25px; /* Match the width of the bars */
+    text-align: center;
 }
 
 /* RESPONSIVE: MOBILE */

@@ -17,6 +17,13 @@
     
     "about.content3": "<p>現在、私は<a href='https://uenp.edu.br' target='_blank'>Universidade Estadual do Norte do Paraná (UENP)</a>のCornélio Procópioキャンパスで教授として動物学、遺伝学、統計学を教えています。</p> <p>私の研究は、環境要因が魚類、ミツバチ、人間を含む動物種の進化にどのように影響するかに焦点を当てています。異なる分野の知識を統合することが、生物多様性を理解し、保護するために不可欠であると信じています。</p> <p>プロジェクトの支援、コンサルティング、コラボレーションをお求めでしたら、ぜひご連絡ください。<a href='#contact'><b>お気軽にご相談ください！</b></a></p>",
     
+    "about.content4": "遺伝学",
+    "about.content5": "分子生態学",
+    "about.content6": "バイオインフォマティクス",
+    "about.content7": "保全学",
+    "about.content8": "コラボレーションやプロジェクトに興味がありますか？",
+    "about.content9": "お問い合わせ",
+    
     "projects.title": "Githubプロジェクト",
     "projects.content": "Githubで私のプロジェクトをいくつかご覧ください。バイオインフォマティクス、遺伝学、保全学に関するコード、チュートリアル、インサイトを共有しています。",
     "projects.filter_placeholder": "プロジェクトを検索...",

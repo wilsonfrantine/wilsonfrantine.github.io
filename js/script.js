@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const researchLeftButton = document.getElementById("researchLeft");
   const researchRightButton = document.getElementById("researchRight");
 
+
   // Configurações de navbar
   let lastScrollTop = 0;
   const delta = 5; // threshold para detectar scroll leve
@@ -402,76 +403,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 800);  // Ajuste o tempo conforme necessário
   }
 
- })
-
-
-/*******************************************
-* 12) Wipes to content
-*******************************************/
-document.addEventListener("DOMContentLoaded", async function () {
-  await loadSocialData();
-
-  const modal = document.getElementById("social-modal");
-
-  document.querySelectorAll(".social-btn").forEach(button => {
-    ['click', 'mouseover'].forEach(event => {
-      button.addEventListener(event, function (e) {
-        assignModal(button);  // Passa o botão inteiro, não apenas o id
-      });
+  // Atualiza o índice da seção atual ao clicar nos links de navegação
+  document.querySelectorAll('.nav-links a').forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      currentIndex = index;
+      scrollToSection();
     });
   });
-});
 
-function assignModal(button) {
-  event.preventDefault();
-  event.stopPropagation();
+  /*******************************************
+  * 12) Wipes to content
+  *******************************************/
 
-  const modal = document.getElementById("social-modal");
+ })
 
-  const platform = button.getAttribute("data-platform");
-  const data = socialData[platform];
-
-  if (data) {
-    document.getElementById("modal-title").innerText = data.title;
-    document.getElementById("modal-icon").src = data.icon || '';
-    document.getElementById("modal-html").innerHTML = data.html || '';
-
-    const rect = button.getBoundingClientRect();
-    const scrollY = window.scrollY || window.scrollY;
-
-    const modalWidth = modal.offsetWidth;
-    const modalHeight = modal.offsetHeight;
-
-    modal.style.left = `${rect.left + rect.width / 2 - modalWidth / 2}px`;
-    modal.style.top = `${rect.top + scrollY - modalHeight - 15}px`;
-
-    modal.classList.add("show");
-  } else {
-    window.open(button.getAttribute('data-link'), '_blank');  // Usa o data-link do botão
-  }
-}
-
-// Fecha o modal ao clicar fora
-document.addEventListener("click", function (e) {
-  const modal = document.getElementById("social-modal");
-  if (!modal.contains(e.target) && !e.target.classList.contains("social-btn")) {
-    closeModal();
-  }
-});
-
-function closeModal() {
-  const modal = document.getElementById("social-modal");
-  modal.classList.remove("show");
-}
-
-// Função para carregar dados sociais do JSON
-async function loadSocialData() {
-  try {
-    const response = await fetch('src/socialData.json');
-    socialData = await response.json();
-  } catch (error) {
-    console.error("Erro ao carregar socialData.json:", error);
-  }
-}
 
 

@@ -17,6 +17,13 @@
   
   "about.content3": "<p>Atualmente, sou professor na <a href='https://uenp.edu.br' target='_blank'>Universidade Estadual do Norte do Paraná (UENP), Campus de Cornélio Procópio</a>, onde leciono Zoologia, Genética e Bioestatística.</p> <p>Minha pesquisa investiga como fatores ambientais moldam a evolução de espécies – de peixes e abelhas até mesmo humanos. Acredito que unir diferentes áreas do conhecimento é fundamental para entender e preservar a biodiversidade em um mundo que está em constante transformação.</p> <p>Se você está buscando suporte em projetos, consultorias ou colaborações, será um prazer fazer parte da sua iniciativa. <a href='#contact'><b>Vamos conversar?</b></a></p>",
   
+  "about.content4": "Genética",
+  "about.content5": "Ecologia Molecular",
+  "about.content6": "Bioinformática",
+  "about.content7": "Conservação",
+  "about.content8": "Interessado em colaborações ou projetos?",
+  "about.content9": "Entre em contato",
+  
   "projects.title": "Projetos no Github",
   "projects.content": "Explore alguns dos meus projetos no Github, onde compartilho códigos, tutoriais e insights sobre bioinformática, genética e conservação.",
   "projects.filter_placeholder": "Buscar projetos...",
