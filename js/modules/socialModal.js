@@ -150,8 +150,15 @@ export function assignModal(button, socialData) {
         const modalWidth = modal.offsetWidth;
         const modalHeight = modal.offsetHeight;
 
-        modal.style.left = `${rect.left + rect.width / 2 - modalWidth / 2}px`;
-        modal.style.top = `${rect.bottom + scrollY + 10}px`;
+        // Adjust position for smaller screens
+        if (window.innerWidth <= 768) {
+            modal.style.left = `50%`;
+            modal.style.top =  `${rect.top - scrollY - modalHeight}px`;
+            modal.style.transform = `translate(-50%, 0)`;
+        } else {
+            modal.style.left = `${rect.left + rect.width / 2 - modalWidth / 2}px`;
+            modal.style.top = `${rect.bottom + scrollY + 10}px`;
+        }
 
         modal.classList.add("show");
     } else {
