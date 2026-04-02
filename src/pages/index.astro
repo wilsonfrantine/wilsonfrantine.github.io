@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import { getFeaturedProjects } from '../data/github-projects';
+import { getOrcidPublications } from '../data/orcid-publications';
+import { Github, Globe, GraduationCap, Mail, Twitter, Instagram, Youtube, BookOpen, ExternalLink } from 'lucide-astro';
+
+const projects = await getFeaturedProjects();
+const publications = await getOrcidPublications();
+
+const categories = ["Bioinfo Tools", "Data Ecology", "Open Resources", "Personal Project"];
+---
+
+<Layout title="Wilson Frantine | Genetics & Bioinformatics">
+	<main class="relative bg-slate-950 min-h-screen">
+		<nav class="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md bg-slate-950/50 border-b border-white/5">
+			<div class="font-mono text-xs tracking-tighter text-sky-400 font-bold uppercase">
+				WF.Silva / Portfolio
+			</div>
+			<ul class="hidden md:flex gap-8 text-xs font-mono tracking-widest uppercase text-slate-400">
+				<li><a href="#hero" class="hover:text-white transition-colors">Home</a></li>
+				<li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+				<li><a href="#research" class="hover:text-white transition-colors">Research</a></li>
+				<li><a href="#teaching" class="hover:text-white transition-colors">Teaching</a></li>
+				<li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+				<li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+			</ul>
+		</nav>
+
+		<Hero />
+		
+		<!-- Projects Section -->
+		<section id="projects" class="py-24 px-4 max-w-7xl mx-auto">
+			<header class="mb-16">
+				<h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+					Selected <span class="text-sky-400">Projects</span>
+				</h2>
+				<p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
+					Scientific tools & Open Source Software
+				</p>
+			</header>
+
+			<div class="space-y-20">
+				{categories.map(category => {
+					const categoryProjects = projects.filter(p => p.category === category);
+					if (categoryProjects.length === 0) return null;
+					
+					return (
+						<div class="space-y-8">
+							<h3 class="text-xs font-mono uppercase tracking-[0.3em] text-slate-500 flex items-center gap-4">
+								<span class="w-12 h-px bg-slate-800"></span>
+								{category}
+								<span class="px-2 py-0.5 border border-slate-800 rounded text-[10px]">{categoryProjects.length}</span>
+							</h3>
+							<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+								{categoryProjects.map(project => (
+									<ProjectCard {...project} />
+								))}
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</section>
+
+		<!-- Research Section -->
+		<section id="research" class="py-24 px-4 bg-slate-900/20 border-y border-white/5">
+			<div class="max-w-5xl mx-auto">
+				<header class="mb-16 text-center">
+					<h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+						Scientific <span class="text-sky-400">Impact</span>
+					</h2>
+					<p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
+						Latest publications from ORCID
+					</p>
+				</header>
+
+				<div class="grid gap-4">
+					{publications.slice(0, 6).map(pub => (
+						<PublicationCard {...pub} />
+					))}
+				</div>
+				
+				<div class="mt-12 text-center">
+					<a href="https://orcid.org/0000-0002-4293-0471" target="_blank" class="text-sky-400 font-mono text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center justify-center gap-2">
+						View full list on ORCID <Globe size={14} />
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Teaching Section -->
+		<section id="teaching" class="py-24 px-4 max-w-7xl mx-auto">
+			<header class="mb-16">
+				<h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+					Teaching & <span class="text-sky-400">Resources</span>
+				</h2>
+				<p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
+					Empowering the next generation of scientists
+				</p>
+			</header>
+
+			<div class="grid md:grid-cols-2 gap-8">
+				<div class="p-8 border border-white/5 bg-slate-900/40 rounded-3xl hover:border-sky-500/30 transition-all group">
+					<BookOpen class="text-sky-400 mb-6" size={32} />
+					<h3 class="text-2xl font-bold text-white mb-4">Bioinformatics Made Simple</h3>
+					<p class="text-slate-400 mb-8 leading-relaxed">
+						A practical PDF guide covering command-line basics, genomic data analysis, and advanced visualization in R. 
+						Designed for biologists starting their computational journey.
+					</p>
+					<a href="#" class="inline-flex items-center gap-2 text-sky-400 font-bold hover:text-white transition-colors">
+						Download Guide (PDF) <ExternalLink size={16} />
+					</a>
+				</div>
+				<div class="p-8 border border-white/5 bg-slate-900/40 rounded-3xl hover:border-sky-500/30 transition-all group">
+					<Youtube class="text-sky-400 mb-6" size={32} />
+					<h3 class="text-2xl font-bold text-white mb-4">Genetics 101 Series</h3>
+					<p class="text-slate-400 mb-8 leading-relaxed">
+						Short, impactful video series on population genetics, molecular evolution, and real-world data analysis 
+						techniques for undergraduate and graduate students.
+					</p>
+					<a href="#" class="inline-flex items-center gap-2 text-sky-400 font-bold hover:text-white transition-colors">
+						Watch on YouTube <ExternalLink size={16} />
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section id="about" class="py-32 px-4 bg-slate-900/20 border-y border-white/5">
+			<div class="max-w-4xl mx-auto space-y-12 text-center md:text-left">
+				<h2 class="text-4xl font-black text-white tracking-tight">
+					Bioinformatics, Genetics <br /> & <span class="text-sky-400">Data Science</span>
+				</h2>
+				<div class="grid md:grid-cols-2 gap-12 text-slate-400 leading-relaxed text-lg">
+					<p>
+						I am a Biologist with a PhD in Genetics and Molecular Biology. My work sits at the intersection 
+						of evolutionary biology and computational science, focusing on molecular ecology and 
+						genomic data analysis.
+					</p>
+					<p>
+						Currently, as an Associate Professor at UENP, I dedicate my time to research and the 
+						development of open-source tools for the scientific community, believing that 
+						accessible data and reproducible code are the foundations of modern science.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact/Social Section -->
+		<section id="contact" class="py-24 px-4 max-w-6xl mx-auto">
+			<div class="grid md:grid-cols-3 gap-12">
+				<div class="md:col-span-1">
+					<h3 class="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+					<p class="text-slate-500 mb-8 font-mono text-sm uppercase tracking-widest leading-loose">
+						Academic collaborations <br /> 
+						Technical inquiries <br /> 
+						Coffee & Science
+					</p>
+					<a href="mailto:wilsonfrantine@gmail.com" class="flex items-center gap-3 text-sky-400 font-bold hover:text-white transition-colors">
+						<Mail size={20} /> wilsonfrantine@gmail.com
+					</a>
+				</div>
+				
+				<div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
+					<a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+						<GraduationCap class="text-sky-400 group-hover:scale-110 transition-transform" />
+						<div>
+							<span class="block text-white font-bold text-sm">Scholar</span>
+							<span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Impact Factor</span>
+						</div>
+					</a>
+					<a href="https://github.com/wilsonfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+						<Github class="text-sky-400 group-hover:scale-110 transition-transform" />
+						<div>
+							<span class="block text-white font-bold text-sm">GitHub</span>
+							<span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Code & Tools</span>
+						</div>
+					</a>
+					<a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+						<Globe class="text-sky-400 group-hover:scale-110 transition-transform" />
+						<div>
+							<span class="block text-white font-bold text-sm">ResearchGate</span>
+							<span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Publications</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<footer class="py-12 border-t border-white/5 text-center">
+			<p class="text-slate-600 text-[10px] font-mono uppercase tracking-[0.5em]">
+				&copy; {new Date().getFullYear()} Wilson Frantine-Silva. Built with Astro & Tailwind.
+			</p>
+		</footer>
+	</main>
+</Layout>

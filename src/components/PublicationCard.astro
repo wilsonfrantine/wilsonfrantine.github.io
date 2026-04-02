@@ -1,0 +1,33 @@
+---
+import { FileText, ExternalLink, Calendar } from 'lucide-astro';
+
+interface Props {
+  title: string;
+  url: string;
+  year?: string;
+  journal?: string;
+}
+
+const { title, url, year, journal } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer" class="group block p-6 border border-white/5 bg-slate-900/40 rounded-2xl hover:border-sky-500/30 hover:bg-slate-900/60 transition-all duration-300">
+  <div class="flex items-start gap-4">
+    <div class="p-3 bg-slate-800/50 rounded-xl group-hover:bg-sky-500/10 transition-colors text-slate-500 group-hover:text-sky-400">
+      <FileText size={20} />
+    </div>
+    <div class="flex-grow">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-[10px] font-mono tracking-widest uppercase text-sky-500/70">Scientific Publication</span>
+        {year && <span class="text-[10px] font-mono text-slate-500 flex items-center gap-1"><Calendar size={10} /> {year}</span>}
+      </div>
+      <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors leading-snug mb-2">
+        {title}
+      </h3>
+      {journal && <p class="text-slate-500 text-xs font-mono uppercase tracking-tight italic">{journal}</p>}
+    </div>
+    <div class="opacity-0 group-hover:opacity-100 transition-opacity text-sky-400 self-center">
+      <ExternalLink size={18} />
+    </div>
+  </div>
+</a>

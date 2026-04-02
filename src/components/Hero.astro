@@ -1,0 +1,51 @@
+---
+import { Github, GraduationCap, Microscope, Database, FileText } from 'lucide-astro';
+---
+
+<section id="hero" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4">
+  <!-- Subtle Background Gradient -->
+  <div class="absolute inset-0 bg-radial-[at_50%_50%] from-sky-900/10 via-slate-950 to-slate-950 pointer-events-none"></div>
+  
+  <div class="relative z-10 max-w-5xl mx-auto text-center">
+    <!-- Profession Tags -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <span class="flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest uppercase border border-sky-500/20 bg-sky-500/5 text-sky-400 rounded-full">
+        <Microscope size={14} /> Genetics
+      </span>
+      <span class="flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest uppercase border border-sky-500/20 bg-sky-500/5 text-sky-400 rounded-full">
+        <Database size={14} /> Bioinformatics
+      </span>
+      <span class="flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest uppercase border border-sky-500/20 bg-sky-500/5 text-sky-400 rounded-full">
+        <FileText size={14} /> Data Science
+      </span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-none">
+      Wilson <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600">Frantine</span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
+      PhD in Genetics & Molecular Biology. Specializing in molecular ecology, 
+      genomic data analysis, and open-source scientific tools.
+    </p>
+
+    <!-- Call to Actions -->
+    <div class="flex flex-wrap justify-center gap-4 mt-8">
+      <a href="https://github.com/wilsonfrantine" class="flex items-center gap-2 px-8 py-3 bg-white text-slate-950 font-bold rounded-lg hover:bg-sky-400 transition-all transform hover:-translate-y-1">
+        <Github size={20} /> GitHub
+      </a>
+      <a href="#research" class="flex items-center gap-2 px-8 py-3 border border-slate-800 bg-slate-900/50 text-white font-bold rounded-lg hover:border-sky-500/50 hover:bg-slate-900 transition-all transform hover:-translate-y-1">
+        <GraduationCap size={20} /> Research
+      </a>
+      <a href="#contact" class="flex items-center gap-2 px-8 py-3 border border-slate-800 bg-slate-900/50 text-white font-bold rounded-lg hover:border-sky-500/50 hover:bg-slate-900 transition-all transform hover:-translate-y-1">
+        Contact
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+    <div class="w-px h-12 bg-gradient-to-b from-transparent via-white to-transparent"></div>
+  </div>
+</section>

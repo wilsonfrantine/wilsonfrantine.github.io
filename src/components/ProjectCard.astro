@@ -1,0 +1,55 @@
+---
+import { Github, ExternalLink, Star } from 'lucide-astro';
+
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  image: string;
+  tags: string[];
+  stars?: number;
+  category: string;
+}
+
+const { name, description, url, image, tags, stars, category } = Astro.props;
+---
+
+<div class="group relative p-6 border border-white/5 bg-slate-900/40 rounded-3xl hover:border-sky-500/30 hover:bg-slate-900/60 transition-all duration-300 backdrop-blur-sm flex flex-col h-full">
+  <div class="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+    <a href={url} target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white">
+      <ExternalLink size={20} />
+    </a>
+  </div>
+
+  <div class="flex items-start gap-4 mb-6">
+    <div class="p-3 bg-slate-800/50 rounded-2xl group-hover:bg-sky-500/10 transition-colors">
+      <img src={image} alt={name} class="w-10 h-10 object-contain" />
+    </div>
+    <div>
+      <span class="text-[10px] font-mono tracking-widest uppercase text-sky-500/70">{category}</span>
+      <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors tracking-tight">{name}</h3>
+    </div>
+  </div>
+
+  <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+    {description}
+  </p>
+
+  <div class="flex flex-wrap gap-2 mb-6">
+    {tags.map(tag => (
+      <span class="text-[10px] font-mono px-2 py-1 bg-slate-800 text-slate-400 rounded-md border border-white/5 uppercase tracking-tighter group-hover:border-sky-500/20 transition-colors">
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  <div class="flex items-center justify-between pt-6 border-t border-white/5">
+    <div class="flex items-center gap-1.5 text-xs font-mono text-slate-500">
+      <Star size={14} class="text-amber-400/50" />
+      <span>{stars || 0} stars</span>
+    </div>
+    <a href={url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
+      <Github size={14} /> View Code
+    </a>
+  </div>
+</div>
