@@ -13,53 +13,61 @@ interface Props {
 
 const { name, description, url, image, tags, status = "Ativo", category } = Astro.props;
 const isComingSoon = status === "Em Breve";
+
+const isBioinfo = category === "Bioinfo Hub";
+const isDataEcology = category === "Data Ecology";
+const patternClass = isBioinfo ? "bg-pattern-code" : isDataEcology ? "bg-pattern-dna" : "";
 ---
 
-<div class="group relative p-6 border border-white/5 bg-slate-900/40 rounded-3xl hover:border-sky-500/30 hover:bg-slate-900/60 transition-all duration-300 backdrop-blur-sm flex flex-col h-full">
-  {!isComingSoon && (
-    <div class="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-      <a href={url} target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white">
-        <ExternalLink size={20} />
-      </a>
-    </div>
-  )}
-
-  <div class="flex items-start gap-4 mb-6">
-    <div class="p-3 bg-slate-800/50 rounded-2xl group-hover:bg-sky-500/10 transition-colors">
-      <img src={image} alt={name} class="w-10 h-10 object-contain" />
-    </div>
-    <div>
-      <span class="text-[10px] font-mono tracking-widest uppercase text-sky-500/70">{category}</span>
-      <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors tracking-tight">{name}</h3>
-    </div>
-  </div>
-
-  <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-    {description}
-  </p>
-
-  <div class="flex flex-wrap gap-2 mb-6">
-    {tags.map(tag => (
-      <span class="text-[10px] font-mono px-2 py-1 bg-slate-800 text-slate-400 rounded-md border border-white/5 uppercase tracking-tighter group-hover:border-sky-500/20 transition-colors">
-        {tag}
-      </span>
-    ))}
-  </div>
-
-  <div class="flex items-center justify-between pt-6 border-t border-white/5">
-    <div class="flex items-center gap-1.5 text-xs font-mono text-slate-500">
-      {isComingSoon ? (
-        <Clock size={14} class="text-amber-400/50" />
-      ) : (
-        <Activity size={14} class="text-emerald-400/50" />
-      )}
-      <span class={isComingSoon ? "text-amber-400/70" : "text-emerald-400/70"}>{status}</span>
-    </div>
-    
+<div class="group relative p-6 border border-slate-800/60 bg-slate-900/40 rounded-xl hover:border-sky-500/30 hover:bg-slate-900/60 transition-all duration-300 backdrop-blur-sm flex flex-col h-full overflow-hidden shadow-sm shadow-black/50">
+  <div class={`absolute inset-0 opacity-40 pointer-events-none mix-blend-overlay transition-opacity duration-500 group-hover:opacity-100 ${patternClass}`}></div>
+  
+  <div class="relative z-10">
     {!isComingSoon && (
-      <a href={url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-white transition-colors">
-        <ExternalLink size={14} /> Acessar
-      </a>
+      <div class="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+        <a href={url} target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white">
+          <ExternalLink size={20} />
+        </a>
+      </div>
     )}
+
+    <div class="flex items-start gap-4 mb-6">
+      <div class="p-3 bg-slate-950 border border-slate-800 rounded-lg group-hover:border-sky-500/30 transition-colors shadow-inner">
+        <img src={image} alt={name} class="w-8 h-8 object-contain" />
+      </div>
+      <div>
+        <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-sky-500/70 block mb-1">{category}</span>
+        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors tracking-tight">{name}</h3>
+      </div>
+    </div>
+
+    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow border-l-2 border-slate-800 pl-4 group-hover:border-sky-500/30 transition-colors">
+      {description}
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-6">
+      {tags.map(tag => (
+        <span class="text-[9px] font-mono px-2 py-1 bg-slate-950 text-slate-400 rounded border border-slate-800 uppercase tracking-widest group-hover:border-sky-500/30 transition-colors">
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <div class="flex items-center justify-between pt-5 border-t border-slate-800/80 mt-auto">
+      <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-slate-500">
+        {isComingSoon ? (
+          <Clock size={12} class="text-amber-400/50" />
+        ) : (
+          <Activity size={12} class="text-emerald-400/50" />
+        )}
+        <span class={isComingSoon ? "text-amber-400/70" : "text-emerald-400/70"}>{status}</span>
+      </div>
+      
+      {!isComingSoon && (
+        <a href={url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-sky-400 hover:text-white transition-colors bg-sky-500/10 px-2.5 py-1 rounded">
+          <ExternalLink size={12} /> Acessar
+        </a>
+      )}
+    </div>
   </div>
 </div>

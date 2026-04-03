@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Base Dot Grid for Lab Notebook Aesthetic */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle background patterns for thematic sections */
+.bg-pattern-dna {
+  /* A very faint repeating pattern that looks like a helix/matrix */
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(14, 165, 233, 0.03) 0,
+    rgba(14, 165, 233, 0.03) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+.bg-pattern-code {
+  /* A faint vertical line pattern reminiscent of code editor guides */
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(148, 163, 184, 0.02) 0,
+    rgba(148, 163, 184, 0.02) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+}
+
+/* Scrollbar styling for that 'IDE' feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #020617; /* slate-950 */
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* slate-800 */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* slate-700 */
+}
