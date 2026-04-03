@@ -31,11 +31,11 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: "Astro101",
     description: "Introdução à Astronomia e processamento de imagens.",
-    url: "#",
+    url: "/tutorials/astro101-introducao",
     image: "https://cdn-icons-png.flaticon.com/512/3204/3204731.png",
     category: "Trilhas de Aprendizado",
     tags: ["Astronomy", "Education"],
-    status: "Em Breve"
+    status: "Ativo"
   },
 
   // Bioinfo Hub
