@@ -1,11 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Dispara o deploy sempre que houver um "push" nas branches "main" ou "astro-migration"
+  # Dispara o deploy apenas na branch principal
   push:
     branches:
       - main
-      - astro-migration
   # Permite rodar o deploy manualmente pela aba Actions, se necessário
   workflow_dispatch:
 
