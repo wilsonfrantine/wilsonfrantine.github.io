@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const tutorials = defineCollection({
@@ -10,7 +10,7 @@ const tutorials = defineCollection({
     author: z.string().default('Wilson Frantine'),
     category: z.enum(['Genética', 'Bioinformática', 'Ecologia', 'Dados', 'Astronomia']),
     tags: z.array(z.string()).optional(),
-    image: z.string().optional(),
+    series: z.string().optional(), // ID da série a que pertence
   }),
 });
 
@@ -25,7 +25,20 @@ const snippets = defineCollection({
   }),
 });
 
+const series = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/series" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    items: z.array(z.object({
+      id: z.string(),
+      collection: z.enum(['tutorials', 'snippets'])
+    })),
+  }),
+});
+
 export const collections = {
   tutorials,
   snippets,
+  series,
 };

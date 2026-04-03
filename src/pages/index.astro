@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import ActivityLog from '../components/ActivityLog.astro';
 import ProjectsSection from '../components/ProjectsSection.astro';
 import ResearchSection from '../components/ResearchSection.astro';
 import TeachingSection from '../components/TeachingSection.astro';
@@ -51,6 +52,7 @@ const publications = await getOrcidPublications();
 		</nav>
 
 		<Hero />
+		<ActivityLog />
 		<ProjectsSection projects={projects} />
 		<ResearchSection publications={publications} />
 		<TeachingSection />

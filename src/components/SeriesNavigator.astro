@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import { ArrowLeft, ArrowRight, List } from 'lucide-astro';
+
+interface Props {
+  currentId: string;
+  collection: 'tutorials' | 'snippets';
+}
+
+const { currentId, collection } = Astro.props;
+
+// Buscamos todas as séries
+const allSeries = await getCollection('series');
+
+// Encontramos se alguma série contém o item atual
+const activeSeries = allSeries.find(s => 
+  s.data.items.some(item => item.id === currentId && item.collection === collection)
+);
+
+let prevItem = null;
+let nextItem = null;
+let currentIndex = -1;
+
+if (activeSeries) {
+  currentIndex = activeSeries.data.items.findIndex(
+    item => item.id === currentId && item.collection === collection
+  );
+  
+  if (currentIndex > 0) prevItem = activeSeries.data.items[currentIndex - 1];
+  if (currentIndex < activeSeries.data.items.length - 1) nextItem = activeSeries.data.items[currentIndex + 1];
+}
+---
+
+{activeSeries && (
+  <div class="mt-20 p-8 bg-slate-900/50 border border-slate-800 rounded-2xl backdrop-blur-md">
+    <div class="flex items-center gap-3 mb-6 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-500">
+      <List size={14} />
+      <span>Série: {activeSeries.data.title}</span>
+      <span class="text-slate-700 ml-auto">{currentIndex + 1} / {activeSeries.data.items.length}</span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      {prevItem ? (
+        <a href={`/${prevItem.collection}/${prevItem.id}`} class="p-4 border border-slate-800 rounded-xl hover:border-sky-500/30 hover:bg-sky-500/5 transition-all group">
+          <span class="text-[9px] font-mono uppercase tracking-widest text-slate-500 block mb-1">Anterior</span>
+          <div class="flex items-center gap-2 text-white font-bold text-sm group-hover:text-sky-400 transition-colors">
+            <ArrowLeft size={16} />
+            <span class="line-clamp-1 italic">{prevItem.id.replace(/-/g, ' ')}</span>
+          </div>
+        </a>
+      ) : <div />}
+
+      {nextItem ? (
+        <a href={`/${nextItem.collection}/${nextItem.id}`} class="p-4 border border-slate-800 rounded-xl hover:border-sky-500/30 hover:bg-sky-500/5 transition-all text-right group">
+          <span class="text-[9px] font-mono uppercase tracking-widest text-slate-500 block mb-1">Próximo</span>
+          <div class="flex items-center justify-end gap-2 text-white font-bold text-sm group-hover:text-sky-400 transition-colors">
+            <span class="line-clamp-1 italic">{nextItem.id.replace(/-/g, ' ')}</span>
+            <ArrowRight size={16} />
+          </div>
+        </a>
+      ) : <div />}
+    </div>
+  </div>
+)}
