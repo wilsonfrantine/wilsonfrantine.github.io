@@ -22,6 +22,7 @@ concurrency:
 
 env:
   BUILD_PATH: "." # Caminho raiz onde o código está localizado
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Força o uso do Node 24 para evitar avisos de depreciação
 
 jobs:
   build:
