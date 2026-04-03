@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // Estabilidade definitiva: Astro 6 + Tailwind v4 + React + Lucide Icons + Sitemap
 export default defineConfig({
-  site: 'https://tatabox.github.io',
+  site: 'https://wilsonfrantine.github.io',
   vite: {
     plugins: [tailwindcss()],
     // Garante que o lucide-react seja processado como ESM, evitando o erro 'undefined' no build
