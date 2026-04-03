@@ -1,0 +1,77 @@
+---
+import { Github, Globe, GraduationCap, Mail, Twitter, Instagram } from 'lucide-astro';
+---
+
+<section id="contact" class="py-24 px-4 max-w-6xl mx-auto border-t border-white/5">
+    <div class="grid md:grid-cols-3 gap-16 items-start">
+        <!-- Integrated Bio/About -->
+        <div class="md:col-span-1 space-y-8">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-6">Sobre o Autor</h3>
+                <div class="text-slate-400 leading-relaxed space-y-4 text-sm">
+                    <p>
+                        Sou Biólogo com doutorado em Genética e Biologia Molecular. Meu trabalho transita entre a biologia evolutiva 
+                        e a ciência da computação, com foco em ecologia molecular e análise de dados genômicos.
+                    </p>
+                    <p>
+                        Atualmente, como Professor Associado na UENP, dedico meu tempo à pesquisa e ao 
+                        desenvolvimento de ferramentas de código aberto para a comunidade científica.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-slate-500 mb-4">Contato Direto</h4>
+                <a href="mailto:wilsonfrantine@gmail.com" class="flex items-center gap-3 text-sky-400 font-bold hover:text-white transition-colors">
+                    <Mail size={18} /> wilsonfrantine@gmail.com
+                </a>
+            </div>
+        </div>
+        
+        <!-- Social/Academic Grid -->
+        <div class="md:col-span-2 space-y-8">
+            <h3 class="text-2xl font-bold text-white">Networking</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <GraduationCap class="text-sky-400 group-hover:scale-110 transition-transform" />
+                    <div>
+                        <span class="block text-white font-bold text-sm">Google Scholar</span>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Publicações Acadêmicas</span>
+                    </div>
+                </a>
+                <a href="https://github.com/wilsonfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Github class="text-sky-400 group-hover:scale-110 transition-transform" />
+                    <div>
+                        <span class="block text-white font-bold text-sm">GitHub</span>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Código & Ferramentas</span>
+                    </div>
+                </a>
+                <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Globe class="text-sky-400 group-hover:scale-110 transition-transform" />
+                    <div>
+                        <span class="block text-white font-bold text-sm">ResearchGate</span>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Artigos & Impacto</span>
+                    </div>
+                </a>
+                <a href="https://x.com/wfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Twitter class="text-sky-400 group-hover:scale-110 transition-transform" />
+                    <div>
+                        <span class="block text-white font-bold text-sm">X / Twitter</span>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Insights & Ciência</span>
+                    </div>
+                </a>
+                <a href="https://instagram.com/wilsonfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Instagram class="text-sky-400 group-hover:scale-110 transition-transform" />
+                    <div>
+                        <span class="block text-white font-bold text-sm">Instagram</span>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Bastidores & Vida</span>
+                    </div>
+                </a>
+            </div>
+            
+            <p class="text-slate-500 font-mono text-[10px] uppercase tracking-[0.2em] leading-loose italic">
+                Aberto para colaborações acadêmicas • Consultoria técnica • Ciência reprodutível
+            </p>
+        </div>
+    </div>
+</section>

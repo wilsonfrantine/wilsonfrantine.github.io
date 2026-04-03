@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# TATAbox Hub 🧬💻
 
-```sh
-npm create astro@latest -- --template minimal
-```
+**TATAbox** é um hub de recursos didáticos, scripts e ferramentas focados em **Genética, Ecologia e Bioinformática**. O projeto visa simplificar o acesso a recursos abertos de alta qualidade para pesquisadores e estudantes, servindo como uma "bancada digital" (Workbench) para o aprendizado e a prática da ciência de dados biológicos.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Visão Geral
 
-## 🚀 Project Structure
+O site, disponível em [tatabox.github.io](https://tatabox.github.io), organiza o conhecimento em **Trilhas de Aprendizado**, transformando repositórios brutos de código em ferramentas e tutoriais acionáveis.
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Bioinfo Hub**: Ferramentas e utilitários para análise de sequências e dados genômicos.
+- **Data Ecology**: Scripts e pacotes R para ecologia quantitativa e modelagem.
+- **Open Education**: Apostilas, cursos e materiais didáticos (ENM101, R101, Astronomia).
+- **Insights**: Mini-tutoriais e dicas rápidas para o dia a dia do pesquisador.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🛠️ Stack Tecnológica
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+O projeto foi construído com foco em performance extrema e design técnico:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Framework**: [Astro 6.1.3](https://astro.build/) (Static Site Generation)
+- **Estilização**: [Tailwind CSS 4.2.2](https://tailwindcss.com/)
+- **Componentes**: React + Lucide-Astro
+- **Deployment**: Automação via GitHub Actions para o GitHub Pages
+- **SEO**: Sitemap integrado e Meta-tags Open Graph para compartilhamento
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 💻 Desenvolvimento Local
 
-## 🧞 Commands
+Se desejar rodar o projeto localmente ou contribuir:
 
-All commands are run from the root of the project, from a terminal:
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/tatabox/tatabox.github.io.git
+   cd tatabox.github.io
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2. **Instalar dependências:**
+   ```bash
+   npm install
+   ```
 
-## 👀 Want to learn more?
+3. **Iniciar servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+4. **Build para produção:**
+   ```bash
+   npm run build
+   ```
+
+## 🤝 Contribuição e Ciência Aberta
+
+O TATAbox é um projeto de **Ciência Aberta**. Sinta-se à vontade para abrir Issues ou enviar Pull Requests com melhorias nos scripts, correções em apostilas ou novas sugestões de trilhas de aprendizado.
+
+---
+*Mantido por Wilson Frantine. Inspirado pela necessidade de simplificar a Bioinformática no Brasil.*

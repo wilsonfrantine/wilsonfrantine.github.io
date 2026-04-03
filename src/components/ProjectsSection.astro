@@ -1,0 +1,43 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+interface Props {
+  projects: any[];
+}
+
+const { projects } = Astro.props;
+const categories = ["Bioinfo Tools", "Data Ecology", "Open Resources", "Personal Project"];
+---
+
+<section id="projects" class="py-24 px-4 max-w-7xl mx-auto">
+    <header class="mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+            Projetos <span class="text-sky-400">Selecionados</span>
+        </h2>
+        <p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
+            Ferramentas científicas & Software de código aberto
+        </p>
+    </header>
+
+    <div class="space-y-20">
+        {categories.map(category => {
+            const categoryProjects = projects.filter(p => p.category === category);
+            if (categoryProjects.length === 0) return null;
+            
+            return (
+                <div class="space-y-8">
+                    <h3 class="text-xs font-mono uppercase tracking-[0.3em] text-slate-500 flex items-center gap-4">
+                        <span class="w-12 h-px bg-slate-800"></span>
+                        {category}
+                        <span class="px-2 py-0.5 border border-slate-800 rounded text-[10px]">{categoryProjects.length}</span>
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {categoryProjects.map(project => (
+                            <ProjectCard {...project} />
+                        ))}
+                    </div>
+                </div>
+            );
+        })}
+    </div>
+</section>

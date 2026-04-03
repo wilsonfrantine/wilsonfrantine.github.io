@@ -1,0 +1,35 @@
+---
+import PublicationCard from './PublicationCard.astro';
+import { Globe } from 'lucide-astro';
+
+interface Props {
+  publications: any[];
+}
+
+const { publications } = Astro.props;
+---
+
+<section id="research" class="py-24 px-4 bg-slate-900/20 border-y border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-16 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+                Impacto <span class="text-sky-400">Científico</span>
+            </h2>
+            <p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
+                Últimas publicações via ORCID
+            </p>
+        </header>
+
+        <div class="grid gap-4">
+            {publications.slice(0, 6).map(pub => (
+                <PublicationCard {...pub} />
+            ))}
+        </div>
+        
+        <div class="mt-12 text-center">
+            <a href="https://orcid.org/0000-0002-4293-0471" target="_blank" class="text-sky-400 font-mono text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center justify-center gap-2">
+                Ver lista completa no ORCID <Globe size={14} />
+            </a>
+        </div>
+    </div>
+</section>

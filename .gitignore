@@ -24,3 +24,13 @@ pnpm-debug.log*
 
 # Legacy Site Structure
 v1_legacy/
+ROADMAP.md
+
+# Generic logs and temp files
+*.log
+*.temp
+scripts.js
+styles.css
+
+# VS Code
+.vscode/
