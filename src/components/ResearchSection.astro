@@ -10,15 +10,20 @@ interface Props {
 const { publications } = Astro.props;
 ---
 
-<section id="research" class="py-24 px-6 bg-slate-950 relative overflow-hidden">
+<section id="research" class="py-24 px-6 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
     <!-- Efeito de Luz de Fundo -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-        <div class="mb-16 text-center">
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">Impacto Científico</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto font-mono text-sm leading-relaxed">
-                Produção acadêmica focada em genética de populações, ecologia de peixes e conservação da biodiversidade neotropical.
+        <div class="mb-16 text-left">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-2 tracking-tight font-mono">
+                > ~/papers
+            </h2>
+            <div class="text-slate-400 dark:text-slate-500 font-mono text-xs mb-6 opacity-60">
+                --grep="bio|info|eco|gen"
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl font-mono text-sm leading-relaxed border-l border-slate-200 dark:border-white/5 pl-6">
+                Tentando convencer os revisores de que meus dados fazem sentido. (Linkado via ORCID para minha própria sanidade mental).
             </p>
         </div>
 
@@ -34,7 +39,7 @@ const { publications } = Astro.props;
         </div>
 
         <div class="mt-16 text-center">
-            <a href="https://orcid.org/0000-0002-4293-0471" class="text-sky-400 font-mono text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center justify-center gap-2">
+            <a href="https://orcid.org/0000-0002-4293-0471" class="text-sky-600 dark:text-sky-400 font-mono text-xs uppercase tracking-widest hover:text-slate-900 dark:hover:text-white transition-colors flex items-center justify-center gap-2">
                 Ver Currículo Lattes / ORCID <ExternalLink size={14} />
             </a>
         </div>

@@ -11,19 +11,19 @@ interface Props {
 const { title, year, journal, url } = Astro.props;
 ---
 
-<a href={url} rel="noopener noreferrer" class="group block p-6 border border-white/5 bg-slate-900/40 rounded-2xl hover:border-sky-500/30 hover:bg-slate-900/60 transition-all duration-300">
+<a href={url} rel="noopener noreferrer" class="group block p-6 border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-slate-900/40 rounded-2xl hover:border-sky-500/30 hover:bg-white dark:hover:bg-slate-900/60 transition-all duration-300 shadow-sm dark:shadow-none">
     <div class="flex justify-between items-start mb-4">
-        <div class="flex items-center gap-2 text-[10px] font-mono text-sky-500/70 uppercase tracking-widest">
+        <div class="flex items-center gap-2 text-[10px] font-mono text-sky-600 dark:text-sky-500/70 uppercase tracking-widest">
             <Calendar size={12} /> {year}
         </div>
-        <ExternalLink size={14} class="text-slate-700 group-hover:text-sky-500 transition-colors" />
+        <ExternalLink size={14} class="text-slate-400 dark:text-slate-700 group-hover:text-sky-600 dark:group-hover:text-sky-500 transition-colors" />
     </div>
     
-    <h3 class="text-white font-bold text-sm leading-snug mb-4 group-hover:text-sky-400 transition-colors line-clamp-3 italic">
+    <h3 class="text-slate-900 dark:text-white font-bold text-sm leading-snug mb-4 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors line-clamp-3 italic">
         {title}
     </h3>
 
-    <div class="flex items-center gap-2 text-[10px] font-mono text-slate-500 uppercase tracking-wider mt-auto">
+    <div class="flex items-center gap-2 text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-auto">
         <BookOpen size={12} /> {journal}
     </div>
 </a>

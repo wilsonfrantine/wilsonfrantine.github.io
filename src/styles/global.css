@@ -5,10 +5,25 @@
   --font-mono: "JetBrains Mono", monospace;
 }
 
+/* Tailwind 4 Dark Mode Configuration (Selector Strategy) */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
 /* Base Dot Grid for Lab Notebook Aesthetic */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+.dark .bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 /* Subtle background patterns for thematic sections */

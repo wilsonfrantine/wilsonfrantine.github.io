@@ -29,47 +29,47 @@ const activityFeed = [
 .slice(0, 3); // Pegamos apenas os 3 mais recentes
 ---
 
-<section class="py-12 px-4 max-w-7xl mx-auto">
-    <div class="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden backdrop-blur-md">
+<section class="py-12 px-4 max-w-7xl mx-auto transition-colors duration-300">
+    <div class="bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden backdrop-blur-md">
         <!-- Header do Log estilo Terminal -->
-        <div class="bg-slate-900 border-b border-slate-800 px-6 py-3 flex items-center justify-between">
+        <div class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-3 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <div class="flex gap-1.5">
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
                 </div>
-                <span class="ml-4 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">Log da Bancada // Ultimas Atividades</span>
+                <span class="ml-4 text-[10px] font-mono tracking-[0.2em] text-slate-500 dark:text-slate-500">> ~/bancada.log --tail</span>
             </div>
-            <div class="text-[10px] font-mono text-sky-500/50 animate-pulse">
+            <div class="text-[10px] font-mono text-sky-600 dark:text-sky-500/50 animate-pulse">
                 SYSTEM_READY: {new Date().toLocaleDateString('pt-BR')}
             </div>
         </div>
 
-        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
+        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-800">
             {activityFeed.map((item) => (
-                <a href={item.url} class="group p-8 hover:bg-sky-500/[0.02] transition-colors relative overflow-hidden">
+                <a href={item.url} class="group p-8 hover:bg-sky-500/[0.03] transition-colors relative overflow-hidden">
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2 bg-slate-950 border border-slate-800 rounded-lg text-sky-400 group-hover:border-sky-500/30 transition-colors">
+                            <div class="p-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sky-600 dark:text-sky-400 group-hover:border-sky-500/30 transition-colors">
                                 {item.type === 'tutorial' ? <BookOpen size={14} /> : <Zap size={14} />}
                             </div>
-                            <span class="text-[9px] font-mono uppercase tracking-widest text-slate-500">{item.label}</span>
+                            <span class="text-[9px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">{item.label}</span>
                         </div>
                         
-                        <h4 class="text-white font-bold mb-2 group-hover:text-sky-400 transition-colors line-clamp-1 italic">
+                        <h4 class="text-slate-900 dark:text-white font-bold mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors line-clamp-1 italic">
                             {item.title}
                         </h4>
                         
-                        <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed mb-6 font-mono opacity-70">
+                        <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed mb-6 font-mono opacity-80">
                             {item.description}
                         </p>
 
                         <div class="flex items-center justify-between mt-auto">
-                            <span class="text-[9px] font-mono text-slate-600 uppercase">
+                            <span class="text-[9px] font-mono text-slate-400 dark:text-slate-600 uppercase">
                                 {item.date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}
                             </span>
-                            <span class="text-sky-500 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                            <span class="text-sky-600 dark:text-sky-500 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                                 <ArrowRight size={14} />
                             </span>
                         </div>
@@ -79,9 +79,9 @@ const activityFeed = [
         </div>
 
         {/* Botão de Ver Tudo (Opcional no futuro) */}
-        <div class="bg-slate-950/50 px-6 py-4 border-t border-slate-800 text-center">
-             <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-slate-600 italic">
-                -- Fim do log recente. Novos dados serão indexados automaticamente --
+        <div class="bg-slate-100/50 dark:bg-slate-950/50 px-6 py-4 border-t border-slate-200 dark:border-slate-800 text-center">
+             <span class="text-[9px] font-mono tracking-[0.3em] text-slate-400 dark:text-slate-600 italic">
+                -- O que andei quebrando (ou consertando) nos últimos tempos. Quase sempre estável --
              </span>
         </div>
     </div>

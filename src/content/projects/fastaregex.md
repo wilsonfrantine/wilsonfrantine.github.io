@@ -1,10 +1,10 @@
 ---
 repo: "fastaregex"
 title: "FASTA Regex Editor 🧬"
-description: "Ferramenta web moderna para editar cabeçalhos de arquivos FASTA usando expressões regulares."
+description: "Porque cabeçalhos FASTA são o caos em forma de texto. Uma ferramenta web para domar a bagunça com regex antes que seu pipeline quebre (de novo)."
 category: "Bioinfo Hub"
 pubDate: 2026-04-03
-insight: "Limpe e normalize seus cabeçalhos FASTA de forma rápida e totalmente offline."
+insight: "Regex é como mágica, exceto quando você esquece um escape. Use isso e pare de editar arquivos de 2GB no bloco de notas."
 tags: ["Bioinformatics", "Genomics", "Regex", "JavaScript"]
 ---
 

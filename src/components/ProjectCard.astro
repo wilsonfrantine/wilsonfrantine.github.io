@@ -20,63 +20,63 @@ const isDataEcology = category === "Data Ecology";
 const patternClass = isBioinfo ? "bg-pattern-code" : isDataEcology ? "bg-pattern-dna" : "";
 ---
 
-<div class="group relative p-6 border border-slate-800/60 bg-slate-900/40 rounded-xl hover:border-sky-500/30 hover:bg-slate-900/60 transition-all duration-300 backdrop-blur-sm flex flex-col h-full overflow-hidden shadow-sm shadow-black/50">
-  <div class={`absolute inset-0 opacity-40 pointer-events-none mix-blend-overlay transition-opacity duration-500 group-hover:opacity-100 ${patternClass}`}></div>
+<div class="group relative p-6 border border-slate-200 dark:border-slate-800/60 bg-slate-50 dark:bg-slate-900/40 rounded-xl hover:border-sky-500/30 hover:bg-white dark:hover:bg-slate-900/60 transition-all duration-300 backdrop-blur-sm flex flex-col h-full overflow-hidden shadow-sm dark:shadow-black/50">
+  <div class={`absolute inset-0 opacity-40 pointer-events-none mix-blend-overlay dark:mix-blend-overlay transition-opacity duration-500 group-hover:opacity-100 ${patternClass}`}></div>
   
   <div class="relative z-10">
     {!isComingSoon && (
       <div class="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
         {demoUrl && (
-          <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-white" title="Abrir Aplicação">
+          <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-slate-900 dark:hover:text-white" title="Abrir Aplicação">
             <Globe size={20} />
           </a>
         )}
-        <a href={url} class="text-sky-400 hover:text-white" title="Ver Detalhes">
+        <a href={url} class="text-sky-600 dark:text-sky-400 hover:text-slate-900 dark:hover:text-white" title="Ver Detalhes">
           <ExternalLink size={20} />
         </a>
       </div>
     )}
 
     <div class="flex items-start gap-4 mb-6">
-      <div class="p-3 bg-slate-950 border border-slate-800 rounded-lg group-hover:border-sky-500/30 transition-colors shadow-inner">
+      <div class="p-3 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg group-hover:border-sky-500/30 transition-colors shadow-sm dark:shadow-inner">
         <img src={image} alt={name} class="w-8 h-8 object-contain" />
       </div>
       <div>
-        <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-sky-500/70 block mb-1">{category}</span>
-        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors tracking-tight">{name}</h3>
+        <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-sky-600 dark:text-sky-500/70 block mb-1">{category}</span>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors tracking-tight">{name}</h3>
       </div>
     </div>
 
-    <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow border-l-2 border-slate-800 pl-4 group-hover:border-sky-500/30 transition-colors">
+    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow border-l-2 border-slate-200 dark:border-slate-800 pl-4 group-hover:border-sky-500/30 transition-colors">
       {description}
     </p>
 
     <div class="flex flex-wrap gap-2 mb-6">
       {tags.map(tag => (
-        <span class="text-[9px] font-mono px-2 py-1 bg-slate-950 text-slate-400 rounded border border-slate-800 uppercase tracking-widest group-hover:border-sky-500/30 transition-colors">
+        <span class="text-[9px] font-mono px-2 py-1 bg-white dark:bg-slate-950 text-slate-500 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800 uppercase tracking-widest group-hover:border-sky-500/30 transition-colors">
           {tag}
         </span>
       ))}
     </div>
 
-    <div class="flex items-center justify-between pt-5 border-t border-slate-800/80 mt-auto">
-      <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-slate-500">
+    <div class="flex items-center justify-between pt-5 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
+      <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">
         {isComingSoon ? (
-          <Clock size={12} class="text-amber-400/50" />
+          <Clock size={12} class="text-amber-500 dark:text-amber-400/50" />
         ) : (
-          <Activity size={12} class="text-emerald-400/50" />
+          <Activity size={12} class="text-emerald-500 dark:text-emerald-400/50" />
         )}
-        <span class={isComingSoon ? "text-amber-400/70" : "text-emerald-400/70"}>{status}</span>
+        <span class={isComingSoon ? "text-amber-600 dark:text-amber-400/70" : "text-emerald-600 dark:text-emerald-400/70"}>{status}</span>
       </div>
       
       {!isComingSoon && (
         <div class="flex gap-2">
           {demoUrl && (
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-emerald-400 hover:text-white transition-colors bg-emerald-500/10 px-2.5 py-1 rounded">
+            <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-emerald-600 dark:text-emerald-400 hover:text-slate-900 dark:hover:text-white transition-colors bg-emerald-500/10 px-2.5 py-1 rounded">
               <Globe size={12} /> Live
             </a>
           )}
-          <a href={url} class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-sky-400 hover:text-white transition-colors bg-sky-500/10 px-2.5 py-1 rounded">
+          <a href={url} class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-sky-600 dark:text-sky-400 hover:text-slate-900 dark:hover:text-white transition-colors bg-sky-500/10 px-2.5 py-1 rounded">
             {demoUrl ? "Doc" : "Acessar"}
           </a>
         </div>

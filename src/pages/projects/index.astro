@@ -22,42 +22,44 @@ const categories = ["Trilhas de Aprendizado", "Bioinfo Hub", "Data Ecology", "Ou
 ---
 
 <Layout title="Todos os Projetos | TATAbox Hub">
-  <main class="relative bg-slate-950 min-h-screen py-32 px-4 max-w-7xl mx-auto">
-    <header class="mb-16">
-        <a href="/" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-500 hover:text-white transition-all mb-8">
-            ← Voltar para a Bancada
-        </a>
-        <h1 class="text-5xl font-black text-white mb-4 tracking-tight italic uppercase">
-            Repositório de <span class="text-sky-400">Projetos</span>
-        </h1>
-        <p class="text-slate-400 font-mono text-sm uppercase tracking-widest max-w-2xl">
-            A lista completa de ferramentas, bibliotecas e simuladores desenvolvidos ou curados no hub.
-        </p>
-    </header>
+  <main class="relative bg-white dark:bg-slate-950 bg-dot-grid min-h-screen py-32 px-4 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <header class="mb-16">
+          <a href="/" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-600 dark:text-sky-500 hover:text-slate-900 dark:hover:text-white transition-all mb-8">
+              ← [ cd .. /bancada ]
+          </a>
+          <h1 class="text-5xl font-black text-slate-900 dark:text-white mb-4 tracking-tight italic font-mono">
+              > ~/projetos <span class="text-sky-600 dark:text-sky-400">--all</span>
+          </h1>
+          <p class="text-slate-500 dark:text-slate-400 font-mono text-sm tracking-widest max-w-2xl">
+              A lista completa de ferramentas, bibliotecas e simuladores que sobreviveram ao caos do desenvolvimento.
+          </p>
+      </header>
 
-    <div class="space-y-24">
-        {categories.map(category => {
-            const categoryProjects = projects.filter(p => p.category === category);
-            if (categoryProjects.length === 0) return null;
-            
-            return (
-                <div class="space-y-10">
-                    <div class="flex items-center gap-6">
-                        <h2 class="text-xl font-bold text-white tracking-tight italic">{category}</h2>
-                        <div class="h-px flex-1 bg-slate-900"></div>
-                        <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded-full text-[10px] font-mono text-slate-500">
-                            {categoryProjects.length} itens
-                        </span>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {categoryProjects.map(project => (
-                            <ProjectCard {...project} />
-                        ))}
-                    </div>
-                </div>
-            );
-        })}
+      <div class="space-y-24">
+          {categories.map(category => {
+              const categoryProjects = projects.filter(p => p.category === category);
+              if (categoryProjects.length === 0) return null;
+              
+              return (
+                  <div class="space-y-10">
+                      <div class="flex items-center gap-6">
+                          <h2 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight italic font-mono">{category}</h2>
+                          <div class="h-px flex-1 bg-slate-100 dark:bg-slate-900"></div>
+                          <span class="px-3 py-1 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full text-[10px] font-mono text-slate-400 dark:text-slate-500">
+                              {categoryProjects.length} itens
+                          </span>
+                      </div>
+                      
+                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                          {categoryProjects.map(project => (
+                              <ProjectCard {...project} />
+                          ))}
+                      </div>
+                  </div>
+              );
+          })}
+      </div>
     </div>
   </main>
 </Layout>

@@ -1,10 +1,10 @@
 ---
 repo: "ggbeast"
 title: "ggbeast 🧬"
-description: "Visualização de árvores filogenéticas e dados do BEAST integrados ao ggplot2."
+description: "Porque o FigTree é legal, mas o ggplot2 é vida. Um pacote R para você parar de sofrer com os logs do BEAST 2 e focar na ciência."
 category: "Data Ecology"
 pubDate: 2026-04-03
-insight: "Plote Extended Bayesian Skyline Plots (EBSP) com facilidade e estética refinada."
+insight: "Se você passou 3 meses rodando o BEAST, você merece um gráfico decente em 3 segundos sem brigar com arquivos de texto."
 tags: ["R", "Phylogenetics", "Evolutionary Biology"]
 ---
 

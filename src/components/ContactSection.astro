@@ -2,13 +2,13 @@
 import { Github, Globe, GraduationCap, Mail, Twitter, Instagram } from 'lucide-astro';
 ---
 
-<section id="contact" class="py-24 px-4 max-w-6xl mx-auto border-t border-white/5">
+<section id="contact" class="py-24 px-4 max-w-6xl mx-auto border-t border-slate-100 dark:border-white/5 transition-colors duration-300">
     <div class="grid md:grid-cols-3 gap-16 items-start">
         <!-- Integrated Bio/About -->
         <div class="md:col-span-1 space-y-8">
             <div>
-                <h3 class="text-2xl font-bold text-white mb-6">Sobre o Autor</h3>
-                <div class="text-slate-400 leading-relaxed space-y-4 text-sm">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 font-mono">> whoami <span class="text-sky-600 dark:text-sky-500">--identity</span></h3>
+                <div class="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4 text-sm font-mono opacity-90">
                     <p>
                         Sou Biólogo com doutorado em Genética e Biologia Molecular. Meu trabalho transita entre a biologia evolutiva 
                         e a ciência da computação, com foco em ecologia molecular e análise de dados genômicos.
@@ -21,8 +21,8 @@ import { Github, Globe, GraduationCap, Mail, Twitter, Instagram } from 'lucide-a
             </div>
 
             <div>
-                <h4 class="text-xs font-mono uppercase tracking-widest text-slate-500 mb-4">Contato Direto</h4>
-                <a href="mailto:wilsonfrantine@gmail.com" class="flex items-center gap-3 text-sky-400 font-bold hover:text-white transition-colors">
+                <h4 class="text-xs font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">Contato Direto</h4>
+                <a href="mailto:wilsonfrantine@gmail.com" class="flex items-center gap-3 text-sky-600 dark:text-sky-400 font-bold hover:text-slate-900 dark:hover:text-white transition-colors font-mono">
                     <Mail size={18} /> wilsonfrantine@gmail.com
                 </a>
             </div>
@@ -30,47 +30,47 @@ import { Github, Globe, GraduationCap, Mail, Twitter, Instagram } from 'lucide-a
         
         <!-- Social/Academic Grid -->
         <div class="md:col-span-2 space-y-8">
-            <h3 class="text-2xl font-bold text-white">Networking</h3>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-mono">> ssh <span class="text-sky-600 dark:text-sky-500">--connections</span></h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
-                    <GraduationCap class="text-sky-400 group-hover:scale-110 transition-transform" />
+                <a href="https://scholar.google.com/citations?user=1YVXRuEAAAAJ" class="p-6 bg-slate-50 dark:bg-white/2 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <GraduationCap class="text-sky-600 dark:text-sky-400 group-hover:scale-110 transition-transform" />
                     <div>
-                        <span class="block text-white font-bold text-sm">Google Scholar</span>
-                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Publicações Acadêmicas</span>
+                        <span class="block text-slate-900 dark:text-white font-bold text-sm">Google Scholar</span>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-tighter italic">Publicações Acadêmicas</span>
                     </div>
                 </a>
-                <a href="https://github.com/wilsonfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
-                    <Github class="text-sky-400 group-hover:scale-110 transition-transform" />
+                <a href="https://github.com/wilsonfrantine" class="p-6 bg-slate-50 dark:bg-white/2 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Github class="text-sky-600 dark:text-sky-400 group-hover:scale-110 transition-transform" />
                     <div>
-                        <span class="block text-white font-bold text-sm">GitHub</span>
-                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Código & Ferramentas</span>
+                        <span class="block text-slate-900 dark:text-white font-bold text-sm">GitHub</span>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-tighter italic">Código & Ferramentas</span>
                     </div>
                 </a>
-                <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
-                    <Globe class="text-sky-400 group-hover:scale-110 transition-transform" />
+                <a href="https://www.researchgate.net/profile/Wilson-Frantine-Silva" class="p-6 bg-slate-50 dark:bg-white/2 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Globe class="text-sky-600 dark:text-sky-400 group-hover:scale-110 transition-transform" />
                     <div>
-                        <span class="block text-white font-bold text-sm">ResearchGate</span>
-                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Artigos & Impacto</span>
+                        <span class="block text-slate-900 dark:text-white font-bold text-sm">ResearchGate</span>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-tighter italic">Artigos & Impacto</span>
                     </div>
                 </a>
-                <a href="https://x.com/wfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
-                    <Twitter class="text-sky-400 group-hover:scale-110 transition-transform" />
+                <a href="https://x.com/wfrantine" class="p-6 bg-slate-50 dark:bg-white/2 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Twitter class="text-sky-600 dark:text-sky-400 group-hover:scale-110 transition-transform" />
                     <div>
-                        <span class="block text-white font-bold text-sm">X / Twitter</span>
-                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Insights & Ciência</span>
+                        <span class="block text-slate-900 dark:text-white font-bold text-sm">X / Twitter</span>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-tighter italic">Insights & Ciência</span>
                     </div>
                 </a>
-                <a href="https://instagram.com/wilsonfrantine" class="p-6 bg-white/2 border border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
-                    <Instagram class="text-sky-400 group-hover:scale-110 transition-transform" />
+                <a href="https://instagram.com/wilsonfrantine" class="p-6 bg-slate-50 dark:bg-white/2 border border-slate-200 dark:border-white/5 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col gap-4 group">
+                    <Instagram class="text-sky-600 dark:text-sky-400 group-hover:scale-110 transition-transform" />
                     <div>
-                        <span class="block text-white font-bold text-sm">Instagram</span>
-                        <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Bastidores & Vida</span>
+                        <span class="block text-slate-900 dark:text-white font-bold text-sm">Instagram</span>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 uppercase tracking-tighter italic">Bastidores & Vida</span>
                     </div>
                 </a>
             </div>
             
-            <p class="text-slate-500 font-mono text-[10px] uppercase tracking-[0.2em] leading-loose italic">
-                Aberto para colaborações acadêmicas • Consultoria técnica • Ciência reprodutível
+            <p class="text-slate-500 font-mono text-[10px] tracking-[0.2em] leading-loose italic">
+                Reporte bugs, sugira melhorias (seja gentil) ou envie um ping. Latência inversamente proporcional ao nível de cafeína.
             </p>
         </div>
     </div>

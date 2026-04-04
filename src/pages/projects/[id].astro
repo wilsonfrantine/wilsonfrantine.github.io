@@ -21,72 +21,74 @@ const readmeContent = await getRepoReadme(entry.data.repo);
 ---
 
 <Layout title={`${entry.data.title} | TATAbox Projects`}>
-  <main class="relative bg-slate-950 min-h-screen py-32 px-4 max-w-5xl mx-auto font-sans">
-    
-    <div class="mb-12">
-      <a href="/#projects" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-500 hover:text-white transition-all">
-        ← Voltar para Projetos
-      </a>
-    </div>
-
-    <article class="prose prose-invert prose-sky max-w-none">
-      <header class="mb-16 not-prose">
-        <div class="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 mb-6">
-          <span class="px-2 py-0.5 border border-slate-800 rounded bg-slate-900/50">{entry.data.category}</span>
-          <span>{entry.data.pubDate.toLocaleDateString('pt-BR')}</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-tight italic">
-          {entry.data.title}
-        </h1>
-        
-        <p class="text-xl md:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl border-l-4 border-sky-500 pl-8 py-2 italic">
-          {entry.data.description}
-        </p>
-
-        <div class="flex flex-wrap gap-4 mt-10">
-            <a href={`https://github.com/wilsonfrantine/${entry.data.repo}`} 
-               rel="noopener noreferrer"
-               class="px-6 py-3 bg-white text-slate-950 rounded-full font-bold text-[10px] uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
-                <Github size={14} /> Ver no GitHub
-            </a>
-            {entry.data.insight && (
-               <div class="flex items-center gap-3 px-5 py-3 bg-sky-500/5 border border-sky-500/10 rounded-full">
-                  <Star class="text-sky-400" size={14} />
-                  <span class="text-[9px] font-mono text-sky-400 uppercase tracking-widest leading-none mt-0.5">
-                    {entry.data.insight}
-                  </span>
-               </div>
-            )}
-        </div>
-      </header>
-
-      <div class="content text-slate-300 leading-relaxed text-lg mb-20" id="project-content">
-        <Content />
+  <main class="relative bg-white dark:bg-slate-950 bg-dot-grid min-h-screen py-32 px-4 transition-colors duration-300">
+    <div class="max-w-5xl mx-auto font-sans relative z-10">
+      
+      <div class="mb-12">
+        <a href="/#projects" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-600 dark:text-sky-500 hover:text-slate-900 dark:hover:text-white transition-all">
+          ← [ cd .. /projetos ]
+        </a>
       </div>
 
-      <footer class="mt-32 pt-16 border-t border-slate-900 not-prose">
-        <div class="flex items-center gap-4 mb-10 text-slate-700 font-mono text-[9px] uppercase tracking-[0.4em]">
-            <div class="h-px flex-1 bg-slate-900"></div>
-            <span>Documentação Técnica (Raw)</span>
-            <div class="h-px flex-1 bg-slate-900"></div>
+      <article class="prose prose-slate dark:prose-invert prose-sky max-w-none">
+        <header class="mb-16 not-prose">
+          <div class="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">
+            <span class="px-2 py-0.5 border border-slate-200 dark:border-slate-800 rounded bg-slate-50 dark:bg-slate-900/50">{entry.data.category}</span>
+            <span>{entry.data.pubDate.toLocaleDateString('pt-BR')}</span>
+          </div>
+          
+          <h1 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-8 tracking-tighter leading-tight font-mono italic">
+            > {entry.data.title.toLowerCase().replace(/\s+/g, '_')}<span class="text-sky-500">.md</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-3xl border-l-4 border-sky-500 pl-8 py-2 italic font-mono opacity-90">
+            {entry.data.description}
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-10">
+              <a href={`https://github.com/wilsonfrantine/${entry.data.repo}`} 
+                 rel="noopener noreferrer"
+                 class="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-950 rounded-full font-bold text-[10px] uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
+                  <Github size={14} /> Ver no GitHub
+              </a>
+              {entry.data.insight && (
+                 <div class="flex items-center gap-3 px-5 py-3 bg-sky-500/5 border border-sky-500/10 rounded-full">
+                    <Star class="text-sky-600 dark:text-sky-400" size={14} />
+                    <span class="text-[9px] font-mono text-sky-600 dark:text-sky-400 uppercase tracking-widest leading-none mt-0.5">
+                      {entry.data.insight}
+                    </span>
+                 </div>
+              )}
+          </div>
+        </header>
+
+        <div class="content text-slate-700 dark:text-slate-300 leading-relaxed text-lg mb-20" id="project-content">
+          <Content />
         </div>
 
-        <div class="bg-slate-900/20 border border-slate-800/50 p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-sm">
-            <div class="max-w-md text-center md:text-left">
-                <h3 class="text-white font-bold mb-2">Repositório Oficial</h3>
-                <p class="text-sm text-slate-500 font-mono leading-relaxed">
-                    Para detalhes de implementação, contribuições ou visualização do código-fonte bruto, acesse o README oficial.
-                </p>
-            </div>
-            <a href={`https://github.com/wilsonfrantine/${entry.data.repo}#readme`} 
-               rel="noopener noreferrer"
-               class="px-8 py-4 border border-slate-700 text-slate-400 rounded-full font-bold text-[10px] uppercase tracking-widest hover:border-sky-500/30 hover:text-white transition-all flex items-center gap-2 shrink-0">
-                <ExternalLink size={14} /> GitHub README.md
-            </a>
-        </div>
-      </footer>
-    </article>
+        <footer class="mt-32 pt-16 border-t border-slate-100 dark:border-slate-900 not-prose">
+          <div class="flex items-center gap-4 mb-10 text-slate-300 dark:text-slate-700 font-mono text-[9px] uppercase tracking-[0.4em]">
+              <div class="h-px flex-1 bg-slate-100 dark:bg-slate-900"></div>
+              <span>Documentação Técnica (Raw)</span>
+              <div class="h-px flex-1 bg-slate-100 dark:bg-slate-900"></div>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-900/20 border border-slate-100 dark:border-slate-800/50 p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-sm">
+              <div class="max-w-md text-center md:text-left">
+                  <h3 class="text-slate-900 dark:text-white font-bold mb-2">Repositório Oficial</h3>
+                  <p class="text-sm text-slate-500 font-mono leading-relaxed">
+                      Para detalhes de implementação, contribuições ou visualização do código-fonte bruto, acesse o README oficial.
+                  </p>
+              </div>
+              <a href={`https://github.com/wilsonfrantine/${entry.data.repo}#readme`} 
+                 rel="noopener noreferrer"
+                 class="px-8 py-4 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 rounded-full font-bold text-[10px] uppercase tracking-widest hover:border-sky-500/30 hover:text-sky-600 dark:hover:text-white transition-all flex items-center gap-2 shrink-0">
+                  <ExternalLink size={14} /> GitHub README.md
+              </a>
+          </div>
+        </footer>
+      </article>
+    </div>
   </main>
 </Layout>
 
@@ -94,30 +96,30 @@ const readmeContent = await getRepoReadme(entry.data.repo);
   @reference "../../styles/global.css";
   
   .content h2, .content h3 {
-    @apply font-bold text-white tracking-tight mt-12 mb-6 italic;
+    @apply font-bold text-slate-900 dark:text-white tracking-tight mt-12 mb-6 italic;
     text-transform: none !important;
   }
-  .content h2 { @apply text-3xl border-b border-slate-900 pb-2; }
-  .content h3 { @apply text-xl text-sky-400/80; }
+  .content h2 { @apply text-3xl border-b border-slate-100 dark:border-slate-900 pb-2 font-mono; }
+  .content h3 { @apply text-xl text-sky-600 dark:text-sky-400/80 font-mono; }
   
-  .content p { @apply mb-6 text-slate-400 leading-relaxed; }
+  .content p { @apply mb-6 text-slate-600 dark:text-slate-400 leading-relaxed; }
   
   .content figure.float-right {
     @apply md:float-right md:ml-8 mb-8 md:mb-4 w-full md:w-1/2 lg:w-2/5;
   }
-  .content figure img { @apply rounded-2xl border border-slate-800 w-full; }
-  .content figcaption { @apply text-[11px] font-mono text-slate-600 mt-3 leading-relaxed italic text-center md:text-left; }
+  .content figure img { @apply rounded-2xl border border-slate-200 dark:border-slate-800 w-full; }
+  .content figcaption { @apply text-[11px] font-mono text-slate-500 dark:text-slate-600 mt-3 leading-relaxed italic text-center md:text-left; }
 
   .content pre { 
-    @apply bg-slate-900/50 border border-slate-800 p-8 rounded-[2rem] my-10 overflow-x-auto relative; 
+    @apply bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 p-8 rounded-[2rem] my-10 overflow-x-auto relative; 
   }
   .content code { 
-    @apply font-mono text-sky-400 text-sm bg-sky-400/5 px-1.5 py-0.5 rounded-md; 
+    @apply font-mono text-sky-600 dark:text-sky-400 text-sm bg-sky-500/5 px-1.5 py-0.5 rounded-md; 
   }
-  .content pre code { @apply bg-transparent p-0 text-slate-300 block; }
+  .content pre code { @apply bg-transparent p-0 text-slate-700 dark:text-slate-300 block; }
   
   .copy-button {
-    @apply absolute top-4 right-6 opacity-0 transition-opacity px-3 py-1 bg-slate-800 text-[10px] font-mono text-slate-400 rounded-full hover:bg-sky-500 hover:text-white uppercase tracking-widest;
+    @apply absolute top-4 right-6 opacity-0 transition-opacity px-3 py-1 bg-slate-200 dark:bg-slate-800 text-[10px] font-mono text-slate-500 dark:text-slate-400 rounded-full hover:bg-sky-500 hover:text-white uppercase tracking-widest;
   }
 
   .content pre:hover .copy-button {
@@ -125,6 +127,6 @@ const readmeContent = await getRepoReadme(entry.data.repo);
   }
 
   .content a {
-    @apply text-sky-400 hover:text-white underline underline-offset-4 decoration-sky-500/30 transition-all;
+    @apply text-sky-600 dark:text-sky-400 hover:text-slate-900 dark:hover:text-white underline underline-offset-4 decoration-sky-500/30 transition-all;
   }
 </style>

@@ -1,10 +1,10 @@
 ---
 repo: "ggrelated"
 title: "ggrelated"
-description: "Visualização elegante de estimativas de parentesco genético para ecologia reprodutiva."
+description: "Quem é parente de quem? Estime o parentesco (relatedness) sem precisar ler o manual do related dez vezes e com gráficos que não parecem de 1995."
 category: "Bioinfo Hub"
 pubDate: 2026-04-03
-insight: "Facilitar a visualização de kinship com um único script."
+insight: "Transforme matrizes de genótipos em laços familiares sem perder o juízo (ou a paciência com o FigTree)."
 tags: ["R", "Genetics", "Visualization"]
 ---
 

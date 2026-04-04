@@ -16,44 +16,46 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={`${entry.data.title} | TATAbox Tutorials`}>
-  <main class="relative bg-slate-950 min-h-screen py-32 px-4 max-w-4xl mx-auto">
-    <!-- Navegação de Voltar -->
-    <a href="/" class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-sky-500 hover:text-white transition-colors mb-12">
-      ← Voltar para a Bancada
-    </a>
+  <main class="relative bg-white dark:bg-slate-950 bg-dot-grid min-h-screen py-32 px-4 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto font-sans relative z-10">
+      <!-- Navegação de Voltar -->
+      <a href="/" class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-600 dark:text-sky-500 hover:text-slate-900 dark:hover:text-white transition-all mb-12">
+        ← [ cd .. /bancada ]
+      </a>
 
-    <article class="prose prose-invert prose-sky max-w-none">
-      <header class="mb-16 not-prose">
-        <div class="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 mb-4">
-          <span class="px-2 py-0.5 border border-slate-800 rounded">{entry.data.category}</span>
-          <span>{entry.data.pubDate.toLocaleDateString('pt-BR')}</span>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
-          {entry.data.title}
-        </h1>
-        <p class="text-xl text-slate-400 font-light leading-relaxed italic">
-          {entry.data.description}
-        </p>
-      </header>
-
-      <div class="content text-slate-300 leading-relaxed text-lg">
-        <Content />
-      </div>
-
-      <SeriesNavigator currentId={entry.id} collection="tutorials" />
-
-      <footer class="mt-20 pt-10 border-t border-slate-900 not-prose">
-        <div class="flex items-center gap-4">
-          <div class="w-10 h-10 bg-sky-500/10 border border-sky-500/20 rounded-full flex items-center justify-center font-mono text-sky-400 font-bold">
-            WF
+      <article class="prose prose-slate dark:prose-invert prose-sky max-w-none">
+        <header class="mb-16 not-prose">
+          <div class="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6">
+            <span class="px-2 py-0.5 border border-slate-200 dark:border-slate-800 rounded bg-slate-50 dark:bg-slate-900/50">{entry.data.category}</span>
+            <span>{entry.data.pubDate.toLocaleDateString('pt-BR')}</span>
           </div>
-          <div>
-            <p class="text-xs font-mono uppercase tracking-widest text-slate-500">Escrito por</p>
-            <p class="text-sm font-bold text-white">{entry.data.author}</p>
-          </div>
+          <h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight leading-tight font-mono italic">
+            > {entry.id.replace(/\s+/g, '_')}<span class="text-sky-500">.sh</span>
+          </h1>
+          <p class="text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed italic border-l-4 border-sky-500 pl-8 py-2 font-mono opacity-90">
+            {entry.data.description}
+          </p>
+        </header>
+
+        <div class="content text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+          <Content />
         </div>
-      </footer>
-    </article>
+
+        <SeriesNavigator currentId={entry.id} collection="tutorials" />
+
+        <footer class="mt-20 pt-10 border-t border-slate-100 dark:border-slate-900 not-prose">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-sky-500/10 border border-sky-500/20 rounded-full flex items-center justify-center font-mono text-sky-600 dark:text-sky-400 font-bold">
+              WF
+            </div>
+            <div>
+              <p class="text-[9px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">Escrito por</p>
+              <p class="text-sm font-bold text-slate-900 dark:text-white">{entry.data.author}</p>
+            </div>
+          </div>
+        </footer>
+      </article>
+    </div>
   </main>
 </Layout>
 
@@ -62,15 +64,34 @@ const { Content } = await render(entry);
   
   /* Adicionando estilos extras para o Markdown */
   .content h1, .content h2, .content h3 {
-    @apply font-black text-white tracking-tight mt-12 mb-6;
+    @apply font-bold text-slate-900 dark:text-white tracking-tight mt-12 mb-6 italic;
+    text-transform: none !important;
   }
-  .content h2 { @apply text-3xl; }
-  .content h3 { @apply text-2xl; }
-  .content p { @apply mb-6; }
-  .content ul { @apply list-disc pl-6 mb-6 space-y-2; }
-  .content ol { @apply list-decimal pl-6 mb-6 space-y-2; }
-  .content blockquote { @apply border-l-4 border-sky-500/40 pl-6 italic text-slate-400 my-10; }
-  .content pre { @apply bg-slate-900 border border-slate-800 p-6 rounded-xl my-8 overflow-x-auto; }
-  .content code { @apply font-mono text-sky-400 text-sm bg-sky-400/10 px-1.5 py-0.5 rounded; }
-  .content pre code { @apply bg-transparent p-0 text-slate-300; }
+  .content h2 { @apply text-3xl border-b border-slate-100 dark:border-slate-900 pb-2 font-mono; }
+  .content h3 { @apply text-2xl text-sky-600 dark:text-sky-400/80 font-mono; }
+  
+  .content p { @apply mb-6 text-slate-600 dark:text-slate-400 leading-relaxed; }
+  .content ul { @apply list-disc pl-6 mb-6 space-y-2 text-slate-600 dark:text-slate-400; }
+  .content ol { @apply list-decimal pl-6 mb-6 space-y-2 text-slate-600 dark:text-slate-400; }
+  .content blockquote { @apply border-l-4 border-sky-500/40 pl-6 italic text-slate-500 dark:text-slate-400 my-10 bg-slate-50 dark:bg-slate-900/30 py-4 rounded-r-xl; }
+  
+  .content pre { 
+    @apply bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 p-8 rounded-[2rem] my-10 overflow-x-auto relative; 
+  }
+  .content code { 
+    @apply font-mono text-sky-600 dark:text-sky-400 text-sm bg-sky-500/5 px-1.5 py-0.5 rounded-md; 
+  }
+  .content pre code { @apply bg-transparent p-0 text-slate-700 dark:text-slate-300 block; }
+  
+  .copy-button {
+    @apply absolute top-4 right-6 opacity-0 transition-opacity px-3 py-1 bg-slate-200 dark:bg-slate-800 text-[10px] font-mono text-slate-500 dark:text-slate-400 rounded-full hover:bg-sky-500 hover:text-white uppercase tracking-widest;
+  }
+
+  .content pre:hover .copy-button {
+    @apply opacity-100;
+  }
+
+  .content a {
+    @apply text-sky-600 dark:text-sky-400 hover:text-slate-900 dark:hover:text-white underline underline-offset-4 decoration-sky-500/30 transition-all;
+  }
 </style>
