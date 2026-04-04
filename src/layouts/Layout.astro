@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { Menu, X } from 'lucide-astro';
 
 interface Props {
 	title: string;
@@ -49,22 +50,114 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-slate-950 bg-dot-grid text-slate-300 font-sans selection:bg-sky-500/30 overflow-x-hidden">
+		<!-- Navegação Global -->
+		<nav class="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md bg-slate-950/80 border-b border-white/5">
+			<a href="/" class="font-mono text-xs tracking-[0.3em] text-sky-500 font-bold uppercase z-50">
+				TATA<span class="text-white">box</span> <span class="text-slate-800 mx-2">//</span> <span class="text-slate-500 font-normal">Bio+Info</span>
+			</a>
+
+			<!-- Botão Mobile -->
+			<button id="menu-toggle" class="md:hidden text-white z-50 focus:outline-none p-2" aria-label="Abrir menu">
+				<Menu id="menu-icon" size={24} />
+				<X id="close-icon" size={24} class="hidden" />
+			</button>
+
+			<!-- Menu Desktop -->
+			<ul class="hidden md:flex gap-10 text-[10px] font-mono tracking-[0.2em] uppercase text-slate-500">
+				<li><a href="/#hero" class="hover:text-white transition-colors font-bold">Início</a></li>
+				<li><a href="/#projects" class="hover:text-white transition-colors font-bold">Projetos</a></li>
+				<li><a href="/#research" class="hover:text-white transition-colors font-bold">Pesquisa</a></li>
+				<li><a href="/#teaching" class="hover:text-white transition-colors font-bold">Recursos</a></li>
+				<li><a href="/#contact" class="hover:text-white transition-colors font-bold">Networking</a></li>
+			</ul>
+
+			<!-- Menu Mobile Overlay -->
+			<div id="mobile-menu" class="fixed inset-0 bg-slate-950 flex flex-col items-center justify-center translate-x-full transition-transform duration-300 md:hidden">
+				<ul class="flex flex-col gap-10 text-xs font-mono tracking-[0.4em] uppercase text-slate-500 text-center px-8">
+					<li><a href="/#hero" class="mobile-link hover:text-white transition-colors block py-2 font-bold">Início</a></li>
+					<li><a href="/#projects" class="mobile-link hover:text-white transition-colors block py-2 font-bold">Projetos</a></li>
+					<li><a href="/#research" class="mobile-link hover:text-white transition-colors block py-2 font-bold">Pesquisa</a></li>
+					<li><a href="/#teaching" class="mobile-link hover:text-white transition-colors block py-2 font-bold">Recursos</a></li>
+					<li><a href="/#contact" class="mobile-link hover:text-white transition-colors block py-2 font-bold">Networking</a></li>
+				</ul>
+				<div class="absolute bottom-12 font-mono text-[8px] text-slate-800 tracking-[0.5em] uppercase">
+					Wilson Frantine-Silva // TATAbox
+				</div>
+			</div>
+		</nav>
+
 		<slot />
+
+		<script>
+			function initGlobalScripts() {
+				// 1. Menu Mobile
+				const menuToggle = document.getElementById('menu-toggle');
+				const mobileMenu = document.getElementById('mobile-menu');
+				const menuIcon = document.getElementById('menu-icon');
+				const closeIcon = document.getElementById('close-icon');
+				const mobileLinks = document.querySelectorAll('.mobile-link');
+
+				function toggleMenu() {
+					if (mobileMenu && menuIcon && closeIcon) {
+						mobileMenu.classList.toggle('translate-x-full');
+						menuIcon.classList.toggle('hidden');
+						closeIcon.classList.toggle('hidden');
+						document.body.style.overflow = mobileMenu.classList.contains('translate-x-full') ? 'auto' : 'hidden';
+					}
+				}
+
+				menuToggle?.replaceWith(menuToggle.cloneNode(true)); // Limpa listeners antigos
+				document.getElementById('menu-toggle')?.addEventListener('click', toggleMenu);
+
+				mobileLinks.forEach(link => {
+					link.addEventListener('click', toggleMenu);
+				});
+
+				// 2. Automação Inteligente de Links Externos
+				const links = document.getElementsByTagName('a');
+				const currentHost = window.location.host;
+
+				for (let link of links) {
+					const href = link.getAttribute('href');
+					if (href && (href.startsWith('http') || href.startsWith('//'))) {
+						try {
+							const linkUrl = new URL(href, window.location.origin);
+							if (linkUrl.host !== currentHost) {
+								link.setAttribute('target', '_blank');
+								link.setAttribute('rel', 'noopener noreferrer');
+							}
+						} catch (e) {
+							link.setAttribute('target', '_blank');
+							link.setAttribute('rel', 'noopener noreferrer');
+						}
+					}
+				}
+
+				// 3. Botões de Cópia em Blocos de Código
+				document.querySelectorAll('pre').forEach((block) => {
+					if (navigator.clipboard && !block.querySelector('.copy-button')) {
+						const button = document.createElement('button');
+						button.innerText = 'Copy';
+						button.className = 'copy-button';
+						block.appendChild(button);
+
+						button.addEventListener('click', async () => {
+							const text = block.querySelector('code')?.innerText || '';
+							await navigator.clipboard.writeText(text);
+							button.innerText = 'Copied!';
+							setTimeout(() => (button.innerText = 'Copy'), 2000);
+						});
+					}
+				});
+			}
+
+			initGlobalScripts();
+			document.addEventListener('astro:page-load', initGlobalScripts);
+		</script>
 	</body>
 </html>
 
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
 	body {
 		margin: 0;
 		width: 100%;

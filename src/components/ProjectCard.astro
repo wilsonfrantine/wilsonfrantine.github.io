@@ -1,17 +1,18 @@
 ---
-import { Github, ExternalLink, Activity, Clock } from 'lucide-astro';
+import { Github, ExternalLink, Activity, Clock, Globe } from 'lucide-astro';
 
 interface Props {
   name: string;
   description: string;
   url: string;
+  demoUrl?: string;
   image: string;
   tags: string[];
   status?: "Em Breve" | "Ativo" | string;
   category: string;
 }
 
-const { name, description, url, image, tags, status = "Ativo", category } = Astro.props;
+const { name, description, url, demoUrl, image, tags, status = "Ativo", category } = Astro.props;
 const isComingSoon = status === "Em Breve";
 
 const isBioinfo = category === "Bioinfo Hub";
@@ -24,8 +25,13 @@ const patternClass = isBioinfo ? "bg-pattern-code" : isDataEcology ? "bg-pattern
   
   <div class="relative z-10">
     {!isComingSoon && (
-      <div class="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
-        <a href={url} target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white">
+      <div class="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+        {demoUrl && (
+          <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-white" title="Abrir Aplicação">
+            <Globe size={20} />
+          </a>
+        )}
+        <a href={url} class="text-sky-400 hover:text-white" title="Ver Detalhes">
           <ExternalLink size={20} />
         </a>
       </div>
@@ -64,9 +70,16 @@ const patternClass = isBioinfo ? "bg-pattern-code" : isDataEcology ? "bg-pattern
       </div>
       
       {!isComingSoon && (
-        <a href={url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-sky-400 hover:text-white transition-colors bg-sky-500/10 px-2.5 py-1 rounded">
-          <ExternalLink size={12} /> Acessar
-        </a>
+        <div class="flex gap-2">
+          {demoUrl && (
+            <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-emerald-400 hover:text-white transition-colors bg-emerald-500/10 px-2.5 py-1 rounded">
+              <Globe size={12} /> Live
+            </a>
+          )}
+          <a href={url} class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-sky-400 hover:text-white transition-colors bg-sky-500/10 px-2.5 py-1 rounded">
+            {demoUrl ? "Doc" : "Acessar"}
+          </a>
+        </div>
       )}
     </div>
   </div>

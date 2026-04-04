@@ -31,6 +31,7 @@ ROADMAP.md
 *.temp
 scripts.js
 styles.css
+temp/
 
 # VS Code
 .vscode/

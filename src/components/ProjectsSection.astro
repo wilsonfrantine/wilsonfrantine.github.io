@@ -6,17 +6,22 @@ interface Props {
 }
 
 const { projects } = Astro.props;
-const categories = ["Trilhas de Aprendizado", "Bioinfo Hub", "Data Ecology"];
+const categories = ["Trilhas de Aprendizado", "Bioinfo Hub", "Data Ecology", "Outros"];
 ---
 
 <section id="projects" class="py-24 px-4 max-w-7xl mx-auto">
-    <header class="mb-16">
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-            Projetos <span class="text-sky-400">Selecionados</span>
-        </h2>
-        <p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
-            Ferramentas científicas & Software de código aberto
-        </p>
+    <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+                Projetect <span class="text-sky-400">Hub</span>
+            </h2>
+            <p class="text-slate-400 font-mono text-sm uppercase tracking-widest">
+                Ferramentas científicas & Software de código aberto
+            </p>
+        </div>
+        <a href="/projects" class="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 hover:text-sky-400 transition-colors border border-slate-800 px-6 py-3 rounded-full hover:border-sky-500/30">
+            Ver Repositório Completo →
+        </a>
     </header>
 
     <div class="space-y-20">
