@@ -9,7 +9,7 @@ import ContactSection from '../components/ContactSection.astro';
 import { featuredProjects } from '../data/featured';
 import { getOrcidPublications } from '../data/orcid-publications';
 
-const projects = featuredProjects;
+const projects = [...featuredProjects].sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 const publications = await getOrcidPublications();
 ---
 

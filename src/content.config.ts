@@ -47,7 +47,7 @@ const series = defineCollection({
     description: z.string(),
     items: z.array(z.object({
       id: z.string(),
-      collection: z.enum(['tutorials', 'snippets'])
+      collection: z.enum(['tutorials', 'snippets', 'projects'])
     })),
   }),
 });

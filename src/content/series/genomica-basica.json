@@ -1,9 +1,0 @@
-{
-  "title": "Introdução à Manipulação de Dados Genômicos",
-  "description": "Uma sequência lógica para quem está começando a lidar com arquivos de sequenciamento no terminal.",
-  "items": [
-    { "id": "astro101-introducao", "collection": "tutorials" },
-    { "id": "grep-dna", "collection": "snippets" },
-    { "id": "samtools-extract", "collection": "snippets" }
-  ]
-}

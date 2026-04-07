@@ -1,5 +1,8 @@
 ---
-import { BookOpen, ExternalLink, Youtube } from 'lucide-astro';
+import { BookOpen, ExternalLink, List } from 'lucide-astro';
+import { getCollection } from 'astro:content';
+
+const allSeries = await getCollection('series');
 ---
 
 <section id="teaching" class="py-24 px-4 max-w-7xl mx-auto transition-colors duration-300">
@@ -8,32 +11,40 @@ import { BookOpen, ExternalLink, Youtube } from 'lucide-astro';
             > ~/teaching <span class="text-sky-600 dark:text-sky-400">--help</span>
         </h2>
         <p class="text-slate-500 dark:text-slate-400 font-mono text-sm tracking-widest">
-            Materiais de aula e guias rápidos. Porque ensinar é a única forma de eu não esquecer como as coisas funcionam.
+            Materiais de aula e guias rápidos estruturados em trilhas de aprendizado.
         </p>
     </header>
 
-    <div class="grid md:grid-cols-2 gap-8">
-        <div class="p-8 border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-slate-900/40 rounded-3xl hover:border-sky-500/30 transition-all group shadow-sm dark:shadow-none">
-            <BookOpen class="text-sky-600 dark:text-sky-400 mb-6" size={32} />
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Bioinformática Simplificada</h3>
-            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-mono text-sm opacity-90">
-                Um guia prático em PDF cobrindo o básico da linha de comando, análise de dados genômicos e visualização avançada em R. 
-                Projetado para biólogos iniciando sua jornada computacional.
-            </p>
-            <a href="#" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold hover:text-slate-900 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest">
-                Baixar Guia (PDF) <ExternalLink size={14} />
-            </a>
-        </div>
-        <div class="p-8 border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-slate-900/40 rounded-3xl hover:border-sky-500/30 transition-all group shadow-sm dark:shadow-none">
-            <Youtube class="text-sky-600 dark:text-sky-400 mb-6" size={32} />
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Série Genética 101</h3>
-            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-mono text-sm opacity-90">
-                Série de vídeos curtos e impactantes sobre genética de populações, evolução molecular e técnicas de análise 
-                de dados do mundo real para estudantes de graduação e pós-graduação.
-            </p>
-            <a href="#" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold hover:text-slate-900 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest">
-                Assistir no YouTube <ExternalLink size={14} />
-            </a>
-        </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {allSeries.map((series) => {
+            const firstItem = series.data.items[0];
+            const href = firstItem ? `/${firstItem.collection}/${firstItem.id}` : '#';
+            
+            return (
+                <div class="p-8 border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-slate-900/40 rounded-3xl hover:border-sky-500/30 transition-all group shadow-sm dark:shadow-none flex flex-col h-full">
+                    <div class="flex items-center gap-3 mb-6">
+                        <List class="text-sky-600 dark:text-sky-400" size={24} />
+                        <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400">Série de Aprendizado</span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                        {series.data.title}
+                    </h3>
+                    
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-mono text-sm opacity-90 flex-grow">
+                        {series.data.description}
+                    </p>
+                    
+                    <div class="flex items-center justify-between pt-6 border-t border-slate-200 dark:border-white/5">
+                        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                            {series.data.items.length} módulos
+                        </span>
+                        <a href={href} class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold hover:text-slate-900 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest">
+                            Iniciar Trilha <ExternalLink size={14} />
+                        </a>
+                    </div>
+                </div>
+            );
+        })}
     </div>
 </section>

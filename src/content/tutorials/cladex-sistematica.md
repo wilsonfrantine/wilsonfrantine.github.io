@@ -1,37 +1,34 @@
 ---
 title: "Tree-Thinking com CladeX"
-description: "Guia prático para não confundir mais grupos parafiléticos e entender onde os caracteres surgem."
+description: "Guia prático para não confundir mais grupos parafiléticos e entender onde os caracteres surgem na árvore."
 category: "Bioinformática"
 pubDate: 2026-04-06
 author: "Wilson Frantine"
-image: "https://cdn-icons-png.flaticon.com/512/3222/3222792.png"
+image: "https://wilsonfrantine.github.io/cladex/favicon.svg"
 tags: ["Sistemática", "Educação", "Filogenia"]
 ---
 
-## > ~/tutorial --start
+## Do Conceito à Prática: Como dominar o CladeX
 
-A sistemática filogenética costuma ser ensinada como uma série de definições estáticas: monofilético, parafilético, polifilético. No papel, tudo parece fazer sentido até que a árvore cresce e você se perde nos ramos. O **CladeX** foi criado para você quebrar essa barreira clicando na árvore.
+Se você está aqui, provavelmente já percebeu que ler árvores filogenéticas no papel é fácil até que a árvore cresce. O **CladeX** não é apenas um visualizador; é um simulador gamificado onde você aprende errando (e vendo por que errou).
 
-### > ~/conceitos --node
+### 1. Comece pelo Treinamento (O "Como")
 
-#### 1. O ancestral comum mais recente (MRCA)
+Não tente adivinhar tudo de primeira. Vá para a seção de **Módulos** e escolha um grupo conhecido, como **Annelida** ou **Chordata**. 
 
-No CladeX, cada nó interno é um evento de especiação — o ancestral comum dos táxons acima dele. Clique nos nós. O simulador vai destacar todos os descendentes. Se você selecionou um grupo que não inclui *todos* esses descendentes, parabéns, você acaba de criar um grupo **parafilético** (e o sistema vai te dar um log de erro por isso).
+*   **Identifique o Ancestral (MRCA):** Clique em um nó da árvore. O sistema vai destacar todos os descendentes. Se você estava tentando formar um grupo e "sobrou" alguém de fora do destaque, parabéns: você visualizou um grupo **parafilético**.
+*   **A Caça às Sinapomorfias:** O CladeX vai te desafiar a encontrar onde um caráter (como a notocorda) surgiu. Não clique nos nomes das pontas; clique no nó mais profundo que une todos que possuem aquele caráter. É ali que a inovação evolutiva aconteceu.
 
-#### 2. Sinapomorfias (a herança compartilhada)
+### 2. O Desafio Diário (A Prova de Fogo)
 
-Caracteres não surgem do nada nos terminais. Eles aparecem nos nós internos (ancestrais). No modo de treinamento:
+Depois que você entender a mecânica nos módulos de treino, o próximo passo é o **Desafio Diário**. 
 
-*   Observe o caráter destacado (quadrado preenchido).
-*   Tente rastrear até o nó mais profundo que possui todos os táxons com esse caráter.
-*   Ali é o ponto de origem (a sinapomorfia).
+Aqui não há rede de segurança. Você recebe uma topologia aleatória e dicas taxonômicas (muitas vezes usando silhuetas do PhyloPic) e precisa identificar os táxons ocultos ou posicionar caracteres corretamente. É o teste final para saber se o seu *tree-thinking* está afiado ou se você ainda está "subindo escadas" em vez de ramos.
 
-### > ~/pratica --run
+### Dicas para não travar:
 
-Eu recomendo começar pelo módulo de **Annelida** ou **Chordata**. São grupos com histórias evolutivas bem documentadas e sinapomorfias claras (como a notocorda ou o clitelo). 
+*   **Olhe o Log de Erro:** Quando o sistema diz que você errou, ele explica a relação evolutiva. No CladeX, o log é parte da aula, não um castigo.
+*   **Siga o XP:** A gamificação (pontos de experiência) serve para te mostrar o quanto você está progredindo nos diferentes níveis de dificuldade.
+*   **Use as Silhuetas:** As imagens não são decorativas. Elas ajudam a associar a morfologia à posição filogenética, reforçando o conceito de homologia.
 
-1. Escolha um módulo.
-2. Tente identificar os clados principais.
-3. Se errar, leia a explicação. O log de erro no CladeX foi feito para ser lido, não ignorado.
-
-Lembre-se: filogenia não é sobre decorar nomes, é sobre entender a geografia do tempo biológico.
+Lembre-se: filogenia é sobre entender a geografia do tempo. No CladeX, você tem o mapa interativo; agora é só começar a navegar.

@@ -1,0 +1,7 @@
+{
+  "title": "Introdução ao R para Biólogos (R101)",
+  "description": "Uma jornada para transformar café em gráficos elegantes (e erros de sintaxe) começando do zero.",
+  "items": [
+    { "id": "R101", "collection": "projects" }
+  ]
+}

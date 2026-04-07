@@ -1,0 +1,7 @@
+{
+  "title": "Modelagem de Nicho Ecológico (ENM101)",
+  "description": "Trilha prática para aprender a modelar distribuição de espécies no R, do zero à projeção.",
+  "items": [
+    { "id": "ENM101", "collection": "projects" }
+  ]
+}

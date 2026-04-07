@@ -7,65 +7,21 @@ export interface FeaturedProject {
   category: "Trilhas de Aprendizado" | "Bioinfo Hub" | "Data Ecology" | "Outros";
   tags: string[];
   status?: "Em Breve" | "Ativo" | string;
+  pubDate: string; // Formato YYYY-MM-DD para ordenação
 }
 
 export const featuredProjects: FeaturedProject[] = [
-  // Trilhas de Aprendizado
-  {
-    name: "ENM101",
-    description: "Trilha de aprendizado sobre Modelagem de Nicho Ecológico. Para quando você quer saber onde a espécie está (ou onde ela acha que está).",
-    url: "/projects/enm101",
-    image: "https://cdn-icons-png.flaticon.com/512/5145/5145062.png",
-    category: "Trilhas de Aprendizado",
-    tags: ["R", "Ecology", "Education"],
-    status: "Ativo"
-  },
-  {
-    name: "R101",
-    description: "Introdução ao R. Onde a jornada para transformar café em gráficos elegantes (e erros de sintaxe) começa.",
-    url: "/projects/r101",
-    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
-    category: "Trilhas de Aprendizado",
-    tags: ["R", "Statistics", "Education"],
-    status: "Ativo"
-  },
-  {
-    name: "Astro101",
-    description: "Astronomia e imagens. Porque às vezes olhar para o DNA não é suficiente e precisamos de uma perspectiva maior.",
-    url: "/tutorials/astro101-introducao",
-    image: "https://cdn-icons-png.flaticon.com/512/3204/3204731.png",
-    category: "Trilhas de Aprendizado",
-    tags: ["Astronomy", "Education"],
-    status: "Ativo"
-  },
-
   // Bioinfo Hub
   {
-    name: "kviewer",
-    description: "Visualização de k-mers. Porque ler arquivos de sequenciamento bruto sem ajuda visual é pedir para ter dor de cabeça.",
-    url: "/projects/kviewer",
-    image: "https://cdn-icons-png.flaticon.com/512/2994/2994311.png",
+    name: "CladeX",
+    description: "Workbench de sistemática filogenética que transforma árvores estáticas em ferramentas interativas de descoberta.",
+    url: "/projects/cladex",
+    demoUrl: "https://wilsonfrantine.github.io/cladex/",
+    image: "https://wilsonfrantine.github.io/cladex/favicon.svg",
     category: "Bioinfo Hub",
-    tags: ["Bioinformatics", "Genomics", "Tool"],
-    status: "Ativo"
-  },
-  {
-    name: "ggrelated",
-    description: "Estimativa de parentesco sem sofrimento. Quem é parente de quem? Descubra antes que a árvore genealógica vire um círculo.",
-    url: "/projects/ggrelated",
-    image: "https://cdn-icons-png.flaticon.com/512/1239/1239719.png",
-    category: "Bioinfo Hub",
-    tags: ["R", "Population Genetics", "Visualization"],
-    status: "Ativo"
-  },
-  {
-    name: "ggDAPC",
-    description: "DAPC visual. Agrupar populações nunca foi tão estético. Se os grupos não separarem, a culpa não é do gráfico.",
-    url: "/projects/ggdapc",
-    image: "https://raw.githubusercontent.com/wilsonfrantine/ggDAPC/main/images/comparison.png",
-    category: "Bioinfo Hub",
-    tags: ["R", "Population Genetics", "Visualization"],
-    status: "Ativo"
+    tags: ["Phylogenetics", "Education", "Bioinformatics", "D3.js"],
+    status: "Ativo",
+    pubDate: "2026-04-06"
   },
   {
     name: "fastaregex",
@@ -75,17 +31,38 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
     category: "Bioinfo Hub",
     tags: ["Bioinformatics", "Regex", "JavaScript"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2026-03-15"
   },
   {
-    name: "CladeX",
-    description: "Simulador de tree-thinking e sistemática filogenética. Para quando o papel e o quadro branco não são suficientes.",
-    url: "/projects/cladex",
-    demoUrl: "https://wilsonfrantine.github.io/cladex/",
-    image: "https://cdn-icons-png.flaticon.com/512/3222/3222792.png",
+    name: "kviewer",
+    description: "Visualização de k-mers. Porque ler arquivos de sequenciamento bruto sem ajuda visual é pedir para ter dor de cabeça.",
+    url: "/projects/kviewer",
+    image: "https://cdn-icons-png.flaticon.com/512/2994/2994311.png",
     category: "Bioinfo Hub",
-    tags: ["Phylogenetics", "Education", "Bioinformatics", "D3.js"],
-    status: "Ativo"
+    tags: ["Bioinformatics", "Genomics", "Tool"],
+    status: "Ativo",
+    pubDate: "2025-11-20"
+  },
+  {
+    name: "ggrelated",
+    description: "Estimativa de parentesco sem sofrimento. Quem é parente de quem? Descubra antes que a árvore genealógica vire um círculo.",
+    url: "/projects/ggrelated",
+    image: "https://cdn-icons-png.flaticon.com/512/1239/1239719.png",
+    category: "Bioinfo Hub",
+    tags: ["R", "Population Genetics", "Visualization"],
+    status: "Ativo",
+    pubDate: "2025-10-10"
+  },
+  {
+    name: "ggDAPC",
+    description: "DAPC visual. Agrupar populações nunca foi tão estético. Se os grupos não separarem, a culpa não é do gráfico.",
+    url: "/projects/ggdapc",
+    image: "https://raw.githubusercontent.com/wilsonfrantine/ggDAPC/main/images/comparison.png",
+    category: "Bioinfo Hub",
+    tags: ["R", "Population Genetics", "Visualization"],
+    status: "Ativo",
+    pubDate: "2025-09-05"
   },
 
   // Data Ecology
@@ -96,7 +73,8 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/4773/4773801.png",
     category: "Data Ecology",
     tags: ["R", "Landscape Ecology"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2025-07-20"
   },
   {
     name: "ggmodel",
@@ -105,7 +83,8 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/2280/2280566.png",
     category: "Data Ecology",
     tags: ["R", "Modeling", "Visualization"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2025-06-15"
   },
   {
     name: "R4eco",
@@ -114,7 +93,8 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/3723/3723449.png",
     category: "Data Ecology",
     tags: ["R", "Quantitative Ecology"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2025-05-10"
   },
 
   // Outros / Apps Vivos
@@ -126,7 +106,8 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/3204/3204731.png",
     category: "Outros",
     tags: ["Astronomy", "Education", "JavaScript"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2025-04-01"
   },
   {
     name: "Aves Urbanas",
@@ -136,7 +117,8 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/3069/3069172.png",
     category: "Outros",
     tags: ["Biodiversity", "Ornithology", "Education"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2025-03-15"
   },
   {
     name: "NeuroFlow",
@@ -146,6 +128,7 @@ export const featuredProjects: FeaturedProject[] = [
     image: "https://cdn-icons-png.flaticon.com/512/3043/3043665.png",
     category: "Outros",
     tags: ["Productivity", "Audio", "JavaScript"],
-    status: "Ativo"
+    status: "Ativo",
+    pubDate: "2025-02-01"
   }
 ];

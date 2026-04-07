@@ -1,0 +1,7 @@
+{
+  "title": "Sistemática Filogenética e Tree-Thinking",
+  "description": "Uma jornada para entender a genealogia da vida, desde a interpretação de ramos até a simulação de processos evolutivos.",
+  "items": [
+    { "id": "cladex-sistematica", "collection": "tutorials" }
+  ]
+}
