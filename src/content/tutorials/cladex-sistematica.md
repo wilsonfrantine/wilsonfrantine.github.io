@@ -1,7 +1,7 @@
 ---
 title: "Tree-Thinking com CladeX"
 description: "Guia prático para não confundir mais grupos parafiléticos e entender onde os caracteres surgem."
-category: "Bioinformatics"
+category: "Bioinformática"
 pubDate: 2026-04-06
 author: "Wilson Frantine"
 image: "https://cdn-icons-png.flaticon.com/512/3222/3222792.png"
