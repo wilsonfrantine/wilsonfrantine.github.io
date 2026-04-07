@@ -76,6 +76,16 @@ export const featuredProjects: FeaturedProject[] = [
     category: "Bioinfo Hub",
     tags: ["Bioinformatics", "Regex", "JavaScript"],
     status: "Ativo"
+  {
+    name: "CladeX",
+    description: "Simulador de tree-thinking e sistemática filogenética. Para quando o papel e o quadro branco não são suficientes.",
+    url: "/projects/cladex",
+    demoUrl: "https://wilsonfrantine.github.io/cladex/",
+    image: "https://cdn-icons-png.flaticon.com/512/3222/3222792.png",
+    category: "Bioinfo Hub",
+    tags: ["Phylogenetics", "Education", "Bioinformatics", "D3.js"],
+    status: "Ativo"
+  },
   },
 
   // Data Ecology
