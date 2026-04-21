@@ -14,8 +14,27 @@
           "rank": "class",
           "colId": "6225G",
           "phylopicUuid": "cf4580eb-847f-401a-854a-3ca28eb63cd0",
+          "phylopicScale": 0.8,
           "speciesCount": 94,
-          "children": [],
+          "children": [
+            {
+              "id": "myxinoidea_sub",
+              "name": "Myxini",
+              "vernacular": "Peixes-bruxa",
+              "rank": "class",
+              "colId": "6225G",
+              "phylopicUuid": "cf4580eb-847f-401a-854a-3ca28eb63cd0",
+              "phylopicScale": 0.8,
+              "speciesCount": 94,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 1,
+                "genus": 6,
+                "species": 91
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
             "family": 1,
@@ -30,8 +49,27 @@
           "rank": "family",
           "colId": "KVMH7",
           "phylopicUuid": "1e04eace-cee7-4fd1-ac33-bb34c5f24fb6",
+          "phylopicScale": 0.8,
           "speciesCount": 54,
-          "children": [],
+          "children": [
+            {
+              "id": "petromyzontidae_sub",
+              "name": "Petromyzonti",
+              "vernacular": "Lampreias",
+              "rank": "family",
+              "colId": "KVMH7",
+              "phylopicUuid": "1e04eace-cee7-4fd1-ac33-bb34c5f24fb6",
+              "phylopicScale": 0.8,
+              "speciesCount": 54,
+              "children": [],
+              "rankCounts": {
+                "order": 0,
+                "family": 1,
+                "genus": 9,
+                "species": 44
+              }
+            }
+          ],
           "rankCounts": {
             "order": 0,
             "family": 1,
@@ -47,37 +85,56 @@
       "vernacular": "Peixes cartilaginosos",
       "color": "#3b82f6",
       "taxa": [
-       
-         {
-          "id": "holocephali",
-          "name": "Holocephali",
-          "vernacular": "Quimeras",
-          "rank": "class",
-          "colId": "CK",
-          "phylopicUuid": "a11c3b20-f3e9-4e04-8185-32759268b3b0",
-          "speciesCount": 90,
-          "children": [],
-          "rankCounts": {
-            "order": 14,
-            "family": 67,
-            "genus": 227,
-            "species": 1353
-          }
-        },
         {
-          "id": "elasmobranchii",
-          "name": "Elasmobranchii",
-          "vernacular": "Tubarões e raias",
+          "id": "chondrichthyes_class",
+          "name": "Chondrichthyes",
+          "vernacular": "Peixes cartilaginosos",
           "rank": "class",
-          "colId": "LB",
+          "colId": "8X6G5",
           "phylopicUuid": "36d54b94-35a6-4a66-a41e-b8f28534e70c",
-          "speciesCount": 1353,
-          "children": [],
+          "phylopicScale": 1.8,
+          "speciesCount": 1443,
+          "children": [
+            {
+              "id": "holocephali",
+              "name": "Holocephali",
+              "vernacular": "Quimeras",
+              "rank": "class",
+              "colId": "CK",
+              "phylopicUuid": "a11c3b20-f3e9-4e04-8185-32759268b3b0",
+              "phylopicScale": 1.2,
+              "speciesCount": 90,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 3,
+                "genus": 6,
+                "species": 90
+              }
+            },
+            {
+              "id": "elasmobranchii",
+              "name": "Elasmobranchii",
+              "vernacular": "Tubarões e raias",
+              "rank": "class",
+              "colId": "LB",
+              "phylopicUuid": "36d54b94-35a6-4a66-a41e-b8f28534e70c",
+              "phylopicScale": 1.1,
+              "speciesCount": 1353,
+              "children": [],
+              "rankCounts": {
+                "order": 14,
+                "family": 67,
+                "genus": 227,
+                "species": 1353
+              }
+            }
+          ],
           "rankCounts": {
-            "order": 14,
-            "family": 67,
-            "genus": 227,
-            "species": 1353
+            "order": 15,
+            "family": 70,
+            "genus": 233,
+            "species": 1443
           }
         }
       ]
@@ -95,6 +152,7 @@
           "rank": "class",
           "colId": "8VR36",
           "phylopicUuid": "7f413b81-2f0c-4e54-9f8f-effec43e28a7",
+          "phylopicScale": 1.3,
           "speciesCount": 41467,
           "children": [
             {
@@ -104,9 +162,15 @@
               "rank": "subclass",
               "colId": "",
               "phylopicUuid": "6d16ae40-b1b2-4b67-a161-2fd1eb7b0024",
+              "phylopicScale": 1.5,
               "speciesCount": 14,
               "children": [],
-              "rankCounts": { "order": 1, "family": 1, "genus": 2, "species": 14 }
+              "rankCounts": {
+                "order": 1,
+                "family": 1,
+                "genus": 2,
+                "species": 14
+              }
             },
             {
               "id": "chondrostei",
@@ -115,9 +179,15 @@
               "rank": "subclass",
               "colId": "",
               "phylopicUuid": "5ce55e7c-827d-4049-b128-ae0bc8fb2981",
+              "phylopicScale": 1,
               "speciesCount": 109,
               "children": [],
-              "rankCounts": { "order": 2, "family": 2, "genus": 6, "species": 109 }
+              "rankCounts": {
+                "order": 2,
+                "family": 2,
+                "genus": 6,
+                "species": 109
+              }
             },
             {
               "id": "holostei",
@@ -126,9 +196,15 @@
               "rank": "subclass",
               "colId": "",
               "phylopicUuid": "fd00131d-7916-44bb-9420-2aaac7cf6798",
+              "phylopicScale": 1.5,
               "speciesCount": 68,
               "children": [],
-              "rankCounts": { "order": 2, "family": 2, "genus": 3, "species": 68 }
+              "rankCounts": {
+                "order": 2,
+                "family": 2,
+                "genus": 3,
+                "species": 68
+              }
             },
             {
               "id": "teleostei",
@@ -137,9 +213,15 @@
               "rank": "infraclass",
               "colId": "",
               "phylopicUuid": "7f413b81-2f0c-4e54-9f8f-effec43e28a7",
+              "phylopicScale": 1,
               "speciesCount": 41276,
               "children": [],
-              "rankCounts": { "order": 63, "family": 565, "genus": 5306, "species": 41276 }
+              "rankCounts": {
+                "order": 63,
+                "family": 565,
+                "genus": 5306,
+                "species": 41276
+              }
             }
           ],
           "rankCounts": {
@@ -156,8 +238,27 @@
           "rank": "order",
           "colId": "YW",
           "phylopicUuid": "ff131fa9-0ac4-4e6d-8df9-c44226ea4e7c",
+          "phylopicScale": 1.3,
           "speciesCount": 2,
-          "children": [],
+          "children": [
+            {
+              "id": "actinistia_sub",
+              "name": "Actinistia",
+              "vernacular": "Celacanto",
+              "rank": "order",
+              "colId": "YW",
+              "phylopicUuid": "ff131fa9-0ac4-4e6d-8df9-c44226ea4e7c",
+              "phylopicScale": 1,
+              "speciesCount": 2,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 2,
+                "genus": 2,
+                "species": 2
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
             "family": 2,
@@ -172,8 +273,27 @@
           "rank": "subclass",
           "colId": "KV2DT",
           "phylopicUuid": "00d885f5-2f01-41cc-8a60-c94147dc81cf",
+          "phylopicScale": 1,
           "speciesCount": 6,
-          "children": [],
+          "children": [
+            {
+              "id": "dipnoi_sub",
+              "name": "Dipnoi",
+              "vernacular": "Peixes-pulmonados",
+              "rank": "subclass",
+              "colId": "KV2DT",
+              "phylopicUuid": "00d885f5-2f01-41cc-8a60-c94147dc81cf",
+              "phylopicScale": 1,
+              "speciesCount": 6,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 4,
+                "genus": 4,
+                "species": 6
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
             "family": 4,
@@ -190,46 +310,85 @@
       "color": "#22c55e",
       "taxa": [
         {
-          "id": "anura",
-          "name": "Anura",
-          "vernacular": "Sapos e rãs",
-          "rank": "order",
-          "colId": "PW",
+          "id": "batrachia",
+          "name": "Batrachia",
+          "vernacular": "Sapos e salamandras",
+          "rank": "superorder",
+          "colId": "",
           "phylopicUuid": "c387bde8-a9de-4101-928b-e99f2a7a33e5",
-          "speciesCount": 7982,
-          "children": [],
+          "phylopicScale": 1,
+          "speciesCount": 8841,
+          "children": [
+            {
+              "id": "anura",
+              "name": "Anura",
+              "vernacular": "Sapos e rãs",
+              "rank": "order",
+              "colId": "PW",
+              "phylopicUuid": "c387bde8-a9de-4101-928b-e99f2a7a33e5",
+              "phylopicScale": 1,
+              "speciesCount": 7982,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 61,
+                "genus": 497,
+                "species": 7982
+              }
+            },
+            {
+              "id": "caudata",
+              "name": "Caudata",
+              "vernacular": "Salamandras",
+              "rank": "order",
+              "colId": "W3",
+              "phylopicUuid": "d1644001-d86d-4541-9501-295a873aed2a",
+              "phylopicScale": 1,
+              "speciesCount": 859,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 9,
+                "genus": 70,
+                "species": 859
+              }
+            }
+          ],
           "rankCounts": {
-            "order": 1,
-            "family": 61,
-            "genus": 497,
-            "species": 7982
+            "order": 2,
+            "family": 70,
+            "genus": 567,
+            "species": 8841
           }
         },
         {
-          "id": "caudata",
-          "name": "Caudata",
-          "vernacular": "Salamandras",
-          "rank": "order",
-          "colId": "W3",
-          "phylopicUuid": "d1644001-d86d-4541-9501-295a873aed2a",
-          "speciesCount": 859,
-          "children": [],
-          "rankCounts": {
-            "order": 1,
-            "family": 9,
-            "genus": 70,
-            "species": 859
-          }
-        },
-        {
-          "id": "gymnophiona",
+          "id": "gymnophiona_parent",
           "name": "Gymnophiona",
           "vernacular": "Cecílias",
           "rank": "order",
           "colId": "623BD",
           "phylopicUuid": "4dd27c92-9daf-4217-b35d-03487bc4a96d",
+          "phylopicScale": 0.8,
           "speciesCount": 236,
-          "children": [],
+          "children": [
+            {
+              "id": "gymnophiona",
+              "name": "Gymnophiona",
+              "vernacular": "Cecílias",
+              "rank": "order",
+              "colId": "623BD",
+              "phylopicUuid": "4dd27c92-9daf-4217-b35d-03487bc4a96d",
+              "phylopicScale": 0.8,
+              "speciesCount": 236,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 10,
+                "genus": 32,
+                "species": 236
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
             "family": 10,
@@ -246,30 +405,85 @@
       "color": "#f59e0b",
       "taxa": [
         {
-          "id": "squamata",
-          "name": "Squamata",
-          "vernacular": "Lagartos e serpentes",
-          "rank": "order",
-          "colId": "45C",
+          "id": "lepidosauria",
+          "name": "Lepidosauria",
+          "vernacular": "Lagartos, serpentes e tuataras",
+          "rank": "superorder",
+          "colId": "",
           "phylopicUuid": "cff6c466-eebe-4884-95f4-d5a49c031154",
-          "speciesCount": 12170,
-          "children": [],
+          "phylopicScale": 1,
+          "speciesCount": 12172,
+          "children": [
+            {
+              "id": "squamata",
+              "name": "Squamata",
+              "vernacular": "Lagartos e serpentes",
+              "rank": "order",
+              "colId": "45C",
+              "phylopicUuid": "cff6c466-eebe-4884-95f4-d5a49c031154",
+              "phylopicScale": 1,
+              "speciesCount": 12170,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 75,
+                "genus": 1153,
+                "species": 12170
+              }
+            },
+            {
+              "id": "rhynchocephalia",
+              "name": "Rhynchocephalia",
+              "vernacular": "Tuatara",
+              "rank": "order",
+              "colId": "8FV6K",
+              "phylopicUuid": "f2a5ae73-c899-4e47-b0ad-b6eac3a99350",
+              "phylopicScale": 1,
+              "speciesCount": 2,
+              "children": [],
+              "rankCounts": {
+                "order": 0,
+                "family": 1,
+                "genus": 1,
+                "species": 2
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
-            "family": 75,
-            "genus": 1153,
-            "species": 12170
+            "family": 76,
+            "genus": 1154,
+            "species": 12172
           }
         },
         {
-          "id": "testudines",
+          "id": "testudines_parent",
           "name": "Testudines",
           "vernacular": "Tartarugas",
           "rank": "order",
           "colId": "477",
           "phylopicUuid": "68bf1e77-0912-4428-852b-9a29a1288022",
+          "phylopicScale": 1,
           "speciesCount": 369,
-          "children": [],
+          "children": [
+            {
+              "id": "testudines",
+              "name": "Testudines",
+              "vernacular": "Tartarugas",
+              "rank": "order",
+              "colId": "477",
+              "phylopicUuid": "68bf1e77-0912-4428-852b-9a29a1288022",
+              "phylopicScale": 1,
+              "speciesCount": 369,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 14,
+                "genus": 96,
+                "species": 369
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
             "family": 14,
@@ -278,35 +492,38 @@
           }
         },
         {
-          "id": "crocodilia",
+          "id": "crocodilia_parent",
           "name": "Crocodilia",
           "vernacular": "Crocodilos",
           "rank": "order",
           "colId": "329",
-          "phylopicUuid": "ba019355-a056-40e7-b515-f7080cd9848b",
+          "phylopicUuid": "7a18bb0b-2583-462b-ab94-16f3404073c0",
+          "phylopicScale": 1.5,
           "speciesCount": 27,
-          "children": [],
+          "children": [
+            {
+              "id": "crocodilia",
+              "name": "Crocodilia",
+              "vernacular": "Crocodilos",
+              "rank": "order",
+              "colId": "329",
+              "phylopicUuid": "7a18bb0b-2583-462b-ab94-16f3404073c0",
+              "phylopicScale": 1,
+              "speciesCount": 27,
+              "children": [],
+              "rankCounts": {
+                "order": 1,
+                "family": 3,
+                "genus": 9,
+                "species": 27
+              }
+            }
+          ],
           "rankCounts": {
             "order": 1,
             "family": 3,
             "genus": 9,
             "species": 27
-          }
-        },
-        {
-          "id": "rhynchocephalia",
-          "name": "Rhynchocephalia",
-          "vernacular": "Tuatara",
-          "rank": "order",
-          "colId": "8FV6K",
-          "phylopicUuid": "f2a5ae73-c899-4e47-b0ad-b6eac3a99350",
-          "speciesCount": 2,
-          "children": [],
-          "rankCounts": {
-            "order": 0,
-            "family": 1,
-            "genus": 1,
-            "species": 2
           }
         }
       ]
@@ -324,6 +541,7 @@
           "rank": "class",
           "colId": "V2",
           "phylopicUuid": "b3d81818-b362-462c-b559-e0fc7c7e9978",
+          "phylopicScale": 1,
           "speciesCount": 12588,
           "children": [
             {
@@ -333,9 +551,15 @@
               "rank": "infraclass",
               "colId": "",
               "phylopicUuid": "02f381ca-4c78-455c-9957-ad8be835feb5",
+              "phylopicScale": 1,
               "speciesCount": 72,
               "children": [],
-              "rankCounts": { "order": 5, "family": 6, "genus": 14, "species": 72 }
+              "rankCounts": {
+                "order": 5,
+                "family": 6,
+                "genus": 14,
+                "species": 72
+              }
             },
             {
               "id": "neognathae",
@@ -344,9 +568,15 @@
               "rank": "infraclass",
               "colId": "",
               "phylopicUuid": "b3d81818-b362-462c-b559-e0fc7c7e9978",
+              "phylopicScale": 1,
               "speciesCount": 12516,
               "children": [],
-              "rankCounts": { "order": 37, "family": 247, "genus": 2344, "species": 12516 }
+              "rankCounts": {
+                "order": 37,
+                "family": 247,
+                "genus": 2344,
+                "species": 12516
+              }
             }
           ],
           "rankCounts": {
@@ -370,7 +600,8 @@
           "vernacular": "Mamíferos",
           "rank": "class",
           "colId": "6224G",
-          "phylopicUuid": "314cbfd5-f93e-4304-8799-169c66ea66eb",
+          "phylopicUuid": "4e9a0149-9a93-4cd4-ab49-4a98958444f4",
+          "phylopicScale": 1.5,
           "speciesCount": 8768,
           "children": [
             {
@@ -380,9 +611,15 @@
               "rank": "order",
               "colId": "",
               "phylopicUuid": "162021b6-349b-4a64-906f-33d4a191b30e",
+              "phylopicScale": 1,
               "speciesCount": 19,
               "children": [],
-              "rankCounts": { "order": 1, "family": 2, "genus": 3, "species": 19 }
+              "rankCounts": {
+                "order": 1,
+                "family": 2,
+                "genus": 3,
+                "species": 19
+              }
             },
             {
               "id": "marsupialia",
@@ -391,9 +628,15 @@
               "rank": "infraclass",
               "colId": "",
               "phylopicUuid": "46cc984c-240f-461f-a8d4-7dcf3e0088d9",
+              "phylopicScale": 1,
               "speciesCount": 700,
               "children": [],
-              "rankCounts": { "order": 7, "family": 22, "genus": 88, "species": 700 }
+              "rankCounts": {
+                "order": 7,
+                "family": 22,
+                "genus": 88,
+                "species": 700
+              }
             },
             {
               "id": "eutheria",
@@ -402,9 +645,15 @@
               "rank": "infraclass",
               "colId": "",
               "phylopicUuid": "4e9a0149-9a93-4cd4-ab49-4a98958444f4",
+              "phylopicScale": 1,
               "speciesCount": 7961,
               "children": [],
-              "rankCounts": { "order": 21, "family": 139, "genus": 1243, "species": 7961 }
+              "rankCounts": {
+                "order": 21,
+                "family": 139,
+                "genus": 1243,
+                "species": 7961
+              }
             }
           ],
           "rankCounts": {

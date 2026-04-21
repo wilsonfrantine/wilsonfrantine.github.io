@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VertebrateChart from '../../components/tools/VertebrateChart';
+import data from '../../data/vertebrate-taxa.json';
+---
+
+<Layout
+  title="Diversidade de Vertebrados | TATAbox"
+  description="Sunburst interativo da diversidade de espécies por grupo taxonômico de vertebrados — ~86 mil espécies, 3 níveis taxonômicos, escalas log e linear."
+>
+  <main class="min-h-screen bg-white dark:bg-slate-950 bg-dot-grid transition-colors duration-300">
+    <div class="max-w-5xl mx-auto px-4 py-28">
+      <header class="mb-10">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-600 dark:text-sky-500 hover:text-slate-900 dark:hover:text-white transition-all mb-8"
+        >
+          ← [ cd .. /bancada ]
+        </a>
+        <h1 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+          Diversidade de Vertebrados
+        </h1>
+        <p class="text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+          Sunburst interativo com ~86 mil espécies de vertebrados distribuídas em 3 níveis taxonômicos.
+          A desigualdade da radiação adaptativa é um ponto importante. Em escala linear, os Actinopterygii (~41k spp.) engoliriam
+          visualmente todos os outros grupos. A escala log₁₀ traz um "conforto visual" para enxergar o quadro completo.
+          Dados do <a href="https://www.catalogueoflife.org" target="_blank" rel="noopener" class="underline hover:text-sky-400">Catalogue of Life</a>.
+          Silhuetas do <a href="https://www.phylopic.org" target="_blank" rel="noopener" class="underline hover:text-sky-400">PhyloPic</a>.
+        </p>
+        <p class="text-xs text-slate-400 dark:text-slate-600 mt-3 font-mono">
+          dados coletados em {new Date(data.fetchedAt).toLocaleDateString('pt-BR', { dateStyle: 'long' })}
+        </p>
+      </header>
+
+      <div class="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8">
+        <VertebrateChart data={data} client:load />
+      </div>
+    </div>
+  </main>
+</Layout>

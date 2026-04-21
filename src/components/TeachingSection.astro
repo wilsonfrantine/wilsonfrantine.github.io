@@ -1,5 +1,5 @@
 ---
-import { BookOpen, ExternalLink, List } from 'lucide-astro';
+import { BookOpen, ExternalLink, List, BarChart2 } from 'lucide-astro';
 import { getCollection } from 'astro:content';
 
 const allSeries = await getCollection('series');
@@ -46,5 +46,30 @@ const allSeries = await getCollection('series');
                 </div>
             );
         })}
+
+        {/* Ferramenta interativa — card estático */}
+        <a href="/tools/vertebrate-diversity" class="p-8 border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-slate-900/40 rounded-3xl hover:border-violet-500/30 transition-all group shadow-sm dark:shadow-none flex flex-col h-full">
+            <div class="flex items-center gap-3 mb-6">
+                <BarChart2 class="text-violet-500 dark:text-violet-400" size={24} />
+                <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400">Ferramenta Interativa</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors">
+                Diversidade de Vertebrados
+            </h3>
+
+            <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-mono text-sm opacity-90 flex-grow">
+                Sunburst interativo com ~86 mil espécies em 3 níveis taxonômicos. Útil para discutir desigualdade de biodiversidade, escalas log vs linear e a lógica da classificação filogenética.
+            </p>
+
+            <div class="flex items-center justify-between pt-6 border-t border-slate-200 dark:border-white/5">
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                    D3.js · PhyloPic · CoL
+                </span>
+                <span class="inline-flex items-center gap-2 text-violet-500 dark:text-violet-400 font-bold group-hover:text-slate-900 dark:group-hover:text-white transition-colors uppercase text-[10px] tracking-widest">
+                    Abrir <ExternalLink size={14} />
+                </span>
+            </div>
+        </a>
     </div>
 </section>

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Terminal, BookOpen, Zap, ArrowRight } from 'lucide-astro';
+import { Terminal, BookOpen, Zap, ArrowRight, BarChart2 } from 'lucide-astro';
 
 // Buscamos as novidades de todas as coleções
 const allTutorials = await getCollection('tutorials');
@@ -8,6 +8,14 @@ const allSnippets = await getCollection('snippets');
 
 // Unificamos e normalizamos os dados para o feed
 const activityFeed = [
+  {
+    title: 'Diversidade de Vertebrados',
+    description: '~86 mil espécies em sunburst interativo com 3 níveis taxonômicos, silhuetas PhyloPic e escala log/linear.',
+    date: new Date('2026-04-17'),
+    url: '/tools/vertebrate-diversity',
+    type: 'tool',
+    label: 'Ferramenta'
+  },
   ...allTutorials.map(t => ({
     title: t.data.title,
     description: t.data.description,
@@ -52,7 +60,7 @@ const activityFeed = [
                     <div class="relative z-10">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="p-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg text-sky-600 dark:text-sky-400 group-hover:border-sky-500/30 transition-colors">
-                                {item.type === 'tutorial' ? <BookOpen size={14} /> : <Zap size={14} />}
+                                {item.type === 'tutorial' ? <BookOpen size={14} /> : item.type === 'tool' ? <BarChart2 size={14} /> : <Zap size={14} />}
                             </div>
                             <span class="text-[9px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">{item.label}</span>
                         </div>

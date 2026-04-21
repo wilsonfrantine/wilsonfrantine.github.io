@@ -35,3 +35,4 @@ temp/
 
 # VS Code
 .vscode/
+.gitignore
