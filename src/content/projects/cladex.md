@@ -10,15 +10,15 @@ tags: ["Phylogenetics", "Education", "Bioinformatics", "React", "D3.js"]
 
 ## > ~/cladex --info
 
-O **CladeX** é um workbench de tree-thinking que eu desenvolvi para parar de explicar a mesma coisa dez vezes em aula. Ele transforma a sistemática filogenética em algo interativo, onde a topologia da árvore responde ao clique e o erro é parte do log de aprendizado.
+O **CladeX** é um simulador interativo de sistemática filogenética. A topologia responde às escolhas durante as atividades, que abordam relações de ancestralidade, delimitação de clados e interpretação de caracteres. A árvore pode ser clicada; os slides, felizmente, não.
 
 ### > ~/features --list
 
-*   **Tree-Thinking Real:** Nada de figuras coladas. As árvores são geradas via D3.js a partir de arquivos Newick reais.
-*   **Homologia Sem Drama:** Localize sinapomorfias e autapomorfias clicando diretamente nos nós e ramos. Se o clado for parafilético, a ferramenta vai te avisar.
-*   **Identificação "Quem sou eu?":** Desafios para identificar táxons ocultos usando pistas morfológicas e filogenéticas.
-*   **Visuais de Terminal:** UI limpa, modo dark por padrão e silhuetas via PhyloPic API.
+* **Árvores interativas:** visualizações geradas com D3.js a partir de dados Newick.
+* **Caracteres e clados:** atividades sobre homologia, sinapomorfias, autapomorfias e grupos mono, para e polifiléticos.
+* **Identificação de táxons:** desafios com pistas morfológicas e filogenéticas.
+* **Ancestralidade comum:** exploração de nós e ancestrais comuns mais recentes (MRCA).
 
 ### > ~/tech-stack --view
 
-O simulador roda em React 19 com D3 para o layout dos ramos. O estado é gerenciado pelo Zustand porque eu precisava de algo que não quebrasse enquanto eu tentava calcular coordenadas de SVG de forma recursiva.
+O simulador usa React, D3.js e Zustand. Consulte o repositório para os detalhes de implementação e os módulos disponíveis.

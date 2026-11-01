@@ -14,12 +14,12 @@ A produtividade na pesquisa muitas vezes depende da capacidade de entrar em esta
 
 ### Som Procedural e Customização
 
-Diferente de playlists estáticas, o NeuroFlow utiliza a *Web Audio API* para gerar sons em tempo real. Você pode misturar diferentes camadas — como chuva, ruído branco ou ambiências de café — criando o ambiente perfeito para suas necessidades.
+Diferente de playlists estáticas, o NeuroFlow utiliza a *Web Audio API* para sintetizar e misturar camadas de áudio no navegador, incluindo ruído rosa, ondas, chuva, vento e sons procedurais.
 
 ### Funcionalidades Principais
 
 *   **Mixer de Ambientes**: Controle o volume individual de cada elemento sonoro.
 *   **Temporizador Pomodoro**: Integrado diretamente na interface para sessões de trabalho focado.
-*   **Totalmente Online**: Funciona diretamente no navegador, sem necessidade de downloads.
+*   **No navegador**: Funciona diretamente no navegador, sem instalação local.
 
-Seja escrevendo um paper ou depurando um script complexo em R, o NeuroFlow fornece a base sonora para sua produtividade.
+O projeto também inclui perfis sonoros e um temporizador Pomodoro.

@@ -1,6 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
-import { Quote, ExternalLink } from 'lucide-astro';
+import { ExternalLink } from 'lucide-astro';
 import PublicationCard from './PublicationCard.astro';
 
 interface Props {
@@ -17,13 +16,13 @@ const { publications } = Astro.props;
     <div class="max-w-7xl mx-auto relative z-10">
         <div class="mb-16 text-left">
             <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-2 tracking-tight font-mono">
-                > ~/papers
+                > ~/pesquisa <span class="text-sky-600 dark:text-sky-400">--publicações</span>
             </h2>
             <div class="text-slate-400 dark:text-slate-500 font-mono text-xs mb-6 opacity-60">
-                --grep="bio|info|eco|gen"
+                Artigos e produção acadêmica
             </div>
             <p class="text-slate-600 dark:text-slate-400 max-w-2xl font-mono text-sm leading-relaxed border-l border-slate-200 dark:border-white/5 pl-6">
-                Tentando convencer os revisores de que meus dados fazem sentido. (Linkado via ORCID para minha própria sanidade mental).
+                Publicações em genética, biologia evolutiva, ecologia e análise de dados.
             </p>
         </div>
 
@@ -40,7 +39,7 @@ const { publications } = Astro.props;
 
         <div class="mt-16 text-center">
             <a href="https://orcid.org/0000-0002-4293-0471" class="text-sky-600 dark:text-sky-400 font-mono text-xs uppercase tracking-widest hover:text-slate-900 dark:hover:text-white transition-colors flex items-center justify-center gap-2">
-                Ver Currículo Lattes / ORCID <ExternalLink size={14} />
+                Ver perfil no ORCID <ExternalLink size={14} />
             </a>
         </div>
     </div>

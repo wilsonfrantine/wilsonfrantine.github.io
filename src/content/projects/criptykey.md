@@ -1,25 +1,25 @@
 ---
 repo: "criptykey"
 title: "criptykey 🔐"
-description: "Gerador de senhas determinístico, seguro e offline usando uma frase mestre."
+description: "Gerador local de senhas determinísticas com PBKDF2-HMAC-SHA256, usando uma frase mestre e o nome do serviço."
 category: "Outros"
 pubDate: 2026-04-03
-insight: "Suas senhas sem armazenamento: basta lembrar de uma frase e o nome do site."
+insight: "CLI e versão web; os mesmos dados geram o mesmo resultado sem enviar informações a um servidor."
 tags: ["Security", "Cryptography", "JavaScript", "Tools"]
 ---
 
 ## Segurança Determinística e Sem Armazenamento
 
-Gerenciar múltiplas senhas complexas é um desafio de segurança. O **Criptykey** oferece uma abordagem diferente: em vez de armazenar senhas em um banco de dados ou "vault", ele as gera dinamicamente através de algoritmos criptográficos sempre que você precisar.
+**CriptyKey** gera senhas a partir de uma frase mestre e do nome de um site ou serviço. A derivação usa PBKDF2-HMAC-SHA256; o gerador não mantém um cofre de senhas.
 
 ### Como funciona?
 
-O Criptykey combina uma **Frase Mestre** (que apenas você conhece) com o **Nome do Serviço** (ex: github.com). O resultado é uma senha única e complexa que será sempre a mesma para aquela combinação, mas impossível de prever sem a frase secreta.
+Para a mesma frase mestre, serviço, estilo e versão do algoritmo, a saída é determinística. Alterar um desses valores produz outra senha.
 
 ### Vantagens Principais
 
-*   **Zero Storage**: Nada é salvo em servidores ou no seu navegador. Se o site do Criptykey sumir, você ainda pode gerar sua senha rodando o código localmente.
+*   **Sem armazenamento pelo app**: A ferramenta não guarda as senhas geradas.
 *   **Totalmente Offline**: O processamento ocorre 100% no seu dispositivo.
 *   **Múltiplos Estilos**: Gere senhas alfanuméricas, apenas números ou frases amigáveis.
 
-O Criptykey é a ferramenta definitiva para quem busca o máximo de soberania digital e segurança sem depender de gerenciadores de senhas de terceiros.
+O repositório contém a versão web e uma interface de linha de comando.

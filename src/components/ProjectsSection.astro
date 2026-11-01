@@ -6,7 +6,13 @@ interface Props {
 }
 
 const { projects } = Astro.props;
-const categories = ["Bioinfo Hub", "Data Ecology", "Outros"];
+const categories = ["Bioinfo Hub", "Data Ecology", "Materiais de referência e projetos de ensino", "Outros"];
+const categoryLabels: Record<string, string> = {
+  "Bioinfo Hub": "Bioinformática",
+  "Data Ecology": "Ecologia e dados",
+  "Materiais de referência e projetos de ensino": "Materiais de referência e projetos de ensino",
+  "Outros": "Outros projetos",
+};
 ---
 
 <section id="projects" class="py-24 px-4 max-w-7xl mx-auto">
@@ -15,12 +21,12 @@ const categories = ["Bioinfo Hub", "Data Ecology", "Outros"];
             <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 tracking-tight font-mono">
                 > ~/projetos <span class="text-sky-600 dark:text-sky-400">--list</span>
             </h2>
-            <p class="text-slate-400 font-mono text-sm tracking-widest">
-                Repositórios que sobreviveram ao <span class="text-rose-500 font-bold italic">rm -rf</span>. Alguns são úteis, outros... (veja você mesmo).
+            <p class="text-slate-500 dark:text-slate-400 font-mono text-sm tracking-wide max-w-2xl">
+                Aplicações, bibliotecas e ferramentas para genética, bioinformática e ecologia.
             </p>
         </div>
         <a href="/projects" class="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 hover:text-sky-400 transition-colors border border-slate-800 px-6 py-3 rounded-full hover:border-sky-500/30">
-            Ver Repositório Completo →
+            Todos os projetos →
         </a>
     </header>
 
@@ -33,7 +39,7 @@ const categories = ["Bioinfo Hub", "Data Ecology", "Outros"];
                 <div class="space-y-8">
                     <h3 class="text-xs font-mono uppercase tracking-[0.3em] text-slate-500 flex items-center gap-4">
                         <span class="w-12 h-px bg-slate-800"></span>
-                        {category}
+                        {categoryLabels[category] ?? category}
                         <span class="px-2 py-0.5 border border-slate-800 rounded text-[10px]">{categoryProjects.length}</span>
                     </h3>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

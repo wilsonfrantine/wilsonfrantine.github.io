@@ -4,7 +4,7 @@ title: "ggDAPC 📈"
 description: "Visualização customizável de resultados de DAPC usando ggplot2 para genética de populações."
 category: "Bioinfo Hub"
 pubDate: 2026-04-03
-insight: "Eleve a qualidade visual dos seus plots de adegenet para nível de publicação."
+insight: "Script R que gera visualizações ggplot2 a partir de resultados de DAPC do adegenet."
 tags: ["R", "Genetics", "Visualization", "adegenet"]
 ---
 
@@ -24,18 +24,12 @@ Embora as funções nativas do `adegenet` sejam funcionais, elas nem sempre aten
 
 ### Como começar
 
-Baixe o script principal e carregue no seu ambiente R:
+O repositório inclui o script `DAPC.R` e um [tutorial online](https://wilsonfrantine.github.io/ggDAPC/) com orientações sobre as entradas e os agrupamentos usados na análise.
 
 ```r
 # Carregar o script
 source("DAPC.R")
 
-# Executar a análise (exemplo simplificado)
-# Assumindo que você já tem um objeto genind carregado
-dapc_results <- dapc(genind_obj)
-
-# Gerar o gráfico ggplot
-plot_ggdapc(dapc_results)
+# Consulte o tutorial e os exemplos do repositório para preparar e executar
+# a análise com as funções disponíveis em DAPC.R.
 ```
-
-O `ggDAPC` é a ferramenta definitiva para o pesquisador que busca aliar precisão estatística com excelência visual em genética de populações.

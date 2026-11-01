@@ -1,25 +1,22 @@
 ---
 repo: "wordcloud-app"
 title: "WordCloud App ☁️"
-description: "Uma aplicação simples para gerar nuvens de palavras e visualizações textuais."
+description: "Aplicação web para criar nuvens de palavras a partir de texto ou de listas com frequências."
 category: "Outros"
 pubDate: 2026-04-03
-insight: "Crie visualizações rápidas de abstracts e corpos de texto para seus posters."
-tags: ["Visualization", "Text Analysis", "JavaScript", "Tools"]
+insight: "Aceita texto livre ou pares palavra/frequência e exporta o resultado em PNG."
+tags: ["Texto", "Visualização", "Web", "PNG"]
 ---
 
-## Explorando Padrões Textuais
+## WordCloud App
 
-A análise visual de frequências de palavras é uma forma poderosa de resumir grandes volumes de texto ou identificar temas centrais em um abstract científico. O **WordCloud App** fornece uma interface simples e direta para gerar essas visualizações instantaneamente.
+Aplicação estática de navegador para gerar nuvens de palavras. É possível colar texto para contar frequências automaticamente ou fornecer uma lista de palavras e valores.
 
-### Estética e Ciência
+### Opções
 
-Seja para ilustrar um slide de apresentação ou para enriquecer a introdução de um poster acadêmico, as nuvens de palavras ajudam a comunicar a essência de uma pesquisa de forma lúdica e impactante.
+* Paletas de cores e fontes.
+* Limite de palavras, rotação e tamanhos mínimo e máximo.
+* Listas de palavras ignoradas em português e inglês, além de termos personalizados.
+* Exportação da imagem em PNG.
 
-### Vantagens
-
-*   **Agilidade**: Cole o texto e veja o resultado na hora.
-*   **Customização**: Ajuste escalas e densidades para melhor legibilidade.
-*   **Offline First**: Processamento local para máxima privacidade.
-
-O WordCloud App é a utilitária que faltava para dar um toque visual às suas análises textuais.
+A ferramenta roda no navegador e pode ser acessada pela demonstração ou executada localmente abrindo `index.html`.

@@ -11,7 +11,7 @@ interface Props {
 
 const { 
 	title, 
-	description = "TATAbox | Hub de Recursos Didáticos, Scripts e Ferramentas para Genética e Bioinformática.",
+	description = "Projetos, ferramentas, materiais de consulta e pesquisa em genética, bioinformática e ecologia.",
 	image = "/og-image.png"
 } = Astro.props;
 
@@ -74,10 +74,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				<!-- Menu Desktop -->
 				<ul class="hidden md:flex gap-10 text-[10px] font-mono tracking-[0.2em] uppercase text-slate-400 dark:text-slate-500">
 					<li><a href="/#hero" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Início</a></li>
-					<li><a href="/#projects" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Projetos</a></li>
+					<li><a href="/#projects" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Projetos e ferramentas</a></li>
+					<li><a href="/#teaching" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Materiais</a></li>
 					<li><a href="/#research" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Pesquisa</a></li>
-					<li><a href="/#teaching" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Recursos</a></li>
-					<li><a href="/#contact" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Networking</a></li>
+					<li><a href="/#contact" class="hover:text-slate-900 dark:hover:text-white transition-colors font-bold">Sobre / contato</a></li>
 				</ul>
 
 				<ThemeToggle />
@@ -93,10 +93,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			<div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-slate-950 flex flex-col items-center justify-center translate-x-full transition-transform duration-300 md:hidden">
 				<ul class="flex flex-col gap-10 text-xs font-mono tracking-[0.4em] uppercase text-slate-400 dark:text-slate-500 text-center px-8">
 					<li><a href="/#hero" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Início</a></li>
-					<li><a href="/#projects" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Projetos</a></li>
+					<li><a href="/#projects" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Projetos e ferramentas</a></li>
+					<li><a href="/#teaching" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Materiais</a></li>
 					<li><a href="/#research" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Pesquisa</a></li>
-					<li><a href="/#teaching" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Recursos</a></li>
-					<li><a href="/#contact" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Networking</a></li>
+					<li><a href="/#contact" class="mobile-link hover:text-slate-900 dark:hover:text-white transition-colors block py-2 font-bold">Sobre / contato</a></li>
 				</ul>
 				<div class="absolute bottom-12 font-mono text-[8px] text-slate-300 dark:text-slate-800 tracking-[0.5em] uppercase">
 					Wilson Frantine-Silva // TATAbox

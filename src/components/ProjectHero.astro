@@ -1,0 +1,168 @@
+---
+import { ExternalLink, Github } from 'lucide-astro';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  repo: string;
+  image?: string;
+  demoUrl?: string;
+  demoLabel?: string;
+  status?: string;
+}
+
+const { title, description, category, repo, image, demoUrl, demoLabel = 'Abrir demonstração', status = 'Ativo' } = Astro.props;
+const isExternalDemo = demoUrl?.startsWith('http');
+---
+
+<header class="project-hero relative flex min-h-[78vh] items-end overflow-hidden border-b border-slate-200 dark:border-white/5 md:items-center">
+  {image ? (
+    <img src={image} alt={`Prévia de ${title}`} class="project-hero__image absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high" />
+  ) : (
+    <div class="project-hero__art absolute inset-0" aria-hidden="true">
+      <span class="project-hero__art-label">{category}</span>
+      <span class="project-hero__art-name">{title}</span>
+    </div>
+  )}
+  <div class="project-hero__shade absolute inset-0" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 pt-36 md:px-10 md:pb-20">
+    <a href="/#projects" class="mb-12 inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-sky-700 transition-colors hover:text-slate-900 dark:text-sky-400 dark:hover:text-white">
+      ← [ cd .. /projetos ]
+    </a>
+
+    <div class="flex flex-wrap items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-600 dark:text-slate-300">
+      <span class="rounded border border-slate-300/70 bg-white/70 px-2 py-1 backdrop-blur dark:border-white/15 dark:bg-slate-950/50">{category}</span>
+      <span class:list={[
+        'rounded border px-2 py-1 backdrop-blur',
+        status === 'Em desenvolvimento' || status === 'Beta'
+          ? 'border-amber-500/30 bg-amber-100/60 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300'
+          : 'border-emerald-500/30 bg-emerald-100/60 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300',
+      ]}>{status}</span>
+    </div>
+
+    <h1 class="mt-7 max-w-4xl break-words font-mono text-4xl font-black italic leading-[1.05] tracking-tight text-slate-950 dark:text-white sm:text-5xl md:text-7xl">
+      &gt; {title.toLowerCase().replace(/\s+/g, '_')}<span class="text-sky-600 dark:text-sky-400">.md</span>
+    </h1>
+    <p class="mt-7 max-w-2xl border-l-2 border-sky-600/70 pl-6 font-mono text-base leading-relaxed text-slate-700 dark:border-sky-400/70 dark:text-slate-200 sm:text-lg">
+      {description}
+    </p>
+
+    <div class="mt-9 flex flex-wrap gap-3">
+      {demoUrl && (
+        <a
+          href={demoUrl}
+          target={isExternalDemo ? '_blank' : undefined}
+          rel={isExternalDemo ? 'noopener noreferrer' : undefined}
+          class="inline-flex min-h-11 items-center gap-2 rounded bg-sky-700 px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-sky-600 dark:bg-sky-500 dark:text-slate-950 dark:hover:bg-sky-400"
+        >
+          <ExternalLink size={14} /> {demoLabel}
+        </a>
+      )}
+      <a
+        href={`https://github.com/wilsonfrantine/${repo}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex min-h-11 items-center gap-2 rounded border border-slate-400/60 bg-white/60 px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-slate-800 backdrop-blur transition-colors hover:border-sky-600 hover:text-sky-700 dark:border-white/20 dark:bg-slate-950/45 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-white"
+      >
+        <Github size={14} /> Repositório
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .project-hero {
+    background: #e6ddc9;
+  }
+
+  .project-hero__image {
+    left: 12%;
+    width: 88%;
+    object-position: center;
+  }
+
+  .project-hero__shade {
+    background:
+      linear-gradient(0deg, #e6ddc9 0%, transparent 38%),
+      linear-gradient(90deg, #e6ddc9 0%, rgb(230 221 201 / 96%) 25%, rgb(230 221 201 / 68%) 51%, transparent 100%);
+  }
+
+  .project-hero__art {
+    background:
+      radial-gradient(ellipse at 77% 32%, rgb(14 116 144 / 24%), transparent 42%),
+      radial-gradient(ellipse at 82% 74%, rgb(166 101 72 / 20%), transparent 35%),
+      repeating-linear-gradient(0deg, transparent 0 27px, rgb(95 113 128 / 9%) 28px),
+      repeating-linear-gradient(90deg, transparent 0 27px, rgb(95 113 128 / 9%) 28px),
+      #e6ddc9;
+  }
+
+  .project-hero__art-label,
+  .project-hero__art-name {
+    position: absolute;
+    right: 6vw;
+    color: rgb(48 72 88 / 20%);
+    font-family: ui-monospace, monospace;
+    text-transform: uppercase;
+  }
+
+  .project-hero__art-label {
+    top: 28%;
+    font-size: clamp(12px, 1.5vw, 20px);
+    letter-spacing: 0.4em;
+  }
+
+  .project-hero__art-name {
+    top: 34%;
+    max-width: 55vw;
+    font-size: clamp(48px, 10vw, 150px);
+    font-weight: 800;
+    letter-spacing: -0.08em;
+    line-height: 0.9;
+    text-align: right;
+  }
+
+  :global(.dark) .project-hero {
+    background: #020617;
+  }
+
+  :global(.dark) .project-hero__shade {
+    background:
+      linear-gradient(0deg, #020617 0%, transparent 38%),
+      linear-gradient(90deg, #020617 0%, rgb(2 6 23 / 96%) 25%, rgb(2 6 23 / 65%) 51%, transparent 100%);
+  }
+
+  :global(.dark) .project-hero__art {
+    background:
+      radial-gradient(ellipse at 77% 32%, rgb(14 165 233 / 25%), transparent 42%),
+      radial-gradient(ellipse at 82% 74%, rgb(16 185 129 / 15%), transparent 35%),
+      repeating-linear-gradient(0deg, transparent 0 27px, rgb(148 163 184 / 7%) 28px),
+      repeating-linear-gradient(90deg, transparent 0 27px, rgb(148 163 184 / 7%) 28px),
+      #020617;
+  }
+
+  :global(.dark) .project-hero__art-label,
+  :global(.dark) .project-hero__art-name {
+    color: rgb(148 163 184 / 18%);
+  }
+
+  @media (max-width: 640px) {
+    .project-hero__image {
+      left: 0;
+      width: 100%;
+    }
+
+    .project-hero__shade {
+      background:
+        linear-gradient(0deg, #e6ddc9 2%, rgb(230 221 201 / 92%) 28%, transparent 100%),
+        linear-gradient(90deg, rgb(230 221 201 / 82%), transparent 100%);
+    }
+
+    :global(.dark) .project-hero__shade {
+      background:
+        linear-gradient(0deg, #020617 2%, rgb(2 6 23 / 92%) 28%, transparent 100%),
+        linear-gradient(90deg, rgb(2 6 23 / 82%), transparent 100%);
+    }
+  }
+</style>

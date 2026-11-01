@@ -15,15 +15,13 @@ const publications = await getOrcidPublications();
 
 <Layout title="TATAbox | Genética & Bioinformática">
 	<main class="relative bg-white dark:bg-slate-950 bg-dot-grid min-h-screen transition-colors duration-300">
-		<section id="hero">
-			<Hero />
-		</section>
-		
-		<ActivityLog />
+		<Hero />
 		
 		<section id="projects">
 			<ProjectsSection projects={projects} />
 		</section>
+
+		<ActivityLog />
 		
 		<section id="research">
 			<ResearchSection publications={publications} />

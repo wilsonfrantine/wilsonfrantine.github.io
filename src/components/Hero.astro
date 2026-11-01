@@ -1,11 +1,12 @@
 ---
 import { Code2, ChevronRight } from 'lucide-astro';
+import ProjectShowcase from './ProjectShowcase.astro';
 ---
 
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden px-6 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-white/5 transition-colors duration-300">
   
   <!-- Fundo Geek 2.0 -->
-  <div class="hero-background-layer absolute inset-0 flex pointer-events-none select-none overflow-hidden">
+  <div class="hero-background-layer absolute inset-0 z-[1] flex pointer-events-none select-none overflow-hidden">
     <div class="hero-dna-background w-1/3 font-mono text-[14px] text-sky-500/10 dark:text-sky-500/15 leading-none break-all px-4 opacity-50">
       {Array.from({ length: 60 }).map(() => (
         <div class="mb-1 tracking-[0.5em] uppercase text-sky-900/10 dark:text-sky-400/20">
@@ -33,8 +34,10 @@ ggplot(aes(x=pos, y=freq)) +
       ))}
     </div>
   </div>
+
+  <ProjectShowcase />
   
-  <div class="relative z-10 max-w-7xl mx-auto w-full">
+  <div class="hero-foreground relative z-10 w-full">
     <div class="max-w-4xl pt-20 md:pt-0">
       <!-- Tag Contexto -->
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-500 text-[10px] font-mono mb-10 uppercase tracking-[0.4em] rounded-full backdrop-blur-sm">
@@ -42,31 +45,32 @@ ggplot(aes(x=pos, y=freq)) +
       </div>
 
       <!-- Título Terminal Style -->
-      <h1 class="text-[clamp(2.2rem,8vw,5.5rem)] font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-none select-none font-mono">
-          @TATAbox:<span class="text-sky-600 dark:text-sky-500">~/workspace</span>$ <span class="animate-cursor">_</span>
+      <h1 class="text-[clamp(2rem,4.8vw,4.5rem)] font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-[1.05] select-none font-mono">
+          <span class="block">@TATAbox:</span>
+          <span class="block text-sky-600 dark:text-sky-500">~/workspace$ <span class="animate-cursor">_</span></span>
       </h1>
       
-      <!-- Subtítulo com altura fixa estrita para evitar layout shift -->
-      <div class="h-[180px] sm:h-[140px] md:h-[120px] mb-12 flex flex-col justify-start overflow-hidden">
-        <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed font-mono opacity-80 border-l border-slate-200 dark:border-white/10 pl-8 h-full">
-          <span class="typing-animation inline-block">
-            Ferramentas, modelos e scripts para a amnésia do futuro...
-          </span>
-          <span class="block text-slate-500 dark:text-slate-600 mt-2 text-lg italic tracking-tight secondary-typing">
-            <span class="text-emerald-600 dark:text-emerald-500">if</span> <span class="text-sky-600 dark:text-sky-400">works</span> → intencional; <span class="text-amber-600 dark:text-amber-500">else</span> → feature em construção produzida às 3h am. (Otimize ou julgue silenciosamente).
-          </span>
+      <div class="mb-10 max-w-2xl border-l border-slate-200 dark:border-white/10 pl-8 font-mono">
+        <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 leading-relaxed">
+          Ferramentas, modelos e scripts para a amnésia do futuro...
+        </p>
+        <p class="mt-3 text-base md:text-lg italic tracking-tight text-slate-500 dark:text-slate-500">
+          <span class="text-emerald-600 dark:text-emerald-500">if</span> <span class="text-sky-600 dark:text-sky-400">works</span> → intencional; <span class="text-amber-600 dark:text-amber-500">else</span> → feature em construção.
         </p>
       </div>
 
       <!-- Botões Modernos e Minimalistas -->
-      <div class="flex flex-wrap gap-6 items-center">
-        <a href="#projects" class="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-black text-xs uppercase tracking-[0.3em] transition-all hover:bg-sky-600 dark:hover:bg-sky-500 hover:shadow-[0_0_40px_rgba(14,165,233,0.3)]">
+      <div class="flex w-full max-w-72 flex-col items-stretch gap-4">
+        <a href="#projects" class="group relative inline-flex h-[42px] w-full items-center justify-center bg-slate-900 text-white dark:bg-white dark:text-slate-950 font-black text-xs uppercase tracking-[0.2em] transition-all hover:bg-sky-600 dark:hover:bg-sky-500 hover:shadow-[0_0_40px_rgba(14,165,233,0.3)]">
           <span class="relative z-10 flex items-center gap-2">
-            Explorar Projetos <ChevronRight size={16} class="group-hover:translate-x-1 transition-transform" />
+            Projetos e ferramentas <ChevronRight size={16} class="group-hover:translate-x-1 transition-transform" />
           </span>
         </a>
-        <a href="#teaching" class="px-10 py-5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-[0.3em] hover:text-slate-900 dark:hover:text-white hover:border-sky-500/50 hover:bg-slate-50 dark:hover:bg-white/2 transition-all backdrop-blur-sm">
-          Recursos Didáticos
+        <a href="#teaching" class="inline-flex h-[42px] w-full items-center justify-center border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-slate-900 dark:hover:text-white hover:border-sky-500/50 hover:bg-slate-50 dark:hover:bg-white/2 transition-all backdrop-blur-sm">
+          Materiais e referências
+        </a>
+        <a href="#research" class="inline-flex h-[42px] w-full items-center justify-center border border-slate-200 dark:border-white/10 text-sky-600 dark:text-sky-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-slate-900 dark:hover:text-white hover:border-sky-500/50 hover:bg-slate-50 dark:hover:bg-white/2 transition-all backdrop-blur-sm">
+          Pesquisa e publicações
         </a>
       </div>
     </div>
@@ -79,6 +83,20 @@ ggplot(aes(x=pos, y=freq)) +
 </section>
 
 <style>
+  .hero-foreground {
+    max-width: 80rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-foreground {
+      width: 50vw;
+      max-width: none;
+      margin-left: max(0px, calc((100vw - 80rem) / 2 - 1.5rem));
+      margin-right: 0;
+    }
+  }
+
   .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -93,23 +111,4 @@ ggplot(aes(x=pos, y=freq)) +
     50% { opacity: 0; }
   }
 
-  .typing-animation {
-    display: inline-block;
-    overflow: hidden;
-    animation: typing-loop 12s infinite;
-  }
-
-  .secondary-typing {
-    animation: fade-loop 12s infinite;
-  }
-
-  @keyframes typing-loop {
-    0%, 5%, 100% { opacity: 0; transform: translateX(-10px); }
-    15%, 90% { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes fade-loop {
-    0%, 20%, 100% { opacity: 0; transform: translateY(10px); }
-    30%, 90% { opacity: 1; transform: translateY(0); }
-  }
 </style>

@@ -32,11 +32,12 @@ const projects = defineCollection({
     repo: z.string(), // Link com GitHub para fetch do README
     title: z.string(),
     description: z.string(), // Resumo curto para cards
-    category: z.enum(['Bioinfo Hub', 'Data Ecology', 'Trilhas de Aprendizado', 'Outros']),
+    category: z.enum(['Bioinfo Hub', 'Data Ecology', 'Materiais de referência e projetos de ensino', 'Outros']),
     pubDate: z.date(),
     insight: z.string().optional(),
     tags: z.array(z.string()).optional(),
     image: z.string().optional(), // Imagem de destaque opcional
+    status: z.enum(['Ativo', 'Beta', 'Em desenvolvimento']).default('Ativo'),
   }),
 });
 

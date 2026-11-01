@@ -6,14 +6,16 @@ interface Props {
   description: string;
   url: string;
   demoUrl?: string;
+  demoLabel?: string;
   image: string;
   tags: string[];
   status?: "Em Breve" | "Ativo" | string;
   category: string;
 }
 
-const { name, description, url, demoUrl, image, tags, status = "Ativo", category } = Astro.props;
+const { name, description, url, demoUrl, demoLabel, image, tags, status = "Ativo", category } = Astro.props;
 const isComingSoon = status === "Em Breve";
+const isInDevelopment = status === "Beta" || status === "Em desenvolvimento";
 
 const isBioinfo = category === "Bioinfo Hub";
 const isDataEcology = category === "Data Ecology";
@@ -61,23 +63,23 @@ const patternClass = isBioinfo ? "bg-pattern-code" : isDataEcology ? "bg-pattern
 
     <div class="flex items-center justify-between pt-5 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
       <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">
-        {isComingSoon ? (
+        {isComingSoon || isInDevelopment ? (
           <Clock size={12} class="text-amber-500 dark:text-amber-400/50" />
         ) : (
           <Activity size={12} class="text-emerald-500 dark:text-emerald-400/50" />
         )}
-        <span class={isComingSoon ? "text-amber-600 dark:text-amber-400/70" : "text-emerald-600 dark:text-emerald-400/70"}>{status}</span>
+        <span class={isComingSoon || isInDevelopment ? "text-amber-600 dark:text-amber-400/70" : "text-emerald-600 dark:text-emerald-400/70"}>{status}</span>
       </div>
       
       {!isComingSoon && (
         <div class="flex gap-2">
           {demoUrl && (
             <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-emerald-600 dark:text-emerald-400 hover:text-slate-900 dark:hover:text-white transition-colors bg-emerald-500/10 px-2.5 py-1 rounded">
-              <Globe size={12} /> Live
+              <Globe size={12} /> {demoLabel ?? "Abrir demonstração"}
             </a>
           )}
           <a href={url} class="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest font-bold text-sky-600 dark:text-sky-400 hover:text-slate-900 dark:hover:text-white transition-colors bg-sky-500/10 px-2.5 py-1 rounded">
-            {demoUrl ? "Doc" : "Acessar"}
+            {demoUrl ? "Detalhes" : "Ver detalhes"}
           </a>
         </div>
       )}

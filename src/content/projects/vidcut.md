@@ -1,28 +1,20 @@
 ---
 repo: "vidcut"
 title: "VidCut ✂️"
-description: "Ferramenta local simples para cortar segmentos de vídeo usando Node.js e FFmpeg."
+description: "Aplicação web local, com servidor Node.js e FFmpeg, para cortar trechos de arquivos de vídeo."
 category: "Outros"
 pubDate: 2026-04-03
-insight: "Corte vídeos de forma precisa via linha de comando sem re-codificação pesada."
-tags: ["Multimedia", "FFmpeg", "Node.js", "Tools"]
+insight: "Requer Node.js e FFmpeg instalados no computador."
+tags: ["Node.js", "FFmpeg", "Vídeo", "Aplicação local"]
 ---
 
-## Edição de Vídeo Sem Complicações
+## VidCut
 
-Muitas vezes, durante a preparação de materiais didáticos ou apresentações, precisamos apenas de um pequeno trecho de um vídeo longo. O **VidCut** automatiza esse processo através de um script Node.js que utiliza o poder do **FFmpeg** para realizar cortes cirúrgicos.
+O **VidCut** é uma interface web servida localmente por Node.js. Ela recebe um vídeo disponível no computador e os tempos de início e fim; o servidor usa FFmpeg para produzir o trecho.
 
-### Por que usar o VidCut?
+### Requisitos
 
-Softwares de edição de vídeo convencionais podem ser pesados e lentos para tarefas simples de corte. O VidCut realiza o "stream copy" sempre que possível, o que significa que o vídeo é cortado quase instantaneamente e sem perda de qualidade original.
+* Node.js instalado.
+* FFmpeg disponível no `PATH` do sistema.
 
-### Como usar
-
-Após instalar as dependências (Node.js e FFmpeg), basta executar o comando especificando o tempo de início e fim:
-
-```bash
-# Exemplo de uso
-node vidcut.js -i entrada.mp4 -s 00:01:30 -e 00:02:00 -o saida.mp4
-```
-
-O VidCut é a ferramenta de "bancada" ideal para o pesquisador que precisa manipular arquivos multimídia com precisão e velocidade.
+Clone o repositório, instale suas dependências, inicie `server.js` e abra `http://localhost:3000` no navegador. Não há demonstração hospedada: a aplicação depende dos arquivos locais e do FFmpeg instalado.

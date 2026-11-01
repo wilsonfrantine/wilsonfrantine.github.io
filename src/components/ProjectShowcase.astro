@@ -1,0 +1,167 @@
+---
+const projects = [
+  {
+    name: 'CladeX',
+    category: 'Sistemática filogenética',
+    image: '/projects/previews/cladex.png',
+    href: '/projects/cladex',
+  },
+  {
+    name: 'FASTA Regex',
+    category: 'Bioinformática',
+    image: '/projects/previews/fastaregex.png',
+    href: '/projects/fastaregex',
+  },
+  {
+    name: 'Pale Blue Dot',
+    category: 'Escalas astronômicas',
+    image: '/projects/previews/palebluedot.png',
+    href: '/projects/palebluedot',
+  },
+  {
+    name: 'Aves Procopenses',
+    category: 'Biodiversidade',
+    image: '/projects/previews/aves.png',
+    href: '/projects/aves',
+  },
+  {
+    name: 'NeuroFlow',
+    category: 'Foco e áudio procedural',
+    image: '/projects/previews/neuroflow.png',
+    href: '/projects/neuroflow',
+  },
+];
+---
+
+<section class="project-showcase pointer-events-none absolute inset-x-0 top-[5.75rem] bottom-0 z-0 overflow-hidden" aria-label="Prévia visual dos projetos">
+  <a id="showcase-link" href={projects[0].href} class="project-showcase__link pointer-events-auto absolute inset-y-0 right-0" aria-label={`Ver detalhes de ${projects[0].name}`}>
+    <img
+      id="showcase-image"
+      src={projects[0].image}
+      alt={`Captura de tela do projeto ${projects[0].name}`}
+      width="1440"
+      height="900"
+      fetchpriority="high"
+      class="project-showcase__image absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700"
+    />
+  </a>
+  <div class="project-showcase__gradient absolute inset-0" aria-hidden="true"></div>
+  <div class="pointer-events-auto absolute bottom-8 right-8 z-10 flex items-center gap-5">
+    <div class="flex gap-2" role="group" aria-label="Selecionar prévia de projeto">
+      {projects.map((project, index) => (
+        <button
+          type="button"
+          data-showcase-index={index}
+          aria-label={`Mostrar ${project.name}`}
+          aria-pressed={index === 0 ? 'true' : 'false'}
+          class:list={[
+            'h-1.5 rounded-full transition-all',
+            index === 0 ? 'w-8 bg-sky-400' : 'w-3 bg-slate-600 hover:bg-slate-400',
+          ]}
+        />
+      ))}
+    </div>
+    <button data-showcase-pause type="button" class="font-mono text-[9px] uppercase tracking-widest text-slate-400 hover:text-white" aria-pressed="false">Pausar</button>
+  </div>
+</section>
+
+<style>
+  @property --showcase-fade-end {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 120%;
+  }
+
+  .project-showcase__gradient {
+    left: calc(100% - var(--preview-width) + var(--preview-padding));
+    right: 0;
+    --showcase-fade-end: 120%;
+    background: linear-gradient(90deg, #e6ddc9 0%, transparent var(--showcase-fade-end));
+    transition: --showcase-fade-end 450ms ease-in-out;
+    pointer-events: none;
+  }
+
+  .project-showcase__link:hover ~ .project-showcase__gradient,
+  .project-showcase__link:focus-visible ~ .project-showcase__gradient {
+    --showcase-fade-end: 25%;
+  }
+
+  :global(.dark) .project-showcase__gradient {
+    background: linear-gradient(90deg, #020617 0%, transparent var(--showcase-fade-end));
+  }
+
+  .project-showcase {
+    --preview-width: 82%;
+    --preview-padding: 15vw;
+  }
+
+  .project-showcase__image {
+    padding: 0;
+  }
+
+  .project-showcase__link {
+    left: calc(100% - var(--preview-width) + var(--preview-padding));
+  }
+
+</style>
+
+<script>
+  const projects = [
+    { name: 'CladeX', category: 'Sistemática filogenética', image: '/projects/previews/cladex.png', href: '/projects/cladex' },
+    { name: 'FASTA Regex', category: 'Bioinformática', image: '/projects/previews/fastaregex.png', href: '/projects/fastaregex' },
+    { name: 'Pale Blue Dot', category: 'Escalas astronômicas', image: '/projects/previews/palebluedot.png', href: '/projects/palebluedot' },
+    { name: 'Aves Procopenses', category: 'Biodiversidade', image: '/projects/previews/aves.png', href: '/projects/aves' },
+    { name: 'NeuroFlow', category: 'Foco e áudio procedural', image: '/projects/previews/neuroflow.png', href: '/projects/neuroflow' },
+  ];
+
+  function initProjectShowcase() {
+    const showcase = document.querySelector<HTMLElement>('.project-showcase');
+    if (!showcase || showcase.dataset.initialized) return;
+    showcase.dataset.initialized = 'true';
+
+    const image = showcase.querySelector<HTMLImageElement>('#showcase-image');
+    const link = showcase.querySelector<HTMLAnchorElement>('#showcase-link');
+    const pauseButton = showcase.querySelector<HTMLButtonElement>('[data-showcase-pause]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let activeIndex = 0;
+    let paused = reducedMotion;
+    if (image && reducedMotion) image.style.transition = 'none';
+    pauseButton?.setAttribute('aria-pressed', String(paused));
+    if (pauseButton && paused) pauseButton.textContent = 'Reproduzir';
+
+    function show(index: number) {
+      activeIndex = (index + projects.length) % projects.length;
+      const project = projects[activeIndex];
+      if (!image || !link) return;
+      image.classList.add('opacity-0');
+      window.setTimeout(() => {
+        image.src = project.image;
+        image.alt = `Captura de tela do projeto ${project.name}`;
+        link.href = project.href;
+        link.setAttribute('aria-label', `Ver detalhes de ${project.name}`);
+        image.classList.remove('opacity-0');
+      }, 220);
+      showcase.querySelectorAll<HTMLButtonElement>('[data-showcase-index]').forEach((button, buttonIndex) => {
+        const active = buttonIndex === activeIndex;
+        button.setAttribute('aria-pressed', String(active));
+        button.className = `h-1.5 rounded-full transition-all ${active ? 'w-8 bg-sky-400' : 'w-3 bg-slate-600 hover:bg-slate-400'}`;
+      });
+    }
+
+    showcase.querySelectorAll<HTMLButtonElement>('[data-showcase-index]').forEach((button) => {
+      button.addEventListener('click', () => show(Number(button.dataset.showcaseIndex)));
+    });
+    pauseButton?.addEventListener('click', () => {
+      paused = !paused;
+      pauseButton.setAttribute('aria-pressed', String(paused));
+      pauseButton.textContent = paused ? 'Reproduzir' : 'Pausar';
+    });
+
+    window.setInterval(() => {
+      if (!paused && document.visibilityState === 'visible') show(activeIndex + 1);
+    }, 7000);
+  }
+
+  initProjectShowcase();
+  document.addEventListener('astro:page-load', initProjectShowcase);
+</script>

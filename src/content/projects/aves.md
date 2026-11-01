@@ -2,9 +2,9 @@
 repo: "aves"
 title: "Aves Urbanas 🐦"
 description: "Guia interativo sobre a avifauna urbana de Cornélio Procópio - PR."
-category: "Trilhas de Aprendizado"
+category: "Materiais de referência e projetos de ensino"
 pubDate: 2026-04-03
-insight: "Conheça a biodiversidade urbana da região através de um site interativo."
+insight: "Guia web de aves registradas em Cornélio Procópio, Paraná."
 tags: ["Biodiversity", "Education", "Ornithology", "JavaScript"]
 ---
 
@@ -22,8 +22,4 @@ O projeto inclui um site interativo onde é possível visualizar característica
 *   **Informação Científica**: Dados técnicos sobre nome científico e habitat.
 *   **Interatividade**: Interface leve e intuitiva construída com tecnologias web modernas.
 
-### Como Contribuir
-
-A preservação da biodiversidade urbana é um esforço coletivo. Você pode participar enviando fotos de avistamentos na cidade ou informações adicionais sobre comportamentos específicos das aves locais para inclusão no site.
-
-Este projeto é um exemplo de como a tecnologia pode ser uma ponte entre a pesquisa científica e a educação ambiental da comunidade.
+O site reúne conteúdo sobre as espécies e a avifauna urbana local. Consulte a demonstração para verificar os registros e informações atualmente disponíveis.
