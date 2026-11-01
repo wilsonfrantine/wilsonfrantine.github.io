@@ -5,18 +5,18 @@ import { Code2, ChevronRight } from 'lucide-astro';
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden px-6 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-white/5 transition-colors duration-300">
   
   <!-- Fundo Geek 2.0 -->
-  <div class="absolute inset-0 flex pointer-events-none select-none overflow-hidden">
-    <div class="w-1/3 font-mono text-[14px] text-sky-500/10 dark:text-sky-500/10 leading-none break-all px-4 opacity-50">
+  <div class="hero-background-layer absolute inset-0 flex pointer-events-none select-none overflow-hidden">
+    <div class="hero-dna-background w-1/3 font-mono text-[14px] text-sky-500/10 dark:text-sky-500/15 leading-none break-all px-4 opacity-50">
       {Array.from({ length: 60 }).map(() => (
-        <div class="mb-1 tracking-[0.5em] uppercase text-sky-900/10 dark:text-sky-900/40">
-          {Array.from({ length: 8 }).map(() => "ATGC").join("")}
+        <div class="mb-1 tracking-[0.5em] uppercase text-sky-900/10 dark:text-sky-400/20">
+          {"ATGC".repeat(8).slice(0, -3)}
         </div>
       ))}
     </div>
-    <div class="w-2/3 font-mono text-[12px] text-emerald-500/5 leading-relaxed px-12 py-12">
+    <div class="hero-code-background w-2/3 font-mono text-[12px] text-emerald-500/5 dark:text-emerald-400/8 leading-relaxed px-12 py-12">
       {Array.from({ length: 12 }).map((_, i) => (
         <div class="mb-12">
-            <pre class="text-slate-200 dark:text-emerald-500/5">
+            <pre class="text-slate-200 dark:text-emerald-400/10">
 {i % 2 === 0 ? `
 # Filtering genomic variants
 for variant in vcf.fetch('chr1', 1000, 2000):
